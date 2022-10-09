@@ -23,10 +23,11 @@ const Home: NextPage = () => {
 						<ul className='flex items-center'>
 							<li>
 								<a
+									id='projects'
 									className='bg-blue-700  hover:bg-blue-200 delay-100 text-white px-4 py-2  rounded-md ml-8'
-									href='#'
+									href='#projects'
 								>
-									Blog
+									Projects
 								</a>
 							</li>
 							<li>
@@ -67,9 +68,7 @@ const Home: NextPage = () => {
 				</section>
 				<section>
 					<div>
-						<h3 id='projects' className='text-3xl py-1 dark:text-white'>
-							Projects
-						</h3>
+						<h3 className='text-3xl py-1 dark:text-white'>Projects</h3>
 					</div>
 				</section>
 			</main>
