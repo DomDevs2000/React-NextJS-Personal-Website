@@ -59,10 +59,10 @@ const Home: NextPage = () => {
 					</div>
 					<div className='text-5xl flex justify-center gap-12 py-3'>
 						<a href='#'>
-							<AiFillLinkedin />
+							<AiFillLinkedin color='gray' />
 						</a>
 						<a href='https://github.com/AidanC2000'>
-							<AiFillGithub />
+							<AiFillGithub color='gray' />
 						</a>
 					</div>
 				</section>
