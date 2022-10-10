@@ -70,6 +70,26 @@ const Home: NextPage = () => {
 					<div>
 						<h3 className='text-3xl py-1 dark:text-white'>Projects</h3>
 					</div>
+					<div className='max-w-sm rounded overflow-hidden shadow-lg'>
+						<image className='w-full' />
+						<div className='px-6 py-4'>
+							<div className='font-bold text-xl mb-2'>Project Name</div>
+							<p className='text-gray-700 text-base'>
+								Lorem ipsum dolor sit amet.
+							</p>
+						</div>
+						<div className='px-6 pt-4 pb-2'>
+							<span className='inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2'>
+								Vanilla JS
+							</span>
+							<span className='inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2'>
+								NodeJS
+							</span>
+							<span className='inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2'>
+								Express
+							</span>
+						</div>
+					</div>
 				</section>
 			</main>
 
