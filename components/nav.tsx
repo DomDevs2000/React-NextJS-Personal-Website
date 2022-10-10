@@ -49,13 +49,13 @@ const Nav: FC<NavProp> = ({ theme, setTheme }) => {
 							</button>
 							<ul className='MENU-LINK-MOBILE-OPEN flex flex-col items-center justify-between min-h-[250px] dark:text-white'>
 								<li className='border-b border-gray-400 my-8 uppercase'>
-									<a href='/portfolio'>Projects</a>
+									<a href='/projects'>Projects</a>
 								</li>
 								<li className='border-b border-gray-400 my-8 uppercase '>
 									<a href='/contact'>Contact Me</a>
 								</li>
 								<li className='border-b border-gray-400 my-8 uppercase'>
-									<a href='/portfolio'>Blog</a>
+									<a href='/blog'>Blog</a>
 								</li>
 							</ul>
 						</div>
@@ -63,13 +63,13 @@ const Nav: FC<NavProp> = ({ theme, setTheme }) => {
 
 					<ul className='DESKTOP-MENU hidden space-x-8 lg:flex dark:text-white'>
 						<li className='hover:underline'>
-							<a href='/portfolio'>Projects</a>
+							<a href='/projects'>Projects</a>
 						</li>
 						<li className='hover:underline'>
 							<a href='/contact'>Contact</a>
 						</li>
 						<li className='hover:underline'>
-							<a href='/portfolio'>Blog</a>
+							<a href='/blog'>Blog</a>
 						</li>
 					</ul>
 				</nav>
