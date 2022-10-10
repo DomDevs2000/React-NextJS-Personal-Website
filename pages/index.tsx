@@ -8,6 +8,7 @@ import { useState } from 'react';
 
 const Home: NextPage = () => {
 	const [darkMode, setDarkMode] = useState(false);
+	const [isNavOpen, setIsNavOpen] = useState(false); // initiate isNavOpen state with false
 
 	return (
 		<div className={darkMode ? 'dark' : ''}>
@@ -18,7 +19,86 @@ const Home: NextPage = () => {
 			</Head>
 			<main className='bg-white px-10 md:px-20 lg:px-40 dark:bg-gray-900'>
 				<section className='max-h-600'>
-					<nav className='py-10 mb-12 flex justify-between dark:text-white'>
+					<div className='flex items-center justify-between border-b border-gray-400 py-8'>
+						<h1 className='dark:text-white'>Aidan C</h1>
+						<button className='ml-8 px-4 py-2'>
+							<BsFillMoonStarsFill
+								onClick={() => setDarkMode(!darkMode)}
+								className='cursor-pointer text-2xl'
+							/>
+						</button>
+						<nav>
+							<section className='MOBILE-MENU flex lg:hidden'>
+								<div
+									className='HAMBURGER-ICON space-y-2'
+									onClick={() => setIsNavOpen((prev) => !prev)}
+								>
+									<span className='block h-0.5 w-8 animate-pulse bg-gray-600'></span>
+									<span className='block h-0.5 w-8 animate-pulse bg-gray-600'></span>
+									<span className='block h-0.5 w-8 animate-pulse bg-gray-600'></span>
+								</div>
+
+								<div className={isNavOpen ? 'showMenuNav' : 'hideMenuNav'}>
+									<div
+										className='CROSS-ICON absolute top-0 right-0 px-8 py-8'
+										onClick={() => setIsNavOpen(false)} // change isNavOpen state to false to close the menu
+									>
+										<svg
+											className='h-8 w-8 text-gray-600'
+											viewBox='0 0 24 24'
+											fill='none'
+											stroke='currentColor'
+											strokeWidth='2'
+											strokeLinecap='round'
+											strokeLinejoin='round'
+										>
+											<line x1='18' y1='6' x2='6' y2='18' />
+											<line x1='6' y1='6' x2='18' y2='18' />
+										</svg>
+									</div>
+									<ul className='MENU-LINK-MOBILE-OPEN flex flex-col items-center justify-between min-h-[250px]'>
+										<li className='border-b border-gray-400 my-8 uppercase hover:underline'>
+											<a href='/portfolio'>Projects</a>
+										</li>
+										<li className='border-b border-gray-400 my-8 uppercase'>
+											<a href='/contact'>Contact Me</a>
+										</li>
+									</ul>
+								</div>
+							</section>
+
+							<ul className='DESKTOP-MENU hidden space-x-8 lg:flex'>
+								<li>
+									<a href='/portfolio'>Projects</a>
+								</li>
+								<li>
+									<a href='/contact'>Contact</a>
+								</li>
+							</ul>
+						</nav>
+						<style>{`
+      .hideMenuNav {
+        display: none;
+      }
+      .showMenuNav {
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 100vh;
+        top: 0;
+        left: 0;
+        background: white;
+        z-index: 10;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        
+      }
+    `}</style>
+					</div>
+
+					{/* <nav className='py-10 mb-12 flex justify-between  dark:text-white'>
 						<h1 className=''>Aidan C</h1>
 						<ul className='flex items-center'>
 							<li>
@@ -47,7 +127,7 @@ const Home: NextPage = () => {
 								</button>
 							</li>
 						</ul>
-					</nav>
+					</nav> */}
 					<div className='text-center p-10 dark:text-white'>
 						<h2 className='text-5xl text-gray-700 py-2 text-grey-800 md:text-6xl'>
 							Aidan Carvalho
