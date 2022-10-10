@@ -17,7 +17,7 @@ const Home: NextPage = () => {
 				<link rel='icon' href='/favicon.ico' />
 			</Head>
 			<main className='bg-white px-10 md:px-20 lg:px-40 dark:bg-gray-900'>
-				<section className='min-h-screen'>
+				<section className='max-h-600'>
 					<nav className='py-10 mb-12 flex justify-between dark:text-white'>
 						<h1 className=''>Aidan C</h1>
 						<ul className='flex items-center'>
@@ -54,7 +54,10 @@ const Home: NextPage = () => {
 						</h2>
 						<h3 className='text-2xl'>Junior Full-Stack Developer</h3>
 						<p className='text-md py-5 leading-8 text-gray md:text-xl max-w-lg mx-auto'>
-							About me text here
+							Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nisi
+							veritatis natus recusandae eligendi, doloremque consectetur
+							voluptate tempora quasi ratione itaque totam assumenda dicta ab
+							eaque eum eveniet? Illum, consequatur iure.
 						</p>
 					</div>
 					<div className='text-5xl flex justify-center gap-12 py-3'>
@@ -70,24 +73,55 @@ const Home: NextPage = () => {
 					<div>
 						<h3 className='text-3xl py-1 dark:text-white'>Projects</h3>
 					</div>
-					<div className='max-w-sm rounded overflow-hidden shadow-lg'>
-						<image className='w-full' />
-						<div className='px-6 py-4'>
-							<div className='font-bold text-xl mb-2'>Project Name</div>
-							<p className='text-gray-700 text-base'>
-								Lorem ipsum dolor sit amet.
-							</p>
+
+					<div className='flex'>
+						<div className='max-w-sm rounded overflow-hidden shadow-lg dark:bg-gray-600'>
+							<image className='w-full' />
+							<div className='px-6 py-4'>
+								<div className='font-bold text-l mb-2 md:text-1xl lg:text-3xl'>
+									Project Name
+								</div>
+								<p className='text-gray-700 text-base dark:text-white'>
+									Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+									Voluptatibus quia, nulla! Maiores et perferendis eaque,
+									exercitationem praesentium nihil.
+								</p>
+							</div>
+							<div className='px-6 pt-4 pb-2'>
+								<span className='inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2'>
+									Javascript
+								</span>
+								<span className='inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2'>
+									Node
+								</span>
+								<span className='inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2'>
+									Express
+								</span>
+							</div>
 						</div>
-						<div className='px-6 pt-4 pb-2'>
-							<span className='inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2'>
-								Vanilla JS
-							</span>
-							<span className='inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2'>
-								NodeJS
-							</span>
-							<span className='inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2'>
-								Express
-							</span>
+						<div className='max-w-sm rounded overflow-hidden shadow-lg dark:bg-gray-600'>
+							<image className='w-full' />
+							<div className='px-6 py-4'>
+								<div className='font-bold text-l mb-2 md:text-1xl lg:text-3xl'>
+									Project Name
+								</div>
+								<p className='text-gray-700 text-base  dark:text-white'>
+									Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+									Voluptatibus quia, nulla! Maiores et perferendis eaque,
+									exercitationem praesentium nihil.
+								</p>
+							</div>
+							<div className='px-6 pt-4 pb-2'>
+								<span className='inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2'>
+									Javascript
+								</span>
+								<span className='inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2'>
+									Node
+								</span>
+								<span className='inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2'>
+									Express
+								</span>
+							</div>
 						</div>
 					</div>
 				</section>
