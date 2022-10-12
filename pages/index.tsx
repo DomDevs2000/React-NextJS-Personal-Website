@@ -6,8 +6,13 @@ import Image from 'next/image';
 import styles from '../styles/Home.module.css';
 import { useState } from 'react';
 import Nav from '../components/nav';
+import Projects from '../components/projects';
+import fs, { readdirSync } from 'fs';
+import path from 'path';
+import matter from 'gray-matter';
 
-const Home: NextPage = () => {
+const Home: NextPage = (posts) => {
+	console.log(posts);
 	const [darkMode, setDarkMode] = useState(false);
 
 	const theme = darkMode ? 'dark' : 'light';
@@ -21,91 +26,13 @@ const Home: NextPage = () => {
 
 			<main className={'bg-white px-10 md:px-20 lg:px-40 dark:bg-gray-900'}>
 				<Nav theme={darkMode} setTheme={setDarkMode}></Nav>
-
+				<Projects></Projects>
 				<section>
-					<div>
-						<h3 className='text-3xl py-1 text-center dark:text-white'>
-							Projects
-						</h3>
-					</div>
-
-					<div
-						className='
-          flex justify-center gap-12'
-					>
-						<div className='max-w-sm rounded overflow-hidden shadow-lg dark:bg-gray-600 dark:shadow-white'>
-							{/* <image className='w-full'  /> */}
-							<div className='px-6 py-4 '>
-								<div className='font-bold text-l mb-2 md:text-1xl lg:text-3xl'>
-									Project Name
-								</div>
-								<p className='text-gray-700 text-center dark:text-white'>
-									Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-									Voluptatibus quia, nulla! Maiores et perferendis eaque,
-									exercitationem praesentium nihil.
-								</p>
-							</div>
-							<div className='px-6 pt-4 pb-2'>
-								<span className='inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2'>
-									Javascript
-								</span>
-								<span className='inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2'>
-									Node
-								</span>
-								<span className='inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2'>
-									Express
-								</span>
-							</div>
-						</div>
-						<div className='max-w-sm rounded overflow-hidden shadow-lg dark:bg-gray-600 dark:shadow-white'>
-							{/* <image className='w-full' /> */}
-							<div className='px-6 py-4'>
-								<div className='font-bold text-l mb-2 md:text-1xl lg:text-3xl'>
-									Project Name
-								</div>
-								<p className='text-gray-700 text-center  dark:text-white'>
-									Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-									Voluptatibus quia, nulla! Maiores et perferendis eaque,
-									exercitationem praesentium nihil.
-								</p>
-							</div>
-							<div className='px-6 pt-4 pb-2'>
-								<span className='inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2'>
-									Javascript
-								</span>
-								<span className='inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2'>
-									Node
-								</span>
-								<span className='inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2'>
-									Express
-								</span>
-							</div>
-						</div>
-						<div className='max-w-sm rounded overflow-hidden shadow-lg dark:bg-gray-600 dark:shadow-white'>
-							{/* <image className='w-full' /> */}
-							<div className='px-6 py-4'>
-								<div className='font-bold text-l mb-2 md:text-1xl lg:text-3xl'>
-									Project Name
-								</div>
-								<p className='text-gray-700 text-center  dark:text-white'>
-									Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-									Voluptatibus quia, nulla! Maiores et perferendis eaque,
-									exercitationem praesentium nihil.
-								</p>
-							</div>
-							<div className='px-6 pt-4 pb-2'>
-								<span className='inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2'>
-									Javascript
-								</span>
-								<span className='inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2'>
-									Node
-								</span>
-								<span className='inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2'>
-									Express
-								</span>
-							</div>
-						</div>
-					</div>
+					{/* <div className='posts'>
+						{posts.map((post, index) => {
+							<h3>{post.frontmatter.title}</h3>;
+						})}
+					</div> */}
 				</section>
 			</main>
 		</div>
@@ -113,3 +40,29 @@ const Home: NextPage = () => {
 };
 
 export default Home;
+
+export async function getStaticProps() {
+	// get files from post dir
+	const files = readdirSync(path.join('posts'));
+	// get slug and front matter from posts
+	const posts = files.map((filename) => {
+		const slug = filename.replace('.md', '');
+
+		// get frontmatter
+		const markdownWithMeta = fs.readFileSync(
+			path.join('posts', filename),
+			'utf-8'
+		);
+		const { data: frontmatter } = matter(markdownWithMeta);
+		return {
+			slug,
+			frontmatter,
+		};
+	});
+
+	return {
+		props: {
+			posts: posts,
+		},
+	};
+}
