@@ -14,6 +14,7 @@ const Nav: FC<NavProp> = ({ theme, setTheme }) => {
 				<h1 className='dark:text-white'>Aidan C</h1>
 				<button className='ml-8 px-4 py-2'>
 					<BsFillMoonStarsFill
+						color='gray'
 						onClick={() => setTheme(!theme)}
 						className='cursor-pointer text-2xl'
 					/>
