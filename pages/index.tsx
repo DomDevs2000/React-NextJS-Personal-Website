@@ -6,8 +6,9 @@ import Projects from '../components/projects';
 import fs, { readdirSync } from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
+import { AiFillGithub, AiFillLinkedin } from 'react-icons/ai';
 
-const Home: NextPage = (posts) => {
+const Home: NextPage = () => {
 	const [darkMode, setDarkMode] = useState(false);
 
 	const theme = darkMode ? 'dark' : 'light';
@@ -21,12 +22,32 @@ const Home: NextPage = (posts) => {
 
 			<main className={'bg-white px-10 md:px-20 lg:px-40 dark:bg-gray-900'}>
 				<Nav theme={darkMode} setTheme={setDarkMode}></Nav>
+				<div className='text-center p-10 dark:text-white'>
+					<h2 className='text-5xl text-gray-700 py-2 text-grey-800 md:text-6xl'>
+						Aidan Dominic Carvalho
+					</h2>
+					<h3 className='text-2xl'>Junior Full-Stack Developer</h3>
+					<p className='text-md py-5 leading-8 text-gray md:text-xl max-w-lg mx-auto'>
+						Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nisi
+						veritatis natus recusandae eligendi, doloremque consectetur
+						voluptate tempora quasi ratione itaque totam assumenda dicta ab
+						eaque eum eveniet? Illum, consequatur iure.
+					</p>
+				</div>
+				<div className='text-5xl flex justify-center gap-12 py-3'>
+					<a href='#'>
+						<AiFillLinkedin color='gray' />
+					</a>
+					<a href='https://github.com/AidanC2000'>
+						<AiFillGithub color='gray' />
+					</a>
+				</div>
 				<Projects></Projects>
 				<section>
 					{/* <div className='posts'>
-						{posts.map((post, index) => {
-							<h3>{post.frontmatter.title}</h3>;
-						})}
+						{posts.map((post, index) => (
+							<h3>{post.frontmatter.title}</h3>
+						))}
 					</div> */}
 				</section>
 			</main>
@@ -48,13 +69,14 @@ export async function getStaticProps() {
 			path.join('posts', filename),
 			'utf-8'
 		);
-
+		// parses down data & renames data to frontmatter
 		const { data: frontmatter } = matter(markdownWithMeta);
 		return {
 			slug,
 			frontmatter,
 		};
 	});
+	console.log(files);
 	console.log(posts);
 	return {
 		props: {
