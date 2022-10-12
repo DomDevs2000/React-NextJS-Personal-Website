@@ -1,6 +1,6 @@
 import React, { FC, useState } from 'react';
 import { BsFillMoonStarsFill } from 'react-icons/bs';
-import { AiFillLinkedin, AiFillGithub } from 'react-icons/ai';
+
 type NavProp = {
 	theme: boolean;
 	setTheme: (theme: boolean) => void;
@@ -100,27 +100,6 @@ const Nav: FC<NavProp> = ({ theme, setTheme }) => {
       }
 
     `}</style>
-			</div>
-
-			<div className='text-center p-10 dark:text-white'>
-				<h2 className='text-5xl text-gray-700 py-2 text-grey-800 md:text-6xl'>
-					Aidan Dominic Carvalho
-				</h2>
-				<h3 className='text-2xl'>Junior Full-Stack Developer</h3>
-				<p className='text-md py-5 leading-8 text-gray md:text-xl max-w-lg mx-auto'>
-					Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nisi
-					veritatis natus recusandae eligendi, doloremque consectetur voluptate
-					tempora quasi ratione itaque totam assumenda dicta ab eaque eum
-					eveniet? Illum, consequatur iure.
-				</p>
-			</div>
-			<div className='text-5xl flex justify-center gap-12 py-3'>
-				<a href='#'>
-					<AiFillLinkedin color='gray' />
-				</a>
-				<a href='https://github.com/AidanC2000'>
-					<AiFillGithub color='gray' />
-				</a>
 			</div>
 		</section>
 	);
