@@ -1,4 +1,3 @@
-//@ts-ignore
 import React, { useRef } from 'react';
 import emailjs from '@emailjs/browser';
 
@@ -7,11 +6,13 @@ const Contact = () => {
 
 	const sendEmail = (e: any) => {
 		e.preventDefault();
-
+		if (!form.current) {
+			return;
+		}
 		emailjs
 			.sendForm(
-				'service_d2ys1mi',
-				'template_wz4bg58',
+				'service_7catqb7',
+				'template_k1fhr6b',
 				form.current,
 				'j04K1l6HIpl3x2O1z'
 			)
