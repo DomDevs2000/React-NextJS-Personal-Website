@@ -8,7 +8,7 @@ type NavProp = {
 };
 
 const Nav: FC<NavProp> = ({ theme, setTheme }) => {
-	const [isNavOpen, setIsNavOpen] = useState(false); // initiate isNavOpen state with false
+	const [isNavOpen, setIsNavOpen] = useState(false);
 	return (
 		<section className='max-h-600 '>
 			<div className='flex items-center justify-between border-b border-gray-400 py-8'>
@@ -68,7 +68,7 @@ const Nav: FC<NavProp> = ({ theme, setTheme }) => {
 							<Link href='/projects'>Projects </Link>
 						</li>
 						<li className='hover:underline'>
-							<a href='/contact'>Contact</a>
+							<Link href='/contact'>Contact</Link>
 						</li>
 						<li className='hover:underline'>
 							<a href='/blog'>Blog</a>
