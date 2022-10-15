@@ -3,6 +3,7 @@ const Projects = () => {
 		<section>
 			<div>
 				<h3 className='text-3xl py-1 text-center dark:text-white'>Projects</h3>
+				<br></br>
 			</div>
 
 			<div
@@ -33,6 +34,7 @@ const Projects = () => {
 						</span>
 					</div>
 				</div>
+
 				<div className='max-w-sm rounded overflow-hidden shadow-lg dark:bg-gray-600 dark:shadow-white'>
 					{/* <image className='w-full' /> */}
 					<div className='px-6 py-4'>
