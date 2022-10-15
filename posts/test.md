@@ -1,7 +1,7 @@
 ---
 title: 'test post'
 date: '12/10/2022'
-excerpt: 'This is a test post'
+description: 'This is a test post'
 cover_image: '/images/posts/img.jpg'
 ---
 
