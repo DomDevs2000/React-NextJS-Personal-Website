@@ -1,7 +1,11 @@
 import Contact from '../components/contact';
 
 const ContactMe = () => {
-	return <Contact></Contact>;
+	return (
+		<>
+			<Contact></Contact>
+		</>
+	);
 };
 
 export default ContactMe;
