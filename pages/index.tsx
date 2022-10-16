@@ -1,17 +1,26 @@
-import type { NextPage } from 'next';
-import Head from 'next/head';
-import { useState } from 'react';
-import Nav from '../components/nav';
-import Projects from '../components/projects';
 import fs, { readdirSync } from 'fs';
-import path from 'path';
 import matter from 'gray-matter';
+import Head from 'next/head';
+import Link from 'next/link';
+import path from 'path';
+import { useContext } from 'react';
 import { AiFillGithub, AiFillLinkedin } from 'react-icons/ai';
+import Projects from '../components/projects';
+import { ThemeContext } from './_app';
+import type { NextPage, GetStaticProps } from 'next';
 
-const Home: NextPage = () => {
-	const [darkMode, setDarkMode] = useState(false);
+type TPosts = {
+	posts: TPost[];
+};
 
-	const theme = darkMode ? 'dark' : 'light';
+type TPost = {
+	frontmatter: { [key: string]: string };
+	slug: string;
+};
+
+const Home: NextPage<TPosts> = ({ posts }) => {
+	const theme = useContext(ThemeContext);
+
 	return (
 		<div className={theme}>
 			<Head>
@@ -21,7 +30,6 @@ const Home: NextPage = () => {
 			</Head>
 
 			<main className={'bg-white px-10 md:px-20 lg:px-40 dark:bg-gray-900'}>
-				<Nav theme={darkMode} setTheme={setDarkMode}></Nav>
 				<div className='text-center p-10 dark:text-white'>
 					<h2 className='text-5xl text-gray-700 py-2 text-grey-800 md:text-6xl'>
 						Aidan Dominic Carvalho
@@ -42,13 +50,24 @@ const Home: NextPage = () => {
 						<AiFillGithub color='gray' />
 					</a>
 				</div>
+				<br></br>
+				<br></br>
+				<br></br>
 				<Projects></Projects>
 				<section>
-					{/* <div className='posts'>
-						{posts.map((post, index) => (
-							<h3>{post.frontmatter.title}</h3>
-						))}
-					</div> */}
+					<div className='dark:text-white'>
+						{posts.map((post) => {
+							return (
+								<>
+									<Link href={`/blog/${post.slug}`}>
+										{post.frontmatter.title}
+									</Link>
+									<p>{post.frontmatter.description}</p>
+									<p>{post.frontmatter.date}</p>
+								</>
+							);
+						})}
+					</div>
 				</section>
 			</main>
 		</div>
@@ -57,11 +76,10 @@ const Home: NextPage = () => {
 
 export default Home;
 
-export async function getStaticProps() {
-	// get files from post dir
+export const getStaticProps: GetStaticProps<TPosts> = async () => {
 	const files = readdirSync(path.join('posts'));
 	// get slug and front matter from posts
-	const posts = files.map((filename) => {
+	const posts: TPost[] = files.map((filename) => {
 		const slug = filename.replace('.md', '');
 
 		// get frontmatter
@@ -80,7 +98,35 @@ export async function getStaticProps() {
 	console.log(posts);
 	return {
 		props: {
-			posts: posts,
+			posts,
 		},
 	};
-}
+};
+
+// export async function getStaticProps() {
+// 	// get files from post dir
+// 	const files = readdirSync(path.join('posts'));
+// 	// get slug and front matter from posts
+// 	const posts = files.map((filename) => {
+// 		const slug = filename.replace('.md', '');
+
+// 		// get frontmatter
+// 		const markdownWithMeta = fs.readFileSync(
+// 			path.join('posts', filename),
+// 			'utf-8'
+// 		);
+// 		// parses down data & renames data to frontmatter
+// 		const { data: frontmatter } = matter(markdownWithMeta);
+// 		return {
+// 			slug,
+// 			frontmatter,
+// 		};
+// 	});
+// 	console.log(files);
+// 	console.log(posts);
+// 	return {
+// 		props: {
+// 			posts: posts,
+// 		},
+// 	};
+// }
