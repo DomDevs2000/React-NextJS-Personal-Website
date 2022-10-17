@@ -17,7 +17,7 @@ export default function Posts({ post }) {
 							{post.frontmatter.date}
 						</span>
 					</div>
-					<a href={`/blog/${post.slug}`}>Read More</a>
+					<a href={`/blog//posts/${post.slug}`}>Read More</a>
 				</div>
 			</div>
 		</section>
