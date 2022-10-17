@@ -8,6 +8,7 @@ import { AiFillGithub, AiFillLinkedin } from 'react-icons/ai';
 import Projects from '../components/projects';
 import { ThemeContext } from './_app';
 import type { NextPage, GetStaticProps } from 'next';
+import Posts from '../components/posts';
 
 type TPosts = {
 	posts: TPost[];
@@ -54,16 +55,19 @@ const Home: NextPage<TPosts> = ({ posts }) => {
 				<br></br>
 				<br></br>
 				<Projects></Projects>
+				<br></br>
+				<br></br>
+				<br></br>
+
 				<section>
+					<h1 className='text-3xl py-1 text-center dark:text-white'>
+						Blog Posts:
+					</h1>
 					<div className='dark:text-white'>
 						{posts.map((post) => {
 							return (
 								<>
-									<Link href={`/blog/${post.slug}`}>
-										{post.frontmatter.title}
-									</Link>
-									<p>{post.frontmatter.description}</p>
-									<p>{post.frontmatter.date}</p>
+									<Posts post={post}></Posts>
 								</>
 							);
 						})}
