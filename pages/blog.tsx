@@ -3,6 +3,8 @@ import matter from 'gray-matter';
 import fs, { readdirSync } from 'fs';
 import path from 'path';
 import type { NextPage, GetStaticProps } from 'next';
+import { ThemeContext } from './_app';
+import { useContext } from 'react';
 type TPosts = {
 	posts: TPost[];
 };
@@ -13,9 +15,10 @@ type TPost = {
 };
 
 const BlogPage: NextPage<TPosts> = ({ posts }) => {
+	const theme = useContext(ThemeContext);
 	return (
-		<section className='dark:text-white'>
-			<div className='dark:text-white'>
+		<section className={theme}>
+			<div>
 				{posts.map((post) => {
 					return (
 						<>
