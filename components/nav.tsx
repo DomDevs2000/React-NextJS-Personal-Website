@@ -11,7 +11,7 @@ const Nav: FC<NavProp> = ({ theme, setTheme }) => {
 	const [isNavOpen, setIsNavOpen] = useState(false);
 	return (
 		<div className={theme}>
-			<section className='max-h-600  dark:bg-gray-900'>
+			<section className='max-h-600  dark:bg-gray-900 px-10'>
 				<div className='flex items-center justify-between border-b border-gray-400 py-8'>
 					<h1 className='dark:text-white'>Aidan C</h1>
 					<button className='ml-8 px-4 py-2'>
