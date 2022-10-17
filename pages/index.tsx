@@ -102,31 +102,3 @@ export const getStaticProps: GetStaticProps<TPosts> = async () => {
 		},
 	};
 };
-
-// export async function getStaticProps() {
-// 	// get files from post dir
-// 	const files = readdirSync(path.join('posts'));
-// 	// get slug and front matter from posts
-// 	const posts = files.map((filename) => {
-// 		const slug = filename.replace('.md', '');
-
-// 		// get frontmatter
-// 		const markdownWithMeta = fs.readFileSync(
-// 			path.join('posts', filename),
-// 			'utf-8'
-// 		);
-// 		// parses down data & renames data to frontmatter
-// 		const { data: frontmatter } = matter(markdownWithMeta);
-// 		return {
-// 			slug,
-// 			frontmatter,
-// 		};
-// 	});
-// 	console.log(files);
-// 	console.log(posts);
-// 	return {
-// 		props: {
-// 			posts: posts,
-// 		},
-// 	};
-// }
