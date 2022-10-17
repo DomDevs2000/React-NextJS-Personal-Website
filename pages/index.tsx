@@ -98,8 +98,7 @@ export const getStaticProps: GetStaticProps<TPosts> = async () => {
 			frontmatter,
 		};
 	});
-	console.log(files);
-	console.log(posts);
+
 	return {
 		props: {
 			posts,
