@@ -54,7 +54,6 @@ export const getStaticProps: GetStaticProps<TProjects> = async () => {
 			frontmatter,
 		};
 	});
-	console.log(files);
 
 	return {
 		props: {
