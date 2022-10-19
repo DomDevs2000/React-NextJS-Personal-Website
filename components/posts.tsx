@@ -23,7 +23,7 @@ export default function Posts({ post }) {
 							{post.frontmatter.date}
 						</span>
 					</div>
-					<a href={`/blog//posts/${post.slug}`} className='dark:text-white'>
+					<a href={`/blog/${post.slug}`} className='dark:text-white'>
 						Read More
 					</a>
 				</div>
