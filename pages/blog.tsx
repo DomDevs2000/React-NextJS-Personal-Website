@@ -5,6 +5,9 @@ import path from 'path';
 import type { NextPage, GetStaticProps } from 'next';
 import { ThemeContext } from './_app';
 import { useContext } from 'react';
+
+import { sortByDate } from '../utils';
+
 type TPosts = {
 	posts: TPost[];
 };
@@ -52,7 +55,7 @@ export const getStaticProps: GetStaticProps<TPosts> = async () => {
 
 	return {
 		props: {
-			posts,
+			posts: posts.sort(sortByDate),
 		},
 	};
 };
