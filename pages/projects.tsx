@@ -19,7 +19,7 @@ type TProject = {
 
 // NEEDS TO BE ITS OWN COMPONENT LIKE POSTS
 
-const ProjectsPage: NextPage<TProject> = ({ projects }) => {
+const ProjectsPage: NextPage<TProjects> = ({ projects }) => {
 	const theme = useContext(ThemeContext);
 	return (
 		<section className={theme}>
