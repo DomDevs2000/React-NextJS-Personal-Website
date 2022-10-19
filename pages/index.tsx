@@ -9,6 +9,7 @@ import Projects from '../components/projects';
 import { ThemeContext } from './_app';
 import type { NextPage, GetStaticProps } from 'next';
 import Posts from '../components/posts';
+import { sortByDate } from '../utils';
 
 type TPosts = {
 	posts: TPost[];
@@ -101,7 +102,7 @@ export const getStaticProps: GetStaticProps<TPosts> = async () => {
 
 	return {
 		props: {
-			posts,
+			posts: posts.sort(sortByDate),
 		},
 	};
 };
