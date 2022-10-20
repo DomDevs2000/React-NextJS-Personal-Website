@@ -1,5 +1,15 @@
 import Image from 'next/image';
-export default function Posts({ post }) {
+import { NextPage } from 'next';
+
+type TPost = {
+	post: {
+		frontmatter: { [key: string]: string };
+		slug: string;
+		content: string;
+	};
+};
+
+const Posts: NextPage<TPost> = ({ post }) => {
 	return (
 		<section className='dark:gray-900'>
 			<div className='flex justify-center gap-12 dark:gray-900'>
@@ -30,4 +40,6 @@ export default function Posts({ post }) {
 			</div>
 		</section>
 	);
-}
+};
+
+export default Posts;
