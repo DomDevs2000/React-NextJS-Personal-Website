@@ -14,7 +14,7 @@ const Nav: FC<NavProp> = ({ theme, setTheme }) => {
 			<section className='max-h-600  dark:bg-gray-900 px-10'>
 				<div className='flex items-center justify-between border-b border-gray-400 py-8'>
 					<h1 className='dark:text-white'>
-						<Link href='/'>Aidan C</Link>
+						<Link href='/'>Dom Devs</Link>
 					</h1>
 					<button className='ml-8 px-4 py-2'>
 						<BsFillMoonStarsFill
@@ -54,13 +54,19 @@ const Nav: FC<NavProp> = ({ theme, setTheme }) => {
 								</button>
 								<ul className='MENU-LINK-MOBILE-OPEN flex flex-col items-center justify-between min-h-[250px] dark:text-white'>
 									<li className='border-b border-gray-400 my-8 uppercase'>
-										<Link href='/projects'>Projects </Link>
+										<button onClick={() => setIsNavOpen(false)}>
+											<Link href='/projects'>Projects</Link>
+										</button>
 									</li>
 									<li className='border-b border-gray-400 my-8 uppercase '>
-										<Link href='/contact'>Contact Me</Link>
+										<button onClick={() => setIsNavOpen(false)}>
+											<Link href='/blog'>Blog</Link>
+										</button>
 									</li>
 									<li className='border-b border-gray-400 my-8 uppercase'>
-										<Link href='/blog'>Blog</Link>
+										<button onClick={() => setIsNavOpen(false)}>
+											<Link href='/contact'>Contact</Link>
+										</button>
 									</li>
 								</ul>
 							</div>
@@ -68,13 +74,13 @@ const Nav: FC<NavProp> = ({ theme, setTheme }) => {
 
 						<ul className='DESKTOP-MENU hidden space-x-8 lg:flex dark:text-white'>
 							<li className='hover:underline'>
-								<Link href='/projects'>Projects </Link>
+								<Link href='/projects'>Projects</Link>
 							</li>
 							<li className='hover:underline'>
 								<Link href='/contact'>Contact</Link>
 							</li>
 							<li className='hover:underline'>
-								<a href='/blog'>Blog</a>
+								<Link href='/blog'>Blog</Link>
 							</li>
 						</ul>
 					</nav>
