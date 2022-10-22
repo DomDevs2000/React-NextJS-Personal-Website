@@ -1,12 +1,12 @@
-import Posts from '../components/posts';
+import ProjectsCard from '../../components/ProjectsCard';
 import matter from 'gray-matter';
 import fs, { readdirSync } from 'fs';
 import path from 'path';
-import type { NextPage, GetStaticProps } from 'next';
-import { ThemeContext } from './_app';
-import { useContext } from 'react';
+import type { GetStaticProps } from 'next';
+import { ThemeContext } from '.././_app';
+import { useContext, FC } from 'react';
 
-import { sortByDate } from '../utils';
+import { sortByDate } from '../../utils';
 
 type TProjects = {
 	projects: TProject[];
@@ -19,20 +19,17 @@ type TProject = {
 
 // NEEDS TO BE ITS OWN COMPONENT LIKE POSTS
 
-const ProjectsPage: NextPage<TProjects> = ({ projects }) => {
-	const theme = useContext(ThemeContext);
+const ProjectsPage: FC<TProjects> = ({ projects }) => {
 	return (
-		<section className={theme}>
-			<div>
-				{projects.map((project) => {
-					return (
-						<>
-							<Posts post={project}></Posts>
-						</>
-					);
-				})}
-			</div>
-		</section>
+		<div className='dark:bg-gray-900  sm:p-20 py-10 px-10 grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-3  md:gap-2 lg:gap-4'>
+			{projects.map((project) => {
+				return (
+					<>
+						<ProjectsCard projects={project}></ProjectsCard>
+					</>
+				);
+			})}
+		</div>
 	);
 };
 

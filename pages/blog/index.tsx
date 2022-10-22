@@ -1,12 +1,13 @@
-import Posts from '../components/posts';
+import PostsCard from '../../components/PostsCard';
 import matter from 'gray-matter';
 import fs, { readdirSync } from 'fs';
 import path from 'path';
-import type { NextPage, GetStaticProps } from 'next';
-import { ThemeContext } from './_app';
-import { useContext } from 'react';
+import type { GetStaticProps } from 'next';
+import { ThemeContext } from '.././_app';
+import { useContext, FC } from 'react';
+import Link from 'next/link';
 
-import { sortByDate } from '../utils';
+import { sortByDate } from '../../utils';
 
 type TPosts = {
 	posts: TPost[];
@@ -17,20 +18,17 @@ type TPost = {
 	slug: string;
 };
 
-const BlogPage: NextPage<TPosts> = ({ posts }) => {
-	const theme = useContext(ThemeContext);
+const BlogPage: FC<TPosts> = ({ posts }) => {
 	return (
-		<section className={theme}>
-			<div>
-				{posts.map((post) => {
-					return (
-						<>
-							<Posts post={post}></Posts>
-						</>
-					);
-				})}
-			</div>
-		</section>
+		<div className=' py-10 px-10 dark:bg-gray-900 grid gap-10 md:grid-cols-2 lg:grid-cols-3 '>
+			{posts.map((post) => {
+				return (
+					<>
+						<PostsCard post={post}></PostsCard>
+					</>
+				);
+			})}
+		</div>
 	);
 };
 

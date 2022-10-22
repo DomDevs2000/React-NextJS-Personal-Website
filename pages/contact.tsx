@@ -1,9 +1,10 @@
-import Contact from '../components/contact';
-
+import ContactForm from '../components/ContactForm';
+import { useContext } from 'react';
+import { ThemeContext } from './_app';
 const ContactMe = () => {
 	return (
 		<>
-			<Contact></Contact>
+			<ContactForm></ContactForm>
 		</>
 	);
 };

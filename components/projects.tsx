@@ -1,3 +1,4 @@
+import Image from 'next/image';
 const Projects = () => {
 	return (
 		<section>
@@ -6,12 +7,15 @@ const Projects = () => {
 				<br></br>
 			</div>
 
-			<div
-				className='
-          flex justify-center gap-12'
-			>
+			<div className='grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-3 '>
 				<div className='max-w-sm rounded overflow-hidden shadow-lg dark:bg-gray-600 dark:shadow-white'>
-					{/* <image className='w-full'  /> */}
+					<Image
+						src='/images/projects/img1.jpg'
+						className='w-full'
+						alt=''
+						width={600}
+						height={400}
+					/>
 					<div className='px-6 py-4 '>
 						<div className='font-bold text-l mb-2 md:text-1xl lg:text-3xl'>
 							Project Name
@@ -36,7 +40,13 @@ const Projects = () => {
 				</div>
 
 				<div className='max-w-sm rounded overflow-hidden shadow-lg dark:bg-gray-600 dark:shadow-white'>
-					{/* <image className='w-full' /> */}
+					<Image
+						src='/images/projects/img1.jpg'
+						className='w-full'
+						alt=''
+						width={600}
+						height={400}
+					/>
 					<div className='px-6 py-4'>
 						<div className='font-bold text-l mb-2 md:text-1xl lg:text-3xl'>
 							Project Name
@@ -60,7 +70,13 @@ const Projects = () => {
 					</div>
 				</div>
 				<div className='max-w-sm rounded overflow-hidden shadow-lg dark:bg-gray-600 dark:shadow-white'>
-					{/* <image className='w-full' /> */}
+					<Image
+						src='/images/projects/img1.jpg'
+						className='w-full'
+						alt=''
+						width={600}
+						height={400}
+					/>
 					<div className='px-6 py-4'>
 						<div className='font-bold text-l mb-2 md:text-1xl lg:text-3xl'>
 							Project Name
