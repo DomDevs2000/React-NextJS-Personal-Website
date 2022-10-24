@@ -3,6 +3,7 @@ title: 'Test Post 1'
 date: 'October 15th, 2022'
 description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis eaque, exercitationem praesentium nihil'
 cover_image: '/images/projects/img1.jpg'
+tags: 'Javascript, Full-Stack, NodeJs, SQL'
 ---
 
 Lorem [markdownum](/blog/test-2), et sanguine rutilos dixit
