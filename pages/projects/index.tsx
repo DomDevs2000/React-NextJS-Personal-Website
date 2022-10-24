@@ -7,22 +7,27 @@ import { ThemeContext } from '.././_app';
 import { useContext, FC } from 'react';
 import { TProject } from '../../types';
 import { sortByDate } from '../../utils';
-
+import { Helmet } from 'react-helmet';
 type ProjectsPageProp = {
 	projects: TProject[];
 };
 
 const ProjectsPage: FC<ProjectsPageProp> = ({ projects }) => {
 	return (
-		<div className='dark:bg-gray-900  sm:p-20 py-10 px-10 grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-3  md:gap-2 lg:gap-4'>
-			{projects.map((project) => {
-				return (
-					<>
-						<ProjectCard project={project}></ProjectCard>
-					</>
-				);
-			})}
-		</div>
+		<>
+			<Helmet>
+				<title>Dom Devs | Projects</title>
+			</Helmet>
+			<div className='dark:bg-gray-900  sm:p-20 py-10 px-10 grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-3  md:gap-2 lg:gap-4'>
+				{projects.map((project) => {
+					return (
+						<>
+							<ProjectCard project={project}></ProjectCard>
+						</>
+					);
+				})}
+			</div>
+		</>
 	);
 };
 

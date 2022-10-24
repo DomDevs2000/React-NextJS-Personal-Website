@@ -7,7 +7,7 @@ import Image from 'next/image';
 import { GetStaticProps } from 'next';
 import { FC } from 'react';
 import { TPost } from '../../types';
-
+import { Helmet } from 'react-helmet';
 type PostPageProp = {
 	post: TPost;
 };
@@ -17,14 +17,17 @@ const PostPage: FC<PostPageProp> = ({ post }) => {
 		content,
 	} = post;
 	return (
-		<>
+		<div>
+			<Helmet>
+				<title>Dom Devs | {title} </title>
+			</Helmet>
 			<div className='dark:bg-gray-900 dark:text-white'>
 				<h1>{title}</h1>
 				<p>Posted on:{date}</p>
 				<Image src={cover_image} alt='' width={700} height={500}></Image>
 				<div dangerouslySetInnerHTML={{ __html: marked(content) }}></div>
 			</div>
-		</>
+		</div>
 	);
 };
 
@@ -52,9 +55,16 @@ export const getStaticProps: GetStaticProps<PostPageProp> = ({
 	const { data: frontmatter, content } = matter(markdownWithMeta);
 	return {
 		props: {
-			frontmatter,
-			slug,
-			content,
+			post: {
+				frontmatter: {
+					...frontmatter,
+
+					tags: frontmatter.tags.split(','),
+				},
+				// frontmatter,
+				slug,
+				content,
+			},
 		},
 	};
 };

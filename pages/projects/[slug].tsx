@@ -5,7 +5,7 @@ import Image from 'next/image';
 import React, { FC } from 'react';
 import { GetStaticProps } from 'next';
 import { TProject } from '../../types';
-
+import { Helmet } from 'react-helmet';
 type ProjectPageProp = {
 	project: TProject;
 };
@@ -17,6 +17,9 @@ const ProjectPage: FC<ProjectPageProp> = ({ project }) => {
 
 	return (
 		<>
+			<Helmet>
+				<title>Dom Devs | {title}</title>
+			</Helmet>
 			<div className='py-10 px-10 dark:bg-gray-900 dark:text-white'>
 				<h1 className='text-xl md:text-2xl lg:text-3xl text-center'>{title}</h1>
 				<br></br>
@@ -27,7 +30,10 @@ const ProjectPage: FC<ProjectPageProp> = ({ project }) => {
 				<ul>
 					{tags.map((tag) => {
 						return (
-							<li key={tag} className=''>
+							<li
+								key={tag}
+								className='inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2'
+							>
 								<a href={`/projects/tags/${tag}`}>{tag}</a>
 							</li>
 						);
@@ -56,9 +62,6 @@ export async function getStaticPaths() {
 		fallback: 'blocking',
 	};
 }
-interface TParams {
-	slug: string;
-}
 
 export const getStaticProps: GetStaticProps<ProjectPageProp> = async ({
 	params: { slug },
@@ -85,15 +88,4 @@ export const getStaticProps: GetStaticProps<ProjectPageProp> = async ({
 	};
 };
 
-// const renderTags = (tags: string[]) => {
-// 	{
-// 		tags.forEach((tag) => {
-// 			return (
-// 				<li className='text-xl'>
-// 					<a href={`/projects/tags/${tag}`}>{tag}</a>
-// 				</li>
-// 			);
-// 		});
-// 	}
-// };
 export default ProjectPage;

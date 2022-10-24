@@ -8,21 +8,26 @@ import { useContext, FC } from 'react';
 import Link from 'next/link';
 import { TPost } from '../../types';
 import { sortByDate } from '../../utils';
-
+import { Helmet } from 'react-helmet';
 type BlogPageProp = {
 	posts: TPost[];
 };
 const BlogPage: FC<BlogPageProp> = ({ posts }) => {
 	return (
-		<div className=' py-10 px-10 dark:bg-gray-900 grid gap-10 md:grid-cols-2 lg:grid-cols-3 '>
-			{posts.map((post) => {
-				return (
-					<>
-						<PostCard post={post}></PostCard>
-					</>
-				);
-			})}
-		</div>
+		<>
+			<Helmet>
+				<title>Dom Devs | Blog</title>
+			</Helmet>
+			<div className=' py-10 px-10 dark:bg-gray-900 grid gap-10 md:grid-cols-2 lg:grid-cols-3 '>
+				{posts.map((post) => {
+					return (
+						<>
+							<PostCard post={post}></PostCard>
+						</>
+					);
+				})}
+			</div>
+		</>
 	);
 };
 
