@@ -2,30 +2,19 @@ import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
 import Image from 'next/image';
-import { FC } from 'react';
+import React, { FC } from 'react';
 import { GetStaticProps } from 'next';
+import { TProject } from '../../types';
 
-type TProject = {
-	frontmatter: { [key: string]: string };
-	slug: string;
-	content: string;
+type ProjectPageProp = {
+	project: TProject;
 };
+const ProjectPage: FC<ProjectPageProp> = ({ project }) => {
+	const {
+		frontmatter: { title, date, cover_image, alternate_image, tags },
+		content,
+	} = project;
 
-const ProjectPostPage: FC<TProject> = ({
-	frontmatter: { title, date, cover_image, alternate_image, tags },
-	content,
-}) => {
-	// loop through each tag and create anchor elements that route to page that renders only projects with that tag
-	const projectTags = [];
-
-	tags.forEach((tag) => {
-		projectTags.push(
-			<p className='text-xl'>
-				<a href={`/projects/tags/${tag}`}>{tag}</a>
-			</p>
-		);
-	});
-	//
 	return (
 		<>
 			<div className='py-10 px-10 dark:bg-gray-900 dark:text-white'>
@@ -34,7 +23,16 @@ const ProjectPostPage: FC<TProject> = ({
 				<p className='inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2'>
 					Posted on {date}
 				</p>
-				<p>Tags: {projectTags}</p>
+				<p>Tags:</p>
+				<ul>
+					{tags.map((tag) => {
+						return (
+							<li key={tag} className=''>
+								<a href={`/projects/tags/${tag}`}>{tag}</a>
+							</li>
+						);
+					})}
+				</ul>
 				<Image src={cover_image} alt='' width={700} height={500} />
 				<Image src={alternate_image} alt='' width={700} height={500} />
 				<div className='text-center text-sm md:text-lg lg:text-xl'>
@@ -62,7 +60,7 @@ interface TParams {
 	slug: string;
 }
 
-export const getStaticProps: GetStaticProps<TProject> = async ({
+export const getStaticProps: GetStaticProps<ProjectPageProp> = async ({
 	params: { slug },
 }) => {
 	const markdownWithMeta = fs.readFileSync(
@@ -70,12 +68,32 @@ export const getStaticProps: GetStaticProps<TProject> = async ({
 		'utf8'
 	);
 	const { data: frontmatter, content } = matter(markdownWithMeta);
+
 	return {
 		props: {
-			frontmatter,
-			slug,
-			content,
+			project: {
+				frontmatter: {
+					...frontmatter,
+
+					tags: frontmatter.tags.split(','),
+				},
+				// frontmatter,
+				slug,
+				content,
+			},
 		},
 	};
 };
-export default ProjectPostPage;
+
+// const renderTags = (tags: string[]) => {
+// 	{
+// 		tags.forEach((tag) => {
+// 			return (
+// 				<li className='text-xl'>
+// 					<a href={`/projects/tags/${tag}`}>{tag}</a>
+// 				</li>
+// 			);
+// 		});
+// 	}
+// };
+export default ProjectPage;

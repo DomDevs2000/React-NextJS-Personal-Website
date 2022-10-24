@@ -6,17 +6,16 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { GetStaticProps } from 'next';
 import { FC } from 'react';
+import { TPost } from '../../types';
 
-type TPost = {
-	frontmatter: { [key: string]: string };
-	slug: string;
-	content: string;
+type PostPageProp = {
+	post: TPost;
 };
-
-const PostPage: FC<TPost> = ({
-	frontmatter: { title, date, cover_image },
-	content,
-}) => {
+const PostPage: FC<PostPageProp> = ({ post }) => {
+	const {
+		frontmatter: { title, date, cover_image },
+		content,
+	} = post;
 	return (
 		<>
 			<div className='dark:bg-gray-900 dark:text-white'>
@@ -43,7 +42,9 @@ export async function getStaticPaths() {
 	};
 }
 
-export const getStaticProps: GetStaticProps<TPost> = ({ params: { slug } }) => {
+export const getStaticProps: GetStaticProps<PostPageProp> = ({
+	params: { slug },
+}) => {
 	const markdownWithMeta = fs.readFileSync(
 		path.join('posts', slug + '.md'),
 		'utf8'

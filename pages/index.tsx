@@ -7,21 +7,17 @@ import { AiFillGithub, AiFillLinkedin } from 'react-icons/ai';
 import Projects from '../components/projects';
 import { ThemeContext } from './_app';
 import type { NextPage, GetStaticProps } from 'next';
-import PostsCard from '../components/PostsCard';
+import PostCard from '../components/PostCard';
 import { sortByDate } from '../utils';
+import type { TPost, TProject, TFrontmatter } from '../types';
+import ProjectCard from '../components/ProjectCard';
 
-type TPosts = {
+type HomeProps = {
 	posts: TPost[];
+	projects: TProject[];
 };
 
-type TPost = {
-	frontmatter: { [key: string]: string };
-	slug: string;
-};
-
-const Home: NextPage<TPosts> = ({ posts }) => {
-	const theme = useContext(ThemeContext);
-
+const Home: NextPage<HomeProps> = ({ posts, projects }) => {
 	return (
 		<div>
 			<Head>
@@ -51,27 +47,33 @@ const Home: NextPage<TPosts> = ({ posts }) => {
 						<AiFillGithub color='gray' />
 					</a>
 				</div>
-				<br></br>
-				<br></br>
-				<br></br>
-				<Projects></Projects>
 
-				<br></br>
-				<br></br>
-				<br></br>
+				<section className=''>
+					<div className='grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-3 '>
+						{projects.map((project) => {
+							return (
+								<ProjectCard
+									key={`project-${project.slug}`}
+									project={project}
+								></ProjectCard>
+							);
+						})}
+					</div>
+				</section>
 
 				<section>
 					<h1 className='text-3xl py-1 text-center dark:text-white'>
 						Latest Blog Posts
 					</h1>
-					<br></br>
-					<br></br>
-					<br></br>
+
 					<div className='grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-3 '>
 						{posts.map((post) => {
-							return <PostsCard post={post}></PostsCard>;
+							return (
+								<PostCard key={`post-${post.slug}`} post={post}></PostCard>
+							);
 						})}
 					</div>
+
 					<br></br>
 				</section>
 			</main>
@@ -81,8 +83,9 @@ const Home: NextPage<TPosts> = ({ posts }) => {
 
 export default Home;
 
-export const getStaticProps: GetStaticProps<TPosts> = async () => {
+export const getStaticProps: GetStaticProps<HomeProps> = async () => {
 	const files = readdirSync(path.join('posts'));
+
 	// get slug and front matter from posts
 	const posts: TPost[] = files.map((filename) => {
 		const slug = filename.replace('.md', '');
@@ -93,16 +96,36 @@ export const getStaticProps: GetStaticProps<TPosts> = async () => {
 			'utf-8'
 		);
 		// parses down data & renames data to frontmatter
-		const { data: frontmatter } = matter(markdownWithMeta);
+		const { data: frontmatter, content } = matter(markdownWithMeta);
 		return {
 			slug,
-			frontmatter,
+			frontmatter: frontmatter as TFrontmatter,
+			content,
+		};
+	});
+
+	const files2 = readdirSync(path.join('projects'));
+	const projects: TProject[] = files2.map((filename) => {
+		const slug = filename.replace('.md', '');
+
+		// get frontmatter
+		const markdownWithMeta = fs.readFileSync(
+			path.join('projects', filename),
+			'utf-8'
+		);
+		// parses down data & renames data to frontmatter
+		const { data: frontmatter, content } = matter(markdownWithMeta);
+		return {
+			slug,
+			frontmatter: frontmatter as TFrontmatter,
+			content,
 		};
 	});
 
 	return {
 		props: {
 			posts: posts.sort(sortByDate),
+			projects: projects.sort(sortByDate),
 		},
 	};
 };

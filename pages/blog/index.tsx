@@ -1,4 +1,4 @@
-import PostsCard from '../../components/PostsCard';
+import PostCard from '../../components/PostCard';
 import matter from 'gray-matter';
 import fs, { readdirSync } from 'fs';
 import path from 'path';
@@ -6,25 +6,19 @@ import type { GetStaticProps } from 'next';
 import { ThemeContext } from '.././_app';
 import { useContext, FC } from 'react';
 import Link from 'next/link';
-
+import { TPost } from '../../types';
 import { sortByDate } from '../../utils';
 
-type TPosts = {
+type BlogPageProp = {
 	posts: TPost[];
 };
-
-type TPost = {
-	frontmatter: { [key: string]: string };
-	slug: string;
-};
-
-const BlogPage: FC<TPosts> = ({ posts }) => {
+const BlogPage: FC<BlogPageProp> = ({ posts }) => {
 	return (
 		<div className=' py-10 px-10 dark:bg-gray-900 grid gap-10 md:grid-cols-2 lg:grid-cols-3 '>
 			{posts.map((post) => {
 				return (
 					<>
-						<PostsCard post={post}></PostsCard>
+						<PostCard post={post}></PostCard>
 					</>
 				);
 			})}
@@ -32,7 +26,7 @@ const BlogPage: FC<TPosts> = ({ posts }) => {
 	);
 };
 
-export const getStaticProps: GetStaticProps<TPosts> = async () => {
+export const getStaticProps: GetStaticProps<BlogPageProp> = async () => {
 	const files = readdirSync(path.join('posts'));
 	// get slug and front matter from posts
 	const posts: TPost[] = files.map((filename) => {
@@ -44,10 +38,11 @@ export const getStaticProps: GetStaticProps<TPosts> = async () => {
 			'utf-8'
 		);
 		// parses down data & renames data to frontmatter
-		const { data: frontmatter } = matter(markdownWithMeta);
+		const { data: frontmatter, content } = matter(markdownWithMeta);
 		return {
 			slug,
 			frontmatter,
+			content,
 		};
 	});
 
