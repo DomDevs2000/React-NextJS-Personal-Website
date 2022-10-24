@@ -2,22 +2,20 @@ import Image from 'next/image';
 import { FC } from 'react';
 import Link from 'next/link';
 
-type TPost = {
-	post: {
-		frontmatter: { [key: string]: string };
-		slug: string;
-		content: string;
-	};
+import type { TPost } from '../types';
+type PostCardProp = {
+	post: TPost;
 };
 
-const Posts: FC<TPost> = ({ post }) => {
+const PostCard: FC<PostCardProp> = ({ post }) => {
+	const { frontmatter, content, slug } = post;
 	return (
 		<div className=' dark:gray-900 '>
-			<a href={`/blog/${post.slug}`}>
+			<a href={`/blog/${slug}`}>
 				<div className='dark:gray-900'>
 					<div className='max-w-sm rounded overflow-hidden shadow-lg dark:bg-gray-600 dark:shadow-white hover:scale-110 delay-100 hover:shadow-2xl transition-all duration-150 ease-out hover:ease-in '>
 						<Image
-							src={post.frontmatter.cover_image}
+							src={frontmatter.cover_image}
 							alt=''
 							className='w-full'
 							width={600}
@@ -25,16 +23,16 @@ const Posts: FC<TPost> = ({ post }) => {
 						/>
 						<div className='px-6 py-4 '>
 							<h1 className='font-bold text-l mb-2 md:text-1xl lg:text-3xl'>
-								{post.frontmatter.title}
+								{frontmatter.title}
 							</h1>
 
 							<p className='text-gray-700 text-center dark:text-white'>
-								{post.frontmatter.description}
+								{frontmatter.description}
 							</p>
 						</div>
 						<div className='px-6 pt-4 pb-2'>
 							<span className='inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2'>
-								{post.frontmatter.date}
+								{frontmatter.date}
 							</span>
 						</div>
 					</div>
@@ -44,4 +42,4 @@ const Posts: FC<TPost> = ({ post }) => {
 	);
 };
 
-export default Posts;
+export default PostCard;
