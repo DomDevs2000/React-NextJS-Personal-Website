@@ -12,6 +12,7 @@
 	"dependencies": {
 		"@emailjs/browser": "^3.7.0",
 		"@types/marked": "^4.0.7",
+		"dotenv": "^16.0.3",
 		"gray-matter": "^4.0.3",
 		"jest-environment-jsdom": "^29.2.1",
 		"marked": "^4.1.1",
@@ -22,6 +23,7 @@
 		"react-icons": "^4.4.0"
 	},
 	"devDependencies": {
+		"@testing-library/jest-dom": "^5.16.5",
 		"@testing-library/react": "^13.4.0",
 		"@types/node": "18.8.3",
 		"@types/react": "18.0.21",
