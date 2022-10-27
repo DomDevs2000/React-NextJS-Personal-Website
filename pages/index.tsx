@@ -2,17 +2,15 @@ import fs, { readdirSync } from 'fs';
 import matter from 'gray-matter';
 import Head from 'next/head';
 import path from 'path';
-import { useContext } from 'react';
+
 import { AiFillGithub, AiFillLinkedin } from 'react-icons/ai';
-import Projects from '../components/projects';
-import { ThemeContext } from './_app';
 import type { NextPage, GetStaticProps } from 'next';
-import PostCard from '../components/PostCard';
+import { PostCard } from '../components/PostCard';
 import { sortByDate } from '../utils';
 import type { TPost, TProject, TFrontmatter } from '../types';
-import ProjectCard from '../components/ProjectCard';
-import renderProjects from '../rendercards/renderProjects';
-import renderPosts from '../rendercards/renderPosts';
+import { ProjectCard } from '../components/ProjectCard';
+// import renderProjects from '../rendercards/renderProjects';
+// import renderPosts from '../rendercards/renderPosts';
 type HomeProps = {
 	posts: TPost[];
 	projects: TProject[];
@@ -50,7 +48,10 @@ const Home: NextPage<HomeProps> = ({ posts, projects }) => {
 				</div>
 
 				<section className=''>
-					<div className='grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-3 '>
+					<h1 className='text-3xl py-1 text-center dark:text-white '>
+						Projects
+					</h1>
+					<div className='grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-3 m-10'>
 						{projects.map((project) => {
 							return (
 								<ProjectCard
@@ -67,7 +68,7 @@ const Home: NextPage<HomeProps> = ({ posts, projects }) => {
 						Latest Blog Posts
 					</h1>
 
-					<div className='grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-3 '>
+					<div className='grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-3 m-10'>
 						{posts.map((post) => {
 							return (
 								<PostCard key={`post-${post.slug}`} post={post}></PostCard>
@@ -127,7 +128,7 @@ export const getStaticProps: GetStaticProps<HomeProps> = async () => {
 
 	return {
 		props: {
-			posts: posts,
+			posts: posts.sort(sortByDate),
 			projects: projects,
 		},
 	};
