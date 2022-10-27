@@ -9,6 +9,7 @@ type NavProp = {
 
 const Nav: FC<NavProp> = ({ theme, setTheme }) => {
 	const [isNavOpen, setIsNavOpen] = useState(false);
+
 	return (
 		<div className={theme}>
 			<section className='max-h-600  dark:bg-gray-900 px-10 font-sans'>
@@ -18,7 +19,7 @@ const Nav: FC<NavProp> = ({ theme, setTheme }) => {
 							<a className='uppercase hover:scale-125 delay-100'>Dom Devs</a>
 						</Link>
 					</h1>
-					<button className='ml-8 px-4 py-2'>
+					<button className='ml-8 px-4 py-2 theme-toggle'>
 						<BsFillMoonStarsFill
 							color='gray'
 							onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}
@@ -35,43 +36,44 @@ const Nav: FC<NavProp> = ({ theme, setTheme }) => {
 								<span className='block h-0.5 w-8 animate-pulse bg-gray-600'></span>
 								<span className='block h-0.5 w-8 animate-pulse bg-gray-600'></span>
 							</button>
-
-							<div className={isNavOpen ? 'showMenuNav bg-red' : 'hideMenuNav'}>
-								<button
-									className='CROSS-ICON absolute top-0 right-0 px-8 py-8'
-									onClick={() => setIsNavOpen(false)} // change isNavOpen state to false to close the menu
-								>
-									<svg
-										className='h-8 w-8 text-gray-600'
-										viewBox='0 0 24 24'
-										fill='none'
-										stroke='currentColor'
-										strokeWidth='2'
-										strokeLinecap='round'
-										strokeLinejoin='round'
+							{isNavOpen && (
+								<div className={isNavOpen ? 'showMenuNav' : 'hideMenuNav'}>
+									<button
+										className='CROSS-ICON absolute top-0 right-0 px-8 py-8'
+										onClick={() => setIsNavOpen(false)} // change isNavOpen state to false to close the menu
 									>
-										<line x1='18' y1='6' x2='6' y2='18' />
-										<line x1='6' y1='6' x2='18' y2='18' />
-									</svg>
-								</button>
-								<ul className='MENU-LINK-MOBILE-OPEN flex flex-col items-center justify-between min-h-[250px] dark:text-white'>
-									<li className='border-b border-gray-400 my-8 uppercase'>
-										<button onClick={() => setIsNavOpen(false)}>
-											<Link href='/projects'>Projects</Link>
-										</button>
-									</li>
-									<li className='border-b border-gray-400 my-8 uppercase '>
-										<button onClick={() => setIsNavOpen(false)}>
-											<Link href='/blog'>Blog</Link>
-										</button>
-									</li>
-									<li className='border-b border-gray-400 my-8 uppercase'>
-										<button onClick={() => setIsNavOpen(false)}>
-											<Link href='/contact'>Contact</Link>
-										</button>
-									</li>
-								</ul>
-							</div>
+										<svg
+											className='h-8 w-8 text-gray-600'
+											viewBox='0 0 24 24'
+											fill='none'
+											stroke='currentColor'
+											strokeWidth='2'
+											strokeLinecap='round'
+											strokeLinejoin='round'
+										>
+											<line x1='18' y1='6' x2='6' y2='18' />
+											<line x1='6' y1='6' x2='18' y2='18' />
+										</svg>
+									</button>
+									<ul className='MENU-LINK-MOBILE-OPEN flex flex-col items-center justify-between min-h-[250px] dark:text-white'>
+										<li className='border-b border-gray-400 my-8 uppercase'>
+											<button onClick={() => setIsNavOpen(false)}>
+												<Link href='/projects'>Projects</Link>
+											</button>
+										</li>
+										<li className='border-b border-gray-400 my-8 uppercase '>
+											<button onClick={() => setIsNavOpen(false)}>
+												<Link href='/blog'>Blog</Link>
+											</button>
+										</li>
+										<li className='border-b border-gray-400 my-8 uppercase'>
+											<button onClick={() => setIsNavOpen(false)}>
+												<Link href='/contact'>Contact</Link>
+											</button>
+										</li>
+									</ul>
+								</div>
+							)}
 						</section>
 
 						<ul className='DESKTOP-MENU hidden space-x-8 lg:flex dark:text-white'>
