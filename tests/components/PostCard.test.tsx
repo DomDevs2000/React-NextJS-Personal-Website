@@ -1,7 +1,7 @@
 // import { PostCard } from '../components/PostCard';
 import React from 'react';
 import { render, screen } from '@testing-library/react';
-import { PostCard } from '../components/PostCard';
+import { PostCard } from '../../components/PostCard';
 
 describe('Post Card', () => {
 	it('should render the component', () => {
