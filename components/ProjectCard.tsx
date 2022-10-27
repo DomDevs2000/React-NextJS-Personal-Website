@@ -5,7 +5,7 @@ import { TProject } from '../types';
 type ProjectCardProp = {
 	project: TProject;
 };
-const ProjectsCard: FC<ProjectCardProp> = ({ project }) => {
+export const ProjectCard: FC<ProjectCardProp> = ({ project }) => {
 	const {
 		frontmatter: {
 			title,
@@ -22,7 +22,7 @@ const ProjectsCard: FC<ProjectCardProp> = ({ project }) => {
 	return (
 		<section className='dark:gray-900'>
 			<a href={`/projects/${slug}`}>
-				<div className='max-w-md rounded overflow-hidden shadow-lg dark:bg-gray-600 dark:shadow-slate-400 hover:scale-105 delay-100 hover:shadow-2xl transition-all duration-150 ease-out hover:ease-in '>
+				<div className='max-w-md rounded overflow-hidden shadow-lg dark:bg-gray-600  dark:shadow-slate-400 hover:scale-105 delay-100 hover:shadow-2xl transition-all duration-150 ease-out hover:ease-in '>
 					<Image
 						src={cover_image}
 						alt=''
@@ -32,11 +32,11 @@ const ProjectsCard: FC<ProjectCardProp> = ({ project }) => {
 					/>
 
 					<div className='px-6 py-4 '>
-						<h1 className='font-bold text-l mb-2 md:text-1xl lg:text-3xl'>
+						<h1 className='font-bold  text-l mb-2 md:text-1xl lg:text-3xl'>
 							{title}
 						</h1>
 
-						<p className='text-gray-700 text-sm text-center dark:text-white'>
+						<p className='text-gray-700  text-center dark:text-white'>
 							{description}
 						</p>
 					</div>
@@ -50,4 +50,3 @@ const ProjectsCard: FC<ProjectCardProp> = ({ project }) => {
 		</section>
 	);
 };
-export default ProjectsCard;
