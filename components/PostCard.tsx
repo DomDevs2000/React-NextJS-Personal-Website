@@ -6,7 +6,7 @@ type PostCardProp = {
 	post: TPost;
 };
 
-const PostCard: FC<PostCardProp> = ({ post }) => {
+export const PostCard: FC<PostCardProp> = ({ post }) => {
 	const {
 		frontmatter: {
 			title,
@@ -51,5 +51,3 @@ const PostCard: FC<PostCardProp> = ({ post }) => {
 		</div>
 	);
 };
-
-export default PostCard;
