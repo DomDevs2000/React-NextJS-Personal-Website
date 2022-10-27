@@ -1,13 +1,13 @@
-import ProjectCard from '../../components/ProjectCard';
+import { ProjectCard } from '../../components/ProjectCard';
 import matter from 'gray-matter';
 import fs, { readdirSync } from 'fs';
 import path from 'path';
 import type { GetStaticProps } from 'next';
-import { ThemeContext } from '.././_app';
-import { useContext, FC } from 'react';
 import { TProject } from '../../types';
 import { sortByDate } from '../../utils';
 import { Helmet } from 'react-helmet';
+import { FC } from 'react';
+
 type ProjectsPageProp = {
 	projects: TProject[];
 };
@@ -18,7 +18,7 @@ const ProjectsPage: FC<ProjectsPageProp> = ({ projects }) => {
 			<Helmet>
 				<title>Dom Devs | Projects</title>
 			</Helmet>
-			<div className='dark:bg-gray-900  sm:p-20 py-10 px-10 grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-3  md:gap-2 lg:gap-4'>
+			<div className='dark:bg-gray-900  sm:p-20 py-10 px-10 grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-3  md:gap-3 lg:gap-4'>
 				{projects.map((project) => {
 					return (
 						<>

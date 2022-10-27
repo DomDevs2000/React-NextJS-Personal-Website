@@ -8,6 +8,7 @@ import { GetStaticProps } from 'next';
 import { FC } from 'react';
 import { TPost } from '../../types';
 import { Helmet } from 'react-helmet';
+
 type PostPageProp = {
 	post: TPost;
 };

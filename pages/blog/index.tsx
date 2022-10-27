@@ -1,11 +1,11 @@
-import PostCard from '../../components/PostCard';
+import { PostCard } from '../../components/PostCard';
 import matter from 'gray-matter';
 import fs, { readdirSync } from 'fs';
 import path from 'path';
 import type { GetStaticProps } from 'next';
-import { ThemeContext } from '.././_app';
-import { useContext, FC } from 'react';
-import Link from 'next/link';
+
+import { FC } from 'react';
+
 import { TPost } from '../../types';
 import { sortByDate } from '../../utils';
 import { Helmet } from 'react-helmet';

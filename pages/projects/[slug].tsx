@@ -2,13 +2,16 @@ import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
 import Image from 'next/image';
+import { marked } from 'marked';
 import React, { FC } from 'react';
 import { GetStaticProps } from 'next';
 import { TProject } from '../../types';
 import { Helmet } from 'react-helmet';
+
 type ProjectPageProp = {
 	project: TProject;
 };
+
 const ProjectPage: FC<ProjectPageProp> = ({ project }) => {
 	const {
 		frontmatter: { title, date, cover_image, alternate_image, tags },
@@ -39,11 +42,15 @@ const ProjectPage: FC<ProjectPageProp> = ({ project }) => {
 						);
 					})}
 				</ul>
-				<Image src={cover_image} alt='' width={700} height={500} />
-				<Image src={alternate_image} alt='' width={700} height={500} />
-				<div className='text-center text-sm md:text-lg lg:text-xl'>
-					{content}
+				<div className='grid grid-cols-2   gap-1 px-15 py-15 '>
+					<Image src={cover_image} alt='' width={700} height={500} />
+					<Image src={alternate_image} alt='' width={700} height={500} />
 				</div>
+
+				<div
+					className='text-center text-sm md:text-lg lg:text-xl  bg-gray-200  px-3 py-1  text-gray-700 mr-2 mb-2'
+					dangerouslySetInnerHTML={{ __html: marked(content) }}
+				></div>
 			</div>
 		</>
 	);
