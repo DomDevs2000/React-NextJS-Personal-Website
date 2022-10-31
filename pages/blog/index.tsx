@@ -49,10 +49,9 @@ const BlogPage: FC<BlogPageProp> = ({ posts }) => {
                                     className={
                                         'dark:text-white dark:bg-gray-900'
                                     }
-                                    key={key}
+                                    key={'posts'}
                                 >
                                     <Link href={`/blog/${val.slug}`}>
-                                        {' '}
                                         {val.frontmatter.title}
                                     </Link>
                                 </div>

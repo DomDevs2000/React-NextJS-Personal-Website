@@ -52,7 +52,7 @@ const ProjectsPage: FC<ProjectsPageProp> = ({ projects }) => {
                                 >
                                     <Link
                                         href={`/projects/${val.slug}`}
-                                        key={key}
+                                        key={'projects'}
                                     >
                                         {val.frontmatter.title}
                                     </Link>

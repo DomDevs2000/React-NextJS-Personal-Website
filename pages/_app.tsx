@@ -8,7 +8,6 @@ const defaultTheme = 'light';
 
 function MyApp({ Component, pageProps }: AppProps) {
     const [theme, setTheme] = useState(defaultTheme);
-    console.log('app');
     useEffect(() => {
         const userTheme = window.localStorage.getItem('THEME');
         if (userTheme) {
