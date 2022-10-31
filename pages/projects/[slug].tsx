@@ -2,12 +2,13 @@ import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
 import Image from 'next/image';
-import { marked } from 'marked';
 import React, { FC } from 'react';
 import { GetStaticProps } from 'next';
 import { TFrontmatter, TProject } from '../../types';
 import { Helmet } from 'react-helmet';
 import { ParsedUrlQuery } from 'querystring';
+import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
 
 type ProjectPageProp = {
     project: TProject;
@@ -55,10 +56,14 @@ const ProjectPage: FC<ProjectPageProp> = ({ project }) => {
                     />
                 </div>
 
-                <div
-                    className="text-center text-sm md:text-lg lg:text-xl  bg-gray-200  px-3 py-1  text-gray-700 mr-2 mb-2"
-                    dangerouslySetInnerHTML={{ __html: marked(content) }}
-                ></div>
+                <div className="text-sm md:text-lg lg:text-xl  bg-gray-200  px-3 py-1  text-gray-700 mr-2 mb-2">
+                    <ReactMarkdown
+                        className="prose"
+                        remarkPlugins={[remarkGfm]}
+                    >
+                        {content}
+                    </ReactMarkdown>
+                </div>
             </div>
         </>
     );
