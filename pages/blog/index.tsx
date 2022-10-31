@@ -20,33 +20,35 @@ const BlogPage: FC<BlogPageProp> = ({posts}) => {
             <Helmet>
                 <title>Dom Devs | Blog</title>
             </Helmet>
-            <div className=' py-10 px-10 dark:bg-gray-900 grid gap-10 md:grid-cols-2 lg:grid-cols-3 '>
-                <div>
-                    <input
-                        type='text'
-                        placeholder='search..'
-                        onChange={(e) => {
-                            setSearchTerm(e.target.value);
-                        }}
-                    />
 
-                    {posts
-                        .filter((val) => {
-                            if (searchTerm == '') {
-                                return val;
-                            } else if (
-                                val.frontmatter.title
-                                    .toLowerCase()
-                                    .includes(searchTerm.toLowerCase())
-                            ) {
-                                return val;
-                            }
-                        })
-                        .map((val, key) => {
-                            if (searchTerm)
-                                return <div key={key}>{val.frontmatter.title}</div>;
-                        })}
-                </div>
+            <div className='text-center mr-2 p-3'>
+                <input
+                    className='inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2'
+                    type='text'
+                    placeholder='Search For A Post..'
+                    onChange={(e) => {
+                        setSearchTerm(e.target.value);
+                    }}
+                />
+
+                {posts
+                    .filter((val) => {
+                        if (searchTerm == '') {
+                            return val;
+                        } else if (
+                            val.frontmatter.title
+                                .toLowerCase()
+                                .includes(searchTerm.toLowerCase())
+                        ) {
+                            return val;
+                        }
+                    })
+                    .map((val, key) => {
+                        if (searchTerm)
+                            return <div key={key}>{val.frontmatter.title}</div>;
+                    })}
+            </div>
+            <div className=' py-10 px-10 dark:bg-gray-900 grid gap-10 md:grid-cols-2 lg:grid-cols-3 '>
                 {posts.map((post) => {
                     return (
                         <>
