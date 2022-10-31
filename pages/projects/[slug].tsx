@@ -9,6 +9,7 @@ import { Helmet } from 'react-helmet';
 import { ParsedUrlQuery } from 'querystring';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
+import Link from 'next/link';
 
 type ProjectPageProp = {
     project: TProject;
@@ -41,7 +42,7 @@ const ProjectPage: FC<ProjectPageProp> = ({ project }) => {
                                 key={tag}
                                 className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2"
                             >
-                                <a href={`/tags/${tag}`}>{tag}</a>
+                                <Link href={`/tags/${tag}`}>{tag}</Link>
                             </li>
                         );
                     })}

@@ -16,9 +16,12 @@ const Nav: FC<NavProp> = ({ theme, setTheme }) => {
                 <div className="flex items-center justify-between border-b border-gray-400 py-8">
                     <h1 className="dark:text-white ">
                         <Link href="/">
-                            <a className="uppercase hover:scale-125 delay-100">
+                            <Link
+                                href="/"
+                                className="uppercase hover:scale-125 delay-100"
+                            >
                                 Dom Devs
-                            </a>
+                            </Link>
                         </Link>
                     </h1>
                     <button className="ml-8 px-4 py-2 theme-toggle">

@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import { FC } from 'react';
 import type { TPost } from '../types';
+import Link from 'next/link';
 
 type PostCardProp = {
     post: TPost;
@@ -21,8 +22,8 @@ export const PostCard: FC<PostCardProp> = ({ post }) => {
         content
     } = post;
     return (
-        <div className=" dark:gray-900 ">
-            <a href={`/blog/${slug}`}>
+        <div className=" dark:gray-900 cursor-pointer ">
+            <Link href={`/blog/${slug}`}>
                 <div className="dark:gray-900">
                     <div className="max-w-md rounded overflow-hidden shadow-lg dark:bg-gray-600 dark:shadow-slate-600 hover:scale-105 delay-100 hover:shadow-2xl transition-all duration-150 ease-out hover:ease-in ">
                         <Image
@@ -48,7 +49,7 @@ export const PostCard: FC<PostCardProp> = ({ post }) => {
                         </div>
                     </div>
                 </div>
-            </a>
+            </Link>
         </div>
     );
 };

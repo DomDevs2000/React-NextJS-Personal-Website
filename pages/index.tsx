@@ -2,7 +2,7 @@ import fs, { readdirSync } from 'fs';
 import matter from 'gray-matter';
 import Head from 'next/head';
 import path from 'path';
-
+import Link from 'next/link';
 import { AiFillGithub, AiFillLinkedin } from 'react-icons/ai';
 import type { GetStaticProps, NextPage } from 'next';
 import { PostCard } from '../components/PostCard';
@@ -39,12 +39,12 @@ const Home: NextPage<HomeProps> = ({ posts, projects }) => {
                 </div>
 
                 <div className="text-5xl flex justify-center gap-12 py-3">
-                    <a href="#">
+                    <Link href="#">
                         <AiFillLinkedin color="gray" />
-                    </a>
-                    <a href="https://github.com/AidanC2000">
+                    </Link>
+                    <Link href="https://github.com/AidanC2000">
                         <AiFillGithub color="gray" />
-                    </a>
+                    </Link>
                 </div>
                 <section className="">
                     <h1 className="text-3xl py-1 text-center dark:text-white ">

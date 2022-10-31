@@ -7,6 +7,7 @@ import { TFrontmatter, TProject } from '../../types';
 import { sortByDate } from '../../utils';
 import { Helmet } from 'react-helmet';
 import { FC, useState } from 'react';
+import Link from 'next/link';
 
 type ProjectsPageProp = {
     projects: TProject[];
@@ -49,9 +50,12 @@ const ProjectsPage: FC<ProjectsPageProp> = ({ projects }) => {
                                         'dark:text-white dark:bg-gray-900'
                                     }
                                 >
-                                    <a href={`/projects/${val.slug}`} key={key}>
+                                    <Link
+                                        href={`/projects/${val.slug}`}
+                                        key={key}
+                                    >
                                         {val.frontmatter.title}
-                                    </a>
+                                    </Link>
                                 </div>
                             );
                     })}

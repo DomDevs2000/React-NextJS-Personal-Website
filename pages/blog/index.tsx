@@ -1,7 +1,7 @@
 import { PostCard } from '../../components/PostCard';
 import matter from 'gray-matter';
 import { FC, useState } from 'react';
-
+import Link from 'next/link';
 import fs, { readdirSync } from 'fs';
 import path from 'path';
 import type { GetStaticProps } from 'next';
@@ -51,10 +51,10 @@ const BlogPage: FC<BlogPageProp> = ({ posts }) => {
                                     }
                                     key={key}
                                 >
-                                    <a href={`/blog/${val.slug}`}>
+                                    <Link href={`/blog/${val.slug}`}>
                                         {' '}
                                         {val.frontmatter.title}
-                                    </a>
+                                    </Link>
                                 </div>
                             );
                     })}
