@@ -1,13 +1,14 @@
 ---
-title: 'Flexbox VS Css Grid'
+title: 'Flexbox Vs CSS Grid'
 date: 'October 12 2022'
-description: 'In this post, we go over the differences between flexbox and css grid.'
-cover_image: '/images/posts/img1.jpg'
+description: 'In this post, we go over the differences between flexbox and css grid,their best use cases and which one I
+prefer.'
+cover_image: '/images/posts/flexbox-vs-grid.jpg'
 tags: 'Javascript, Full-Stack, NodeJs, SQL'
 read_length: '5 min'
 ---
 
-# What is a responsive layout model?
+## What is a responsive layout model?
 
 In this day and age, there is a plethora of different screen sizes. From standard mobile phones to tablets, laptops and
 large
