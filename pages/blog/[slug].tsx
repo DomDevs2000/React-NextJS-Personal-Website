@@ -26,7 +26,7 @@ const PostPage: FC<PostPageProp> = ({post}) => {
             </Helmet>
             <div className='dark:bg-gray-900 dark:text-white'>
                 <h1>{title}</h1>
-                <p>Posted on:{date}</p>
+                <p className='text-center'>Posted on:{date}</p>
                 <Image src={cover_image} alt='' width={700} height={500}></Image>
                 <div dangerouslySetInnerHTML={{__html: marked(content)}}></div>
             </div>
