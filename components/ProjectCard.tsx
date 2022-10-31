@@ -22,7 +22,7 @@ export const ProjectCard: FC<ProjectCardProp> = ({ project }) => {
     return (
         <section className="dark:gray-900">
             <a href={`/projects/${slug}`}>
-                <div className="max-w-md rounded overflow-hidden shadow-lg dark:bg-gray-600  dark:shadow-slate-400 hover:scale-105 delay-100 hover:shadow-2xl transition-all duration-150 ease-out hover:ease-in ">
+                <div className="max-h-50 rounded overflow-hidden shadow-lg dark:bg-gray-600  dark:shadow-slate-600 hover:scale-105 delay-100 hover:shadow-2xl transition-all duration-150 ease-out hover:ease-in ">
                     <Image
                         src={cover_image}
                         alt=""

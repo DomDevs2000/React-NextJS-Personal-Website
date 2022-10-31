@@ -4,7 +4,7 @@ import matter from 'gray-matter';
 import Image from 'next/image';
 import { GetStaticProps } from 'next';
 import { ParsedUrlQuery } from 'querystring';
-import { FC } from 'react';
+import React, { FC } from 'react';
 import { TFrontmatter, TPost } from '../../types';
 import { Helmet } from 'react-helmet';
 import ReactMarkdown from 'react-markdown';
@@ -15,7 +15,7 @@ type PostPageProp = {
 };
 const PostPage: FC<PostPageProp> = ({ post }) => {
     const {
-        frontmatter: { title, date, cover_image },
+        frontmatter: { title, date, cover_image, read_length },
         content
     } = post;
     return (
@@ -23,18 +23,31 @@ const PostPage: FC<PostPageProp> = ({ post }) => {
             <Helmet>
                 <title>Dom Devs | {title} </title>
             </Helmet>
-            <div className="dark:bg-gray-900 dark:text-white">
-                <h1>{title}</h1>
-                <p className="text-center">Posted on:{date}</p>
-                <Image
-                    src={cover_image}
-                    alt=""
-                    width={700}
-                    height={500}
-                ></Image>
-                <ReactMarkdown className="prose" remarkPlugins={[remarkGfm]}>
-                    {content}
-                </ReactMarkdown>
+
+            <div className="py-10 px-10 dark:bg-gray-900 dark:text-white  ">
+                <h1 className="text-xl md:text-2xl lg:text-3xl  text-center ">
+                    {title}
+                </h1>
+                <br></br>
+                <p className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold  text-gray-700 mr-2 mb-2">
+                    Posted on {date} | {read_length} read
+                </p>
+                <div className="1 px-15 py-15 flex justify-center ">
+                    <Image
+                        src={cover_image}
+                        alt=""
+                        width={700}
+                        height={500}
+                    ></Image>
+                </div>
+                <div className="text-sm md:text-lg lg:text-xl  flex justify-center  px-3 py-1  text-gray-700 mr-2 mb-2">
+                    <ReactMarkdown
+                        className="prose dark:text-white dark:prose-headings:text-gray-100"
+                        remarkPlugins={[remarkGfm]}
+                    >
+                        {content}
+                    </ReactMarkdown>
+                </div>
             </div>
         </div>
     );

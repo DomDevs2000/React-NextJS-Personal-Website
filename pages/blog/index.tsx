@@ -20,9 +20,9 @@ const BlogPage: FC<BlogPageProp> = ({ posts }) => {
                 <title>Dom Devs | Blog</title>
             </Helmet>
 
-            <div className="text-center mr-2 p-3">
+            <div className="text-center dark:bg-gray-900 mr-2 p-3">
                 <input
-                    className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2"
+                    className="inline-block dark:bg-gray-900 dark:text-white  bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2"
                     type="text"
                     placeholder="Search For A Post.."
                     onChange={(e) => {
@@ -44,7 +44,19 @@ const BlogPage: FC<BlogPageProp> = ({ posts }) => {
                     })
                     .map((val, key) => {
                         if (searchTerm)
-                            return <div key={key}>{val.frontmatter.title}</div>;
+                            return (
+                                <div
+                                    className={
+                                        'dark:text-white dark:bg-gray-900'
+                                    }
+                                    key={key}
+                                >
+                                    <a href={`/blog/${val.slug}`}>
+                                        {' '}
+                                        {val.frontmatter.title}
+                                    </a>
+                                </div>
+                            );
                     })}
             </div>
             <div className=" py-10 px-10 dark:bg-gray-900 grid gap-10 md:grid-cols-2 lg:grid-cols-3 ">
@@ -62,7 +74,6 @@ const BlogPage: FC<BlogPageProp> = ({ posts }) => {
 
 export const getStaticProps: GetStaticProps<BlogPageProp> = async () => {
     const files = readdirSync(path.join('posts'));
-    // get slug and front matter from posts
     const posts: TPost[] = files.map((filename) => {
         const slug = filename.replace('.md', '');
 

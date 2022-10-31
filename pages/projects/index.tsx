@@ -19,9 +19,9 @@ const ProjectsPage: FC<ProjectsPageProp> = ({ projects }) => {
             <Helmet>
                 <title>Dom Devs | Projects</title>
             </Helmet>
-            <div className="text-center mr-5 p-3  ">
+            <div className="text-center mr-5 p-3 dark:bg-gray-900">
                 <input
-                    className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2"
+                    className="inline-block dark:bg-gray-900 dark:text-white  bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2"
                     type="text"
                     placeholder="Search For A Project.."
                     onChange={(e) => {
@@ -44,7 +44,11 @@ const ProjectsPage: FC<ProjectsPageProp> = ({ projects }) => {
                     .map((val, key) => {
                         if (searchTerm)
                             return (
-                                <div>
+                                <div
+                                    className={
+                                        'dark:text-white dark:bg-gray-900'
+                                    }
+                                >
                                     <a href={`/projects/${val.slug}`} key={key}>
                                         {val.frontmatter.title}
                                     </a>
@@ -52,7 +56,7 @@ const ProjectsPage: FC<ProjectsPageProp> = ({ projects }) => {
                             );
                     })}
             </div>
-            <div className="dark:bg-gray-900  sm:p-20 py-10 px-10 grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-3 md:gap-3 lg:gap-4">
+            <div className="dark:bg-gray-900  sm:p-20 py-10 px-10 grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-3 md:gap-3 lg:gap-10">
                 {projects.map((project) => {
                     return (
                         <>

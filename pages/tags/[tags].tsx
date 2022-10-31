@@ -60,7 +60,7 @@ export const getStaticProps: GetStaticProps<
                     tags: frontmatter.tags.split(',')
                 } as TFrontmatter,
                 // frontmatter,
-                slug,
+
                 content
             }
         }
