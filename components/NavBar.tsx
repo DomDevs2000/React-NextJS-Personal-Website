@@ -12,7 +12,7 @@ const Nav: FC<NavProp> = ({ theme, setTheme }) => {
 
     return (
         <div className={theme}>
-            <section className="max-h-600  dark:bg-gray-900 px-10 font-sans">
+            <section className="max-h-600  dark:bg-slate-900  px-10 font-sans">
                 <div className="flex items-center justify-between border-b border-gray-400 py-8">
                     <h1 className="dark:text-white ">
                         <Link href="/">
@@ -24,9 +24,12 @@ const Nav: FC<NavProp> = ({ theme, setTheme }) => {
                     <button className="ml-8 px-4 py-2 theme-toggle">
                         <BsFillMoonStarsFill
                             color="gray"
-                            onClick={() =>
-                                setTheme(theme === 'light' ? 'dark' : 'light')
-                            }
+                            onClick={() => {
+                                const newTheme =
+                                    theme === 'light' ? 'dark' : 'light';
+                                window.localStorage.setItem('THEME', newTheme);
+                                setTheme(newTheme);
+                            }}
                             className="cursor-pointer text-2xl"
                         />
                     </button>
