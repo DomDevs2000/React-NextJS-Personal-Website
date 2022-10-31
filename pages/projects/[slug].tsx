@@ -25,7 +25,7 @@ const ProjectPage: FC<ProjectPageProp> = ({ project }) => {
             <Helmet>
                 <title>Dom Devs | {title}</title>
             </Helmet>
-            <div className="py-10 px-10 dark:bg-gray-900 dark:text-white">
+            <div className="py-10 px-10 dark:bg-gray-900 dark:text-white  ">
                 <h1 className="text-xl md:text-2xl lg:text-3xl text-center">
                     {title}
                 </h1>
@@ -46,7 +46,7 @@ const ProjectPage: FC<ProjectPageProp> = ({ project }) => {
                         );
                     })}
                 </ul>
-                <div className="grid grid-cols-2   gap-1 px-15 py-15 ">
+                <div className="flex justify-center  px-15 py-15 ">
                     <Image src={cover_image} alt="" width={700} height={500} />
                     <Image
                         src={alternate_image}
@@ -56,9 +56,9 @@ const ProjectPage: FC<ProjectPageProp> = ({ project }) => {
                     />
                 </div>
 
-                <div className="text-sm md:text-lg lg:text-xl  bg-gray-200  px-3 py-1  text-gray-700 mr-2 mb-2">
+                <div className="text-sm md:text-lg lg:text-xl   flex justify-center  px-3 py-1  text-gray-700 mr-2 mb-2">
                     <ReactMarkdown
-                        className="prose"
+                        className="prose dark:text-white dark:prose-headings:text-gray-100"
                         remarkPlugins={[remarkGfm]}
                     >
                         {content}
