@@ -1,0 +1,6 @@
+coverage
+.next
+public
+node_modules
+next-env.d.ts
+

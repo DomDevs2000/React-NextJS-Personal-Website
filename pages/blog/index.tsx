@@ -1,31 +1,30 @@
-import {PostCard} from '../../components/PostCard';
+import { PostCard } from '../../components/PostCard';
 import matter from 'gray-matter';
-import {useState} from 'react';
+import { FC, useState } from 'react';
 
-import fs, {readdirSync} from 'fs';
+import fs, { readdirSync } from 'fs';
 import path from 'path';
-import type {GetStaticProps} from 'next';
-import {FC} from 'react';
-import {TFrontmatter, TPost} from '../../types';
-import {sortByDate} from '../../utils';
-import {Helmet} from 'react-helmet';
+import type { GetStaticProps } from 'next';
+import { TFrontmatter, TPost } from '../../types';
+import { sortByDate } from '../../utils';
+import { Helmet } from 'react-helmet';
 
 type BlogPageProp = {
     posts: TPost[];
 };
-const BlogPage: FC<BlogPageProp> = ({posts}) => {
-    const [searchTerm, setSearchTerm] = useState('')
+const BlogPage: FC<BlogPageProp> = ({ posts }) => {
+    const [searchTerm, setSearchTerm] = useState('');
     return (
         <>
             <Helmet>
                 <title>Dom Devs | Blog</title>
             </Helmet>
 
-            <div className='text-center mr-2 p-3'>
+            <div className="text-center mr-2 p-3">
                 <input
-                    className='inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2'
-                    type='text'
-                    placeholder='Search For A Post..'
+                    className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2"
+                    type="text"
+                    placeholder="Search For A Post.."
                     onChange={(e) => {
                         setSearchTerm(e.target.value);
                     }}
@@ -48,7 +47,7 @@ const BlogPage: FC<BlogPageProp> = ({posts}) => {
                             return <div key={key}>{val.frontmatter.title}</div>;
                     })}
             </div>
-            <div className=' py-10 px-10 dark:bg-gray-900 grid gap-10 md:grid-cols-2 lg:grid-cols-3 '>
+            <div className=" py-10 px-10 dark:bg-gray-900 grid gap-10 md:grid-cols-2 lg:grid-cols-3 ">
                 {posts.map((post) => {
                     return (
                         <>
@@ -73,18 +72,18 @@ export const getStaticProps: GetStaticProps<BlogPageProp> = async () => {
             'utf-8'
         );
         // parses down data & renames data to frontmatter
-        const {data: frontmatter, content} = matter(markdownWithMeta);
+        const { data: frontmatter, content } = matter(markdownWithMeta);
         return {
             slug,
             frontmatter: frontmatter as TFrontmatter,
-            content,
+            content
         };
     });
 
     return {
         props: {
-            posts: posts.sort(sortByDate),
-        },
+            posts: posts.sort(sortByDate)
+        }
     };
 };
 
