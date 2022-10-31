@@ -1,60 +1,92 @@
-import { ProjectCard } from '../../components/ProjectCard';
+import {ProjectCard} from '../../components/ProjectCard';
 import matter from 'gray-matter';
-import fs, { readdirSync } from 'fs';
+import fs, {readdirSync} from 'fs';
 import path from 'path';
-import type { GetStaticProps } from 'next';
-import { TProject } from '../../types';
-import { sortByDate } from '../../utils';
-import { Helmet } from 'react-helmet';
-import { FC } from 'react';
+import type {GetStaticProps} from 'next';
+import {TFrontmatter, TProject} from '../../types';
+import {sortByDate} from '../../utils';
+import {Helmet} from 'react-helmet';
+import {FC, useState} from 'react';
+
 
 type ProjectsPageProp = {
-	projects: TProject[];
+    projects: TProject[];
 };
 
-const ProjectsPage: FC<ProjectsPageProp> = ({ projects }) => {
-	return (
-		<>
-			<Helmet>
-				<title>Dom Devs | Projects</title>
-			</Helmet>
-			<div className='dark:bg-gray-900  sm:p-20 py-10 px-10 grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-3  md:gap-3 lg:gap-4'>
-				{projects.map((project) => {
-					return (
-						<>
-							<ProjectCard project={project}></ProjectCard>
-						</>
-					);
-				})}
-			</div>
-		</>
-	);
+
+const ProjectsPage: FC<ProjectsPageProp> = ({projects}) => {
+    const [searchTerm, setSearchTerm] = useState('')
+    return (
+        <>
+            <Helmet>
+                <title>Dom Devs | Projects</title>
+            </Helmet>
+
+            <div
+                className='dark:bg-gray-900  sm:p-20 py-10 px-10 grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-3  md:gap-3 lg:gap-4'>
+                <div>
+                    <input
+                        type='text'
+                        placeholder='search..'
+                        onChange={(e) => {
+                            setSearchTerm(e.target.value);
+                        }}
+                    />
+
+                    {projects
+                        .filter((val) => {
+                            if (searchTerm == '') {
+                                return val;
+                            } else if (
+                                val.frontmatter.title
+                                    .toLowerCase()
+                                    .includes(searchTerm.toLowerCase())
+                            ) {
+                                return val;
+                            }
+                        })
+                        .map((val, key) => {
+                            if (searchTerm)
+                                return <div key={key}>{val.frontmatter.title}</div>;
+                        })}
+                </div>
+                {projects.map((project) => {
+                    return (
+                        <>
+                            <ProjectCard project={project}></ProjectCard>
+                        </>
+                    );
+                })}
+            </div>
+        </>
+    );
 };
 
 export const getStaticProps: GetStaticProps<ProjectsPageProp> = async () => {
-	const files = readdirSync(path.join('projects'));
-	// get slug and front matter from posts
-	const projects: TProject[] = files.map((filename) => {
-		const slug = filename.replace('.md', '');
+    const files = readdirSync(path.join('projects'));
+    // get slug and front matter from posts
+    const projects: TProject[] = files.map((filename) => {
+        const slug = filename.replace('.md', '');
 
-		// get frontmatter
-		const markdownWithMeta = fs.readFileSync(
-			path.join('projects', filename),
-			'utf-8'
-		);
-		// parses down data & renames data to frontmatter
-		const { data: frontmatter } = matter(markdownWithMeta);
-		return {
-			slug,
-			frontmatter,
-		};
-	});
+        // get frontmatter
+        const markdownWithMeta = fs.readFileSync(
+            path.join('projects', filename),
+            'utf-8'
+        );
+        // parses down data & renames data to frontmatter
+        const {data: frontmatter, content} = matter(markdownWithMeta);
+        return {
+            slug,
+            frontmatter: frontmatter as TFrontmatter,
+            content,
+        };
+    });
 
-	return {
-		props: {
-			projects: projects.sort(sortByDate),
-		},
-	};
+    return {
+        props: {
+            projects: projects.sort(sortByDate),
+        },
+    };
 };
 
 export default ProjectsPage;
