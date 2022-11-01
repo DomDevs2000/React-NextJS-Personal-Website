@@ -4,7 +4,7 @@ date: 'October 13, 2022'
 description: 'Back-end API where users can access various notes saved in a mongo database with full CRUD functionality,
 created with NodeJS, MongoDB & Express'
 cover_image: '/images/projects/img1.jpg'
-tags: 'Javascript, NodeJS, MongoDB, Express'
+tags: 'Javascript,NodeJS,MongoDB,Express'
 ---
 
 I created this API to allow users to create, select or delete specfic lorem ipsum notes to be used in any website where
