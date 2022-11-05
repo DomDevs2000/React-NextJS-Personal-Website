@@ -1,10 +1,10 @@
 ---
-title: 'React/NextJS Personal Website'
+title: 'Personal Blog'
 date: 'October 20, 2022'
-description: 'static site to showcase personal projects & blog posts using React, Next, Typescript & Tailwind'
+description: 'Full-stack static site to showcase personal projects & blog posts.'
 cover_image: '/images/projects/img1.jpg'
 alternate_image: '/images/projects/img1.jpg'
-tags: 'Javascript,React,NextJS,Typescript,Tailwind'
+tags: 'React,NextJS,Typescript,Tailwind'
 ---
 
 # What is this project about?

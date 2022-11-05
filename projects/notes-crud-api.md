@@ -1,8 +1,7 @@
 ---
 title: 'Notes CRUD API'
 date: 'October 13, 2022'
-description: 'Back-end API where users can access various notes saved in a mongo database with full CRUD functionality,
-created with NodeJS, MongoDB & Express'
+description: 'A REST CRUD API built to create notes.'
 cover_image: '/images/projects/img1.jpg'
 tags: 'Javascript,NodeJS,MongoDB,Express'
 ---

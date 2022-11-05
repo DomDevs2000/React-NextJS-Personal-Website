@@ -1,7 +1,7 @@
 ---
-title: 'Game-Lib Video Game Library'
+title: 'Game-Lib'
 date: 'October 14, 2022'
-description: 'website where users can search for games, genres, developers or platforms to find their favourite games'
+description: 'For gamers to manage their favourite games and wishlists.'
 cover_image: '/images/projects/game-lib/gamelib.png'
 alternate_image: '/images/projects/game-lib/gamelib2.png'
 tags: 'Javascript,Full-Stack,NodeJs,SQL'
