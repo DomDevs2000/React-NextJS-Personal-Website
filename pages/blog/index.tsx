@@ -14,6 +14,39 @@ type BlogPageProp = {
 };
 const BlogPage: FC<BlogPageProp> = ({ posts }) => {
     const [searchTerm, setSearchTerm] = useState('');
+    const renderPostCard = posts.map((post) => {
+        return (
+            <>
+                <PostCard post={post}></PostCard>
+            </>
+        );
+    });
+
+    const searchBar = posts
+        .filter((val) => {
+            if (searchTerm == '') {
+                return val;
+            } else if (
+                val.frontmatter.title
+                    .toLowerCase()
+                    .includes(searchTerm.toLowerCase())
+            ) {
+                return val;
+            }
+        })
+        .map((val, key) => {
+            if (searchTerm)
+                return (
+                    <div
+                        className={'dark:text-white dark:bg-gray-900'}
+                        key={key}
+                    >
+                        <Link href={`/blog/${val.slug}`}>
+                            {val.frontmatter.title}
+                        </Link>
+                    </div>
+                );
+        });
     return (
         <>
             <Helmet>
@@ -22,50 +55,17 @@ const BlogPage: FC<BlogPageProp> = ({ posts }) => {
 
             <div className="text-center dark:bg-gray-900 mr-2 p-3">
                 <input
-                    className="inline-block dark:bg-gray-900 dark:text-white  bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2"
+                    className="inline-block dark:bg-gray-200 dark:text-black  bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold  mr-2 mb-2"
                     type="text"
                     placeholder="Search For A Post.."
                     onChange={(e) => {
                         setSearchTerm(e.target.value);
                     }}
                 />
-
-                {posts
-                    .filter((val) => {
-                        if (searchTerm == '') {
-                            return val;
-                        } else if (
-                            val.frontmatter.title
-                                .toLowerCase()
-                                .includes(searchTerm.toLowerCase())
-                        ) {
-                            return val;
-                        }
-                    })
-                    .map((val, key) => {
-                        if (searchTerm)
-                            return (
-                                <div
-                                    className={
-                                        'dark:text-white dark:bg-gray-900'
-                                    }
-                                    key={'posts'}
-                                >
-                                    <Link href={`/blog/${val.slug}`}>
-                                        {val.frontmatter.title}
-                                    </Link>
-                                </div>
-                            );
-                    })}
+                {searchBar}
             </div>
             <div className=" py-10 px-10 dark:bg-gray-900 grid gap-10 md:grid-cols-2 lg:grid-cols-3 ">
-                {posts.map((post) => {
-                    return (
-                        <>
-                            <PostCard post={post}></PostCard>
-                        </>
-                    );
-                })}
+                {renderPostCard}
             </div>
         </>
     );

@@ -15,6 +15,37 @@ type ProjectsPageProp = {
 
 const ProjectsPage: FC<ProjectsPageProp> = ({ projects }) => {
     const [searchTerm, setSearchTerm] = useState('');
+
+    const renderProjects = projects.map((project) => {
+        return (
+            <>
+                <ProjectCard project={project}></ProjectCard>
+            </>
+        );
+    });
+
+    const searchBar = projects
+        .filter((val) => {
+            if (searchTerm == '') {
+                return val;
+            } else if (
+                val.frontmatter.title
+                    .toLowerCase()
+                    .includes(searchTerm.toLowerCase())
+            ) {
+                return val;
+            }
+        })
+        .map((val, key) => {
+            if (searchTerm)
+                return (
+                    <div className={'dark:text-white dark:bg-gray-900'}>
+                        <Link href={`/projects/${val.slug}`} key={'projects'}>
+                            {val.frontmatter.title}
+                        </Link>
+                    </div>
+                );
+        });
     return (
         <>
             <Helmet>
@@ -22,7 +53,7 @@ const ProjectsPage: FC<ProjectsPageProp> = ({ projects }) => {
             </Helmet>
             <div className="text-center mr-5 p-3 dark:bg-gray-900">
                 <input
-                    className="inline-block dark:bg-gray-900 dark:text-white  bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2"
+                    className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2"
                     type="text"
                     placeholder="Search For A Project.."
                     onChange={(e) => {
@@ -30,44 +61,10 @@ const ProjectsPage: FC<ProjectsPageProp> = ({ projects }) => {
                     }}
                 />
 
-                {projects
-                    .filter((val) => {
-                        if (searchTerm == '') {
-                            return val;
-                        } else if (
-                            val.frontmatter.title
-                                .toLowerCase()
-                                .includes(searchTerm.toLowerCase())
-                        ) {
-                            return val;
-                        }
-                    })
-                    .map((val, key) => {
-                        if (searchTerm)
-                            return (
-                                <div
-                                    className={
-                                        'dark:text-white dark:bg-gray-900'
-                                    }
-                                >
-                                    <Link
-                                        href={`/projects/${val.slug}`}
-                                        key={'projects'}
-                                    >
-                                        {val.frontmatter.title}
-                                    </Link>
-                                </div>
-                            );
-                    })}
+                {searchBar}
             </div>
             <div className="dark:bg-gray-900  sm:p-20 py-10 px-10 grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-3">
-                {projects.map((project) => {
-                    return (
-                        <>
-                            <ProjectCard project={project}></ProjectCard>
-                        </>
-                    );
-                })}
+                {renderProjects}
             </div>
         </>
     );
