@@ -16,7 +16,7 @@ type ProjectsPageProp = {
 const ProjectsPage: FC<ProjectsPageProp> = ({ projects }) => {
     const [searchTerm, setSearchTerm] = useState('');
 
-    const renderProjects = projects.map((project) => {
+    const renderProjectCard = projects.map((project) => {
         return (
             <>
                 <ProjectCard project={project}></ProjectCard>
@@ -64,7 +64,7 @@ const ProjectsPage: FC<ProjectsPageProp> = ({ projects }) => {
                 {searchBar}
             </div>
             <div className="dark:bg-gray-900  sm:p-20 py-10 px-10 grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-3">
-                {renderProjects}
+                {renderProjectCard}
             </div>
         </>
     );
