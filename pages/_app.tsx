@@ -2,7 +2,7 @@ import '../styles/globals.css';
 import type { AppProps } from 'next/app';
 import NavBar from '../components/NavBar';
 import { createContext, useEffect, useState } from 'react';
-
+import { Footer } from '../components/Footer';
 export const ThemeContext = createContext('light');
 const defaultTheme = 'light';
 
@@ -22,6 +22,7 @@ function MyApp({ Component, pageProps }: AppProps) {
                     <NavBar theme={theme} setTheme={setTheme} />
                     <Component {...pageProps} />
                 </ThemeContext.Provider>
+                <Footer></Footer>
             </div>
         </>
     );
