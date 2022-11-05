@@ -41,7 +41,7 @@ const Home: NextPage<HomeProps> = ({ posts, projects }) => {
 
             <main className="bg-white px-10 md:px-20 lg:px-40 dark:bg-gray-900 font-sans">
                 <div className="text-center p-10 dark:text-white">
-                    <h2 className="text-5xl text-gray-700 py-2 text-grey-800 md:text-6xl">
+                    <h2 className="text-5xl text-gray-700 py-2 dark:text-slate-400 md:text-6xl">
                         Aidan Dominic Carvalho
                     </h2>
                     <h3 className="text-2xl">Junior Full-Stack Developer</h3>
@@ -52,10 +52,13 @@ const Home: NextPage<HomeProps> = ({ posts, projects }) => {
 
                 <div className="text-5xl flex justify-center gap-12 py-3">
                     <Link href="#">
-                        <AiFillLinkedin color="gray" />
+                        <AiFillLinkedin
+                            color="gray"
+                            className="cursor-pointer"
+                        />
                     </Link>
                     <Link href="https://github.com/AidanC2000">
-                        <AiFillGithub color="gray" />
+                        <AiFillGithub color="gray" className="cursor-pointer" />
                     </Link>
                 </div>
                 <section className="">
