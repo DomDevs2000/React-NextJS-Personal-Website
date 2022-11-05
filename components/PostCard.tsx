@@ -25,7 +25,7 @@ export const PostCard: FC<PostCardProp> = ({ post }) => {
         <div className=" dark:gray-900 cursor-pointer ">
             <Link href={`/blog/${slug}`}>
                 <div className="dark:gray-900">
-                    <div className="max-w-md rounded overflow-hidden shadow-lg dark:bg-gray-600 dark:shadow-slate-600 hover:scale-105 delay-100 hover:shadow-2xl transition-all duration-150 ease-out hover:ease-in ">
+                    <div className="max-w-md rounded overflow-hidden shadow-lg dark:bg-gray-700 dark:shadow-slate-600 hover:scale-105 delay-100 hover:shadow-2xl transition-all duration-150 ease-out hover:ease-in ">
                         <Image
                             src={cover_image}
                             alt=""
@@ -38,7 +38,7 @@ export const PostCard: FC<PostCardProp> = ({ post }) => {
                                 {title}
                             </h1>
 
-                            <p className="text-gray-700 text-center dark:text-white">
+                            <p className="text-gray-700 text-center text-xs dark:text-white">
                                 {description}
                             </p>
                         </div>
