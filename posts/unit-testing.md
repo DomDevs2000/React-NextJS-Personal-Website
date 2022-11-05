@@ -1,8 +1,8 @@
 ---
-title: 'Unit Testing and why it is important'
+title: 'Unit Testing'
 date: 'October 14 2022'
-description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis
-eaque, exercitationem praesentium nihil.'
+description: 'A brief look at the differences between flexbox and css grid,their best use cases and which one I
+prefer.'
 cover_image: '/images/posts/unit-testing.jpg'
 tags: ''
 read_length: '4 min'

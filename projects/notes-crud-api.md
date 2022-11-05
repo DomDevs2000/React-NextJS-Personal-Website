@@ -1,7 +1,7 @@
 ---
 title: 'Notes CRUD API'
 date: 'October 13, 2022'
-description: 'A REST CRUD API built to create notes.'
+description: 'A REST API built to create notes, with full CRUD functionality.'
 cover_image: '/images/projects/img1.jpg'
 tags: 'Javascript,NodeJS,MongoDB,Express'
 ---
