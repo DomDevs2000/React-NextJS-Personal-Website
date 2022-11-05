@@ -9,13 +9,14 @@ import { TFrontmatter, TPost } from '../../types';
 import { Helmet } from 'react-helmet';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
+import Link from 'next/link';
 
 type PostPageProp = {
     post: TPost;
 };
 const PostPage: FC<PostPageProp> = ({ post }) => {
     const {
-        frontmatter: { title, date, cover_image, read_length },
+        frontmatter: { title, date, cover_image, tags, read_length },
         content
     } = post;
     return (
@@ -24,14 +25,27 @@ const PostPage: FC<PostPageProp> = ({ post }) => {
                 <title>Dom Devs | {title} </title>
             </Helmet>
 
-            <div className="py-10 px-10 dark:bg-gray-900 dark:text-white  ">
+            <div className="py-10 px-10 dark:bg-gray-900 dark:text-white ">
                 <h1 className="text-xl md:text-2xl lg:text-3xl  text-center ">
                     {title}
                 </h1>
                 <br></br>
-                <p className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold  text-gray-700 mr-2 mb-2">
+                <p className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold   text-gray-700 mr-2 mb-2">
                     Posted on {date} | {read_length} read
                 </p>
+                <p>Tags:</p>
+                <ul>
+                    {tags.map((tag) => {
+                        return (
+                            <li
+                                key={'tags'}
+                                className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2"
+                            >
+                                <Link href={`/tags/${tag}`}>{tag}</Link>
+                            </li>
+                        );
+                    })}
+                </ul>
                 <div className="1 px-15 py-15 flex justify-center ">
                     <Image
                         src={cover_image}
