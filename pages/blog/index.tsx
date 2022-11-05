@@ -47,6 +47,7 @@ const BlogPage: FC<BlogPageProp> = ({ posts }) => {
                     </div>
                 );
         });
+
     return (
         <>
             <Helmet>
@@ -55,7 +56,7 @@ const BlogPage: FC<BlogPageProp> = ({ posts }) => {
 
             <div className="text-center dark:bg-gray-900 mr-2 p-3">
                 <input
-                    className="inline-block dark:bg-gray-200 dark:text-black  bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold  mr-2 mb-2"
+                    className="inline-block dark:bg-gray-200 dark:text-black bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold  mr-2 mb-2"
                     type="text"
                     placeholder="Search For A Post.."
                     onChange={(e) => {
@@ -64,7 +65,7 @@ const BlogPage: FC<BlogPageProp> = ({ posts }) => {
                 />
                 {searchBar}
             </div>
-            <div className=" py-10 px-10 dark:bg-gray-900 grid gap-10 md:grid-cols-2 lg:grid-cols-3 ">
+            <div className="dark:bg-gray-900  sm:p-20 py-10 px-10 grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-3">
                 {renderPostCard}
             </div>
         </>
