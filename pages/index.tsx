@@ -16,6 +16,18 @@ type HomeProps = {
 };
 
 const Home: NextPage<HomeProps> = ({ posts, projects }) => {
+    const renderProjectCard = projects.map((project) => {
+        return (
+            <ProjectCard
+                key={`project-${project.slug}`}
+                project={project}
+            ></ProjectCard>
+        );
+    });
+    const renderPostCard = posts.map((post) => {
+        return <PostCard key={`post-${post.slug}`} post={post}></PostCard>;
+    });
+
     return (
         <div>
             <Head>
@@ -51,14 +63,7 @@ const Home: NextPage<HomeProps> = ({ posts, projects }) => {
                         Projects
                     </h1>
                     <div className="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-3 m-10">
-                        {projects.map((project) => {
-                            return (
-                                <ProjectCard
-                                    key={`project-${project.slug}`}
-                                    project={project}
-                                ></ProjectCard>
-                            );
-                        })}
+                        {renderProjectCard}
                     </div>
                 </section>
                 <section>
@@ -67,14 +72,7 @@ const Home: NextPage<HomeProps> = ({ posts, projects }) => {
                     </h1>
 
                     <div className="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-3 m-10">
-                        {posts.map((post) => {
-                            return (
-                                <PostCard
-                                    key={`post-${post.slug}`}
-                                    post={post}
-                                ></PostCard>
-                            );
-                        })}
+                        {renderPostCard}
                     </div>
 
                     <br></br>
@@ -120,7 +118,11 @@ export const getStaticProps: GetStaticProps<HomeProps> = async () => {
         const { data: frontmatter, content } = matter(markdownWithMeta);
         return {
             slug,
-            frontmatter: frontmatter as TFrontmatter,
+            frontmatter: {
+                ...frontmatter,
+
+                tags: frontmatter.tags.split(',')
+            } as TFrontmatter,
             content
         };
     });

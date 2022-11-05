@@ -88,7 +88,11 @@ export const getStaticProps: GetStaticProps<ProjectsPageProp> = async () => {
         const { data: frontmatter, content } = matter(markdownWithMeta);
         return {
             slug,
-            frontmatter: frontmatter as TFrontmatter,
+            frontmatter: {
+                ...frontmatter,
+
+                tags: frontmatter.tags.split(',')
+            } as TFrontmatter,
             content
         };
     });
