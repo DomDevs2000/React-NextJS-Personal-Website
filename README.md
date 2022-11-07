@@ -1,34 +1,29 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Getting Started
+# What is this project about?
 
-First, run the development server:
+I created this project for two purposes, to be able to showcase my most recent projects as well as a dedicated space to
+post my blogs.
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+## Why did I decide to create this project?
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+My initial idea was to create a modern responsive website that showcases my projects & blog posts all in one
+place.
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+## Why did i decide to use the technologies/languages that i did?
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+I decided to use [React](https://www.reactjs.org) for this project as i initially designed a modular website with a need
+for multiple components being implemented, as well as various states such as dark mode theme toggle and search
+functionality.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+Since I've learnt [Typescript](https://www.typescriptlang.org/) I have implemented it into every project I have made, so
+it was a no-brainer to include it in this one. Typescript allows for a better development experience.
 
-## Learn More
+[NextJS](https://nextjs.org) is a great tool to create static sites and was easy to implement with react and
+typescript Creating a NextJs app with Typescript is simple. Running this command:
+```npx create-next-app@latest --ts```
+will create a
+Next app with typescript included out of the box.
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+I decided to use [TailwindCSS](https://tailwindcss.com/) due to it being easy to implement into a NextJS application. By
+using Tailwind I
+learnt about mobile first design principles and adapting responsiveness to different screen sizes.
