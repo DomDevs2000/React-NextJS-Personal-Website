@@ -58,11 +58,12 @@ const BlogPage: FC<BlogPageProp> = ({ posts }) => {
                 <input
                     className="inline-block dark:bg-gray-200 dark:text-black bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold  mr-2 mb-2"
                     type="text"
-                    placeholder="Search For A Post.."
+                    placeholder="Search For A Post... &#128270;"
                     onChange={(e) => {
                         setSearchTerm(e.target.value);
                     }}
                 />
+
                 {searchBar}
             </div>
             <div className="dark:bg-gray-900 sm:p-20 py-10 px-10 grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-3">
