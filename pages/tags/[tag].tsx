@@ -69,8 +69,7 @@ export const getStaticProps: GetStaticProps<TagPageProp, ITagPageParams> = (
             title: frontmatter.title,
             description: frontmatter.description,
             cover_image: frontmatter.cover_image
-            // alternate_image: frontmatter?.alternate_image,
-            // read_length: frontmatter?.read_length
+            // read_length: frontmatter.read_length
         };
         return { frontmatter: fm, slug, content };
         // return { frontmatter: frontmatter as TFrontmatter, slug, content };

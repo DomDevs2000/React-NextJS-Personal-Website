@@ -9,14 +9,7 @@ type ProjectCardProp = {
 
 export const ProjectCard: FC<ProjectCardProp> = ({ project }) => {
     const {
-        frontmatter: {
-            title,
-            date,
-            description,
-            cover_image,
-            alternate_image,
-            tags
-        },
+        frontmatter: { title, date, description, cover_image, tags },
         slug,
         content
     } = project;

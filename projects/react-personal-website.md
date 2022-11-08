@@ -19,11 +19,11 @@ place.
 
 ## Why did i decide to use the technologies/languages that i did?
 
-I decided to use [React](https://www.reactjs.org) for this project as i initially designed a modular website with a need
-for multiple components being implemented, as well as various states such as dark mode theme toggle and search
-functionality.
+I decided to use [React](https://www.reactjs.org) for this project as I initially designed a modular website with a need
+for multiple components being implemented and interchanged based on the page content. Using React Hooks such as useState, I could implement a dark mode theme toggle and search
+functionality. Using, the useEffect hook I decided to use local storage to store the theme variable, so that users can return to the site or refresh the page and the theme will what the user has previously set.
 
-Since I've learnt [Typescript](https://www.typescriptlang.org/) I have implemented it into every project I have made, so
+Since I started learning [Typescript](https://www.typescriptlang.org/) I have implemented it into every project I have made, so
 it was a no-brainer to include it in this one. Typescript allows for a better development experience.
 
 [NextJS](https://nextjs.org) is a great tool to create static sites and was easy to implement with react and

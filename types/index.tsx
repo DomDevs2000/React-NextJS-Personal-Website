@@ -21,6 +21,5 @@ export type TFrontmatter = {
     title: string;
     description: string;
     cover_image: string;
-    alternate_image: string;
-    read_length: string;
+    read_length?: string;
 };
