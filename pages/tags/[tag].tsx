@@ -47,6 +47,7 @@ export async function getStaticPaths() {
 interface ITagPageParams extends ParsedUrlQuery {
     slug: string;
 }
+
 export const getStaticProps: GetStaticProps<TagPageProp, ITagPageParams> = (
     context
 ) => {
@@ -62,19 +63,23 @@ export const getStaticProps: GetStaticProps<TagPageProp, ITagPageParams> = (
             'utf8'
         );
         const { data: frontmatter, content } = matter(projectMetaMarkdowns);
-        return { frontmatter, slug, content };
+        const fm: TFrontmatter = {
+            tags: frontmatter.tags.split(','),
+            date: frontmatter.date,
+            title: frontmatter.title,
+            description: frontmatter.description,
+            cover_image: frontmatter.cover_image
+            // alternate_image: frontmatter?.alternate_image,
+            // read_length: frontmatter?.read_length
+        };
+        return { frontmatter: fm, slug, content };
         // return { frontmatter: frontmatter as TFrontmatter, slug, content };
     });
-    const projects = metaMarkdowns.filter(({ frontmatter }) => {
-        const tags: string[] = frontmatter.tags.split(',');
-        if (
-            tags
-                .map((tag) => tag.toLowerCase().trim())
-                .includes(tag.toLowerCase())
-        ) {
-            return true;
-        }
-        return false;
+    const projects: TProject[] = metaMarkdowns.filter(({ frontmatter }) => {
+        const tags: string[] = frontmatter.tags;
+        return tags
+            .map((tag) => tag.toLowerCase().trim())
+            .includes(tag.toLowerCase());
     });
     //gets slug and frontmatter by tags for posts
 
