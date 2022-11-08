@@ -14,7 +14,6 @@ export const PostCard: FC<PostCardProp> = ({ post }) => {
             date,
             description,
             cover_image,
-            alternate_image,
             tags,
             read_length
         },

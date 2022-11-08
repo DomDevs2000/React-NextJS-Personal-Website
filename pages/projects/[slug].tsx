@@ -17,7 +17,7 @@ type ProjectPageProp = {
 
 const ProjectPage: FC<ProjectPageProp> = ({ project }) => {
     const {
-        frontmatter: { title, date, cover_image, alternate_image, tags },
+        frontmatter: { title, date, cover_image, tags },
         content
     } = project;
 
@@ -39,7 +39,7 @@ const ProjectPage: FC<ProjectPageProp> = ({ project }) => {
                     {tags.map((tag) => {
                         return (
                             <li
-                                key={'tags'}
+                                key={'project-tags'}
                                 className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2"
                             >
                                 <Link href={`/tags/${tag}`}>{tag}</Link>
@@ -49,17 +49,11 @@ const ProjectPage: FC<ProjectPageProp> = ({ project }) => {
                 </ul>
                 <div className="flex justify-center  px-15 py-15 ">
                     <Image src={cover_image} alt="" width={700} height={500} />
-                    <Image
-                        src={alternate_image}
-                        alt=""
-                        width={700}
-                        height={500}
-                    />
                 </div>
 
                 <div className="text-sm md:text-lg lg:text-xl   flex justify-center  px-3 py-1  text-gray-700 mr-2 mb-2">
                     <ReactMarkdown
-                        className="prose dark:text-white dark:prose-a:text-gray-400 dark:prose-headings:text-gray-100"
+                        className="prose dark:text-white dark:prose-a:text-gray-400 dark:prose-headings:text-gray-100- dark:prose-code:text-gray-400"
                         remarkPlugins={[remarkGfm]}
                     >
                         {content}
