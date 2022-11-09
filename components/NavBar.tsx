@@ -14,11 +14,11 @@ const Nav: FC<NavProp> = ({ theme, setTheme }) => {
         <div className={theme}>
             <section className="max-h-600  dark:bg-gray-900  px-10 font-sans">
                 <div className="flex items-center justify-between border-b border-gray-400 py-8">
-                    <h1 className="dark:text-white ">
+                    <h1  className="uppercase dark:text-white hover:underline hover:scale-105">
                         <Link href="/">
                             <Link
                                 href="/"
-                                className="uppercase hover:scale-125 delay-100"
+
                             >
                                 Dom Devs
                             </Link>
@@ -42,9 +42,9 @@ const Nav: FC<NavProp> = ({ theme, setTheme }) => {
                                 className="HAMBURGER-ICON space-y-2"
                                 onClick={() => setIsNavOpen((prev) => !prev)}
                             >
-                                <span className="block h-0.5 w-8 animate-pulse bg-gray-600"></span>
-                                <span className="block h-0.5 w-8 animate-pulse bg-gray-600"></span>
-                                <span className="block h-0.5 w-8 animate-pulse bg-gray-600"></span>
+                                <span className="block h-0.5 w-8 animate-pulse dark:bg-white bg-gray-600"></span>
+                                <span className="block h-0.5 w-8 animate-pulse dark:bg-white bg-gray-600"></span>
+                                <span className="block h-0.5 w-8 animate-pulse dark:bg-white bg-gray-600"></span>
                             </button>
                             {isNavOpen && (
                                 <div
