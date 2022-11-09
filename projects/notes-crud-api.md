@@ -2,7 +2,7 @@
 title: 'Notes CRUD API'
 date: 'October 13, 2022'
 description: 'A REST API built to create notes, with full CRUD functionality.'
-cover_image: '/images/projects/img1.jpg'
+cover_image: '/images/projects/crud-api/nodejs-logo.png'
 tags: 'Javascript,NodeJS,MongoDB,Express'
 ---
 

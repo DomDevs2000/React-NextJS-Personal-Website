@@ -48,7 +48,7 @@ const ProjectPage: FC<ProjectPageProp> = ({ project }) => {
                     })}
                 </ul>
                 <div className="flex justify-center  px-15 py-15 ">
-                    <Image src={cover_image} alt="" width={700} height={500} />
+                    <Image src={cover_image} alt="" width={700} height={400} />
                 </div>
 
                 <div className="text-sm md:text-lg lg:text-xl   flex justify-center  px-3 py-1  text-gray-700 mr-2 mb-2">
