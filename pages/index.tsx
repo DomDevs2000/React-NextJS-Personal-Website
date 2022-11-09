@@ -66,17 +66,21 @@ const Home: NextPage<HomeProps> = ({ posts, projects }) => {
                     </Link>
                 </div>
                 <section className="">
-                    <h1 className="text-3xl py-1 text-center dark:text-white ">
+                    <Link href='/projects'>
+                    <h1 className="text-3xl cursor-pointer hover:underline text-center dark:text-white ">
                         Projects
                     </h1>
+                    </Link>
                     <div className="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-3 m-10">
                         {renderProjectCard}
                     </div>
                 </section>
                 <section>
-                    <h1 className="text-3xl py-1 text-center dark:text-white">
+                    <Link href='/blog'>
+                    <h1 className="text-3xl py-1  cursor-pointer hover:underline text-center dark:text-white">
                         Latest Blog Posts
                     </h1>
+                    </Link>
 
                     <div className="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-3 m-10">
                         {renderPostCard}
