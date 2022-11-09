@@ -44,9 +44,11 @@ export const ProjectCard: FC<ProjectCardProp> = ({ project }) => {
                             {title}
                         </h1>
                     </Link>
-                    <p className="text-gray-700 text-sm dark:text-white">
+                    <Link href={`/projects/${slug}`}>
+                    <p className="text-gray-700 text-sm dark:text-white cursor-pointer">
                         {description}
                     </p>
+                    </Link>
                 </div>
 
                 <div className="grid px-4 pt-3  pb-2">

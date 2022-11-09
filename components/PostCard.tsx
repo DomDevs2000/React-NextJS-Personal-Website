@@ -39,10 +39,11 @@ export const PostCard: FC<PostCardProp> = ({ post }) => {
                             {title}
                         </h1>
                     </Link>
-
-                    <p className="text-gray-700 text-sm  dark:text-white">
+                    <Link href={`/blog/${slug}`}>
+                    <p className="text-gray-700 text-sm cursor-pointer dark:text-white">
                         {description}
                     </p>
+                    </Link>
                 </div>
                 <div className="px-4 pt-2 pb-2 mb-2 ">
                     <span className="inline-block  bg-gray-200 dark:bg-gray-400 rounded-full px-3 py-1 text-sm dark:text-black text-gray-700 mr-2 mb-2">
