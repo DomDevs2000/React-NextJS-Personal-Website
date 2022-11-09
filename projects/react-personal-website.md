@@ -2,8 +2,8 @@
 title: 'Personal Blog'
 date: 'October 20, 2022'
 description: 'Full-stack static site to showcase personal projects & blog posts.'
-cover_image: '/images/projects/img1.jpg'
-alternate_image: '/images/projects/img1.jpg'
+cover_image: '/images/projects/personal-blog/personal-blog.jpg'
+
 tags: 'React,NextJS,Typescript,Tailwind'
 ---
 

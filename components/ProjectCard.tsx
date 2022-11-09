@@ -34,7 +34,7 @@ export const ProjectCard: FC<ProjectCardProp> = ({ project }) => {
                         alt=""
                         className="w-full cursor-pointer"
                         width={650}
-                        height={300}
+                        height={350}
                     />
                 </Link>
 

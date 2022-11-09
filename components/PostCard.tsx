@@ -29,7 +29,7 @@ export const PostCard: FC<PostCardProp> = ({ post }) => {
                         alt=""
                         className="w-full cursor-pointer"
                         width={700}
-                        height={300}
+                        height={350}
                     />
                 </Link>
 
