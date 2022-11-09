@@ -61,7 +61,7 @@ const Home: NextPage<HomeProps> = ({ posts, projects }) => {
                             className="cursor-pointer"
                         />
                     </Link>
-                    <Link href="https://github.com/AidanC2000">
+                    <Link href="https://github.com/DomDevs2000">
                         <AiFillGithub color="gray" className="cursor-pointer" />
                     </Link>
                 </div>
