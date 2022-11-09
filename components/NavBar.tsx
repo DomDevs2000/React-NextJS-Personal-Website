@@ -28,7 +28,7 @@ const Nav: FC<NavProp> = ({ theme, setTheme }) => {
                                 window.localStorage.setItem('THEME', newTheme);
                                 setTheme(newTheme);
                             }}
-                            className="cursor-pointer text-2xl"
+                            className="cursor-pointer animate-pulse text-2xl"
                         />
                     </button>
                     <nav>
