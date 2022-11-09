@@ -51,7 +51,7 @@ const PostPage: FC<PostPageProp> = ({ post }) => {
                         src={cover_image}
                         alt=""
                         width={700}
-                        height={500}
+                        height={400}
                     ></Image>
                 </div>
                 <div className="text-sm md:text-lg lg:text-xl  flex justify-center  px-3 py-1  text-gray-700 mr-2 mb-2">
