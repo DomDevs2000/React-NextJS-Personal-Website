@@ -14,14 +14,9 @@ const Nav: FC<NavProp> = ({ theme, setTheme }) => {
         <div className={theme}>
             <section className="max-h-600  dark:bg-gray-900  px-10 font-sans">
                 <div className="flex items-center justify-between border-b border-gray-400 py-8">
-                    <h1  className="uppercase dark:text-white hover:underline hover:scale-105">
+                    <h1 className="uppercase dark:text-white hover:underline hover:scale-105">
                         <Link href="/">
-                            <Link
-                                href="/"
-
-                            >
-                                Dom Devs
-                            </Link>
+                            <Link href="/">Dom Devs</Link>
                         </Link>
                     </h1>
                     <button className="ml-8 px-4 py-2 theme-toggle">
@@ -33,7 +28,7 @@ const Nav: FC<NavProp> = ({ theme, setTheme }) => {
                                 window.localStorage.setItem('THEME', newTheme);
                                 setTheme(newTheme);
                             }}
-                            className="cursor-pointer text-2xl"
+                            className="cursor-pointer animate-pulse text-2xl"
                         />
                     </button>
                     <nav>
@@ -123,10 +118,10 @@ const Nav: FC<NavProp> = ({ theme, setTheme }) => {
                                 <Link href="/projects">Projects</Link>
                             </li>
                             <li className="hover:scale-125 delay-100 ">
-                                <Link href="/contact">Contact</Link>
+                                <Link href="/blog">Blog</Link>
                             </li>
                             <li className="hover:scale-125 delay-100 ">
-                                <Link href="/blog">Blog</Link>
+                                <Link href="/contact">Contact</Link>
                             </li>
                         </ul>
                     </nav>

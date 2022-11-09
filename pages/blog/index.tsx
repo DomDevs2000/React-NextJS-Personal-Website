@@ -56,9 +56,9 @@ const BlogPage: FC<BlogPageProp> = ({ posts }) => {
 
             <div className="text-center  dark:bg-gray-900 mr-2 p-3">
                 <input
-                    className="inline-block dark:bg-gray-200 dark:text-black bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold  mr-2 mb-2"
+                    className="inline-block dark:bg-gray-200 dark:text-black bg-gray-200 rounded-full m-5 px-3 py-1 text-sm font-semibold  mr-2 mb-2"
                     type="text"
-                    placeholder="Search For A Post... &#128270;"
+                    placeholder="Search Blog Posts..."
                     onChange={(e) => {
                         setSearchTerm(e.target.value);
                     }}

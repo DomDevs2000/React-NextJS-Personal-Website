@@ -53,9 +53,9 @@ const ProjectsPage: FC<ProjectsPageProp> = ({ projects }) => {
             </Helmet>
             <div className="text-center mr-5 p-3 dark:bg-gray-900">
                 <input
-                    className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2"
+                    className="inline-block bg-gray-200 rounded-full m-5 px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2"
                     type="text"
-                    placeholder="Search For A Project... &#128270;"
+                    placeholder="Search Projects..."
                     onChange={(e) => {
                         setSearchTerm(e.target.value);
                     }}
