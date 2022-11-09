@@ -85,9 +85,9 @@ interface IPostPageParams extends ParsedUrlQuery {
 }
 
 export const getStaticProps: GetStaticProps<PostPageProp, IPostPageParams> = (
-    context
+    context:any
 ) => {
-    // @ts-ignore
+
     const { slug } = context.params;
 
     const markdownWithMeta = fs.readFileSync(
