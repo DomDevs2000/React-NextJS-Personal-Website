@@ -3,10 +3,9 @@ title: 'Personal Blog'
 date: 'October 20, 2022'
 description: 'Full-stack static site to showcase personal projects & blog posts.'
 cover_image: '/images/projects/personal-blog/personal-blog.jpg'
-
 tags: 'React,NextJS,Typescript,Tailwind'
 ---
-
+View This Project In [GitHub](https://github.com/DomDevs2000/React-NextJS-Personal-Website)
 # What is this project about?
 
 I created this project for two purposes, to be able to showcase my most recent projects as well as a dedicated space to
