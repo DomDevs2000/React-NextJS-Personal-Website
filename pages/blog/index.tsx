@@ -66,7 +66,7 @@ const BlogPage: FC<BlogPageProp> = ({ posts }) => {
 
                 {searchBar}
             </div>
-            <div className="dark:bg-gray-900 sm:p-20 py-10 px-10 grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-3">
+            <div className="dark:bg-gray-900 min-h-screen sm:p-20 py-10 px-10 grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-3">
                 {renderPostCard}
             </div>
         </>
