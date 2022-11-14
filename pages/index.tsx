@@ -55,7 +55,7 @@ const Home: NextPage<HomeProps> = ({ posts, projects }) => {
                 </div>
 
                 <div className="text-5xl flex justify-center gap-12 py-3">
-                    <Link href="#">
+                    <Link href="https://www.linkedin.com/in/aidan-carvalho/">
                         <AiFillLinkedin
                             color="gray"
                             className="cursor-pointer"
