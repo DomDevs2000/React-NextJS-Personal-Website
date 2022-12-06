@@ -22,7 +22,7 @@ I wanted to create back-end only project to experiment and increase my skills de
 ## Why did I decide to use the technologies/languages that I did?
 
 Using [NodeJs](https://nodejs.org/en/) with [ExpressJS](https://expressjs.com) is a great framework for developing
-server-side code. Creating an express server is much more simpler and easier to read than creating a NodeJs http server.
+server-side code. Creating an express server is much simpler and easier to create and read than creating a NodeJs http server.
 
 I decided to use [MongoDB](https://www.mongodb.com/) for this project, using Atlas to create a cluster, and Compass as
 the GUI, it was simple to create a database and collection to store my data.
