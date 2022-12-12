@@ -1,9 +1,9 @@
 ---
-title: 'Full-Stack User Auth'
+title: 'User Authentication'
 date: 'October 14, 2022'
 description: 'Allows users to sign up and login, using PassportJS for authentication'
 cover_image: '/images/projects/user-auth/login.png'
-tags: 'Javascript,Full-Stack,NodeJs,SQL,PassportJS,User-Authentication'
+tags: 'Javascript,NodeJs,PostgreSQL'
 ---
 View this project in [GitHub](https://github.com/DomDevs2000/user-auth)
 
