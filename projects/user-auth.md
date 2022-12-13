@@ -14,5 +14,7 @@ then logged in, with their username being displayed as logged in if successful.
 
 ## What technologies did I use?
 
-The Front-end was created with EJS as the template engine and standard CSS to style the pages. The Back-end was created 
-using NodeJS and ExpressJS and users are stored in a database file using SQlite3. For user authentication I used a package called PassportJS and in order to hash passwords for security, i used another package called BcryptJS.
+The front-end was created with EJS as the template engine and standard CSS to style the pages. The back-end was created 
+using NodeJS and ExpressJS. Originally the users were stored in a Sqlite3 database, but for easier deployment and database management, I decided
+to convert the project to PostgreSQL. For the user authentication I used a package called Passport.js, which is a flexible
+and modular authentication middleware for Node.js. For password security, I used Bcrpyt.js to hash the passwords.
