@@ -6,10 +6,17 @@ cover_image: '/images/projects/game-lib/gamelib.png'
 tags: 'Javascript,Full-Stack,NodeJs,SQL'
 ---
 View This Project In [GitHub](https://github.com/DomDevs2000/GameLib)
-# Why I made this project
 
+## What is this project?
 In this project, I created a video game library in which users can search for their favourite games, developers, genres
-or platforms. I created this using Vanilla JS, NodeJS with ExpressJS for the backend, PassportJS for the user
-authentication, and SQL for database storage. Users can use the login/signup button to create an account or login to an
-existing account, and then create their own wishlists of games by marking each game as "Played, Playing or "Want To
-Play".
+or platforms.
+
+## Why I made this project
+ I created this site using Vanilla JS, the styling was created with standard CSS through pug template engine that was
+ being served from the back end, which itself was created with Node & Express. The app fetches data from a 3rd-party API
+ called [RAWG](https://rawg.io/apidocs). Once the data has been fetched,  I used pug/jade templates to render the data 
+ in the DOM. 
+
+# To do for the future / work in progress
+In the future i would like users to be able to create an account and add games to their wishlist and mark each game as
+"Currently playing", "Played" or "Want to play".

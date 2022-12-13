@@ -7,3 +7,17 @@ tags: 'Javascript,React, CSS'
 ---
 
 View this project in [GitHub](https://github.com/DomDevs2000/react-shopping-cart)
+
+View this project [Live](https://react-shopping-cart-steel-mu.vercel.app/)
+
+# What is this project about?
+
+## Why did I decide to create this project?
+
+## What technologies did I use?
+
+
+
+# To do for the future / work in progress
+
+In the future I will make this website fully responsive, so that it can be displayed on mobile.
