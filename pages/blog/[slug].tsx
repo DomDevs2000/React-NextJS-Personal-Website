@@ -28,9 +28,9 @@ const PostPage: FC<PostPageProp> = ({ post }) => {
             <div className="py-10 px-10 dark:bg-gray-900 dark:text-white ">
                 <h1 className="text-xl md:text-2xl lg:text-3xl  text-center ">
                     {title}
-                </h1>
+                </h1>e
                 <br></br>
-                <p className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold   text-gray-700 mr-2 mb-2">
+                <p className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">
                     Posted on {date} | {read_length} read
                 </p>
                 <p>Tags:</p>
@@ -56,7 +56,7 @@ const PostPage: FC<PostPageProp> = ({ post }) => {
                 </div>
                 <div className="text-sm md:text-lg lg:text-xl  flex justify-center  px-3 py-1  text-gray-700 mr-2 mb-2">
                     <ReactMarkdown
-                        className="prose dark:text-white dark:prose-headings:text-gray-100"
+                        className="prose dark:text-white dark:prose-a:text-gray-400 dark:prose-code:text-gray-400 dark:prose-strong:text-white"
                         remarkPlugins={[remarkGfm]}
                     >
                         {content}
