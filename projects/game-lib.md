@@ -12,11 +12,11 @@ In this project, I created a video game library in which users can search for th
 or platforms.
 
 ## Why I made this project
- I created this site using Vanilla JS, the styling was created with standard CSS through pug template engine that was
+ I created this site using Vanilla Javascript and standard CSS. Pug(formerly known as Jade) was used as the template engine that was
  being served from the back end, which itself was created with Node & Express. The app fetches data from a 3rd-party API
- called [RAWG](https://rawg.io/apidocs). Once the data has been fetched,  I used pug/jade templates to render the data 
+ called [RAWG](https://rawg.io/apidocs). Once the data has been fetched, I used pug templates to render the data 
  in the DOM. 
 
-# To do for the future / work in progress
+### To do for the future / work in progress
 In the future i would like users to be able to create an account and add games to their wishlist and mark each game as
 "Currently playing", "Played" or "Want to play".

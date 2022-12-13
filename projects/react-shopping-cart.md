@@ -18,6 +18,6 @@ View this project [Live](https://react-shopping-cart-steel-mu.vercel.app/)
 
 
 
-# To do for the future / work in progress
+### To do for the future / work in progress
 
 In the future I will make this website fully responsive, so that it can be displayed on mobile.
