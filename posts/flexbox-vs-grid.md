@@ -12,7 +12,7 @@ read_length: '5 min'
 
 In this day and age, there is a plethora of different screen sizes. From standard mobile phones to tablets, laptops and
 large monitor displays. A responsive layout allows a webpage to adapt based on the screen size it is being viewed
-on. Software developers must cater their webpage to not just fit  every screen size, but make sure it
+on. Software developers must cater their webpage to not just fit every screen size, but make sure it
 is well-designed both visually and for the user experience. Gone are the days when developers had to 'hack' their CSS
 with 'inline-block' and 'float'. Nowadays developers use CSS Grid or flexbox to design their web pages.
 
