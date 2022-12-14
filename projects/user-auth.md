@@ -6,6 +6,7 @@ cover_image: '/images/projects/user-auth/login.png'
 tags: 'Javascript,NodeJs,PostgreSQL'
 ---
 View this project in [GitHub](https://github.com/DomDevs2000/user-auth)
+View this project [Live](https://user-auth-fn0e.onrender.com)
 
 # What is this project?
 
@@ -14,7 +15,6 @@ then logged in, with their username being displayed as logged in if successful.
 
 ## What technologies did I use?
 
-The front-end was created with EJS as the template engine and standard CSS to style the pages. The back-end was created 
-using NodeJS and ExpressJS. Originally the users were stored in a Sqlite3 database, but for easier deployment and database management, I decided
-to convert the project to PostgreSQL. For the user authentication I used a package called Passport.js, which is a flexible
+The front end was created with EJS as the template engine and standard CSS to style the pages. The back end was created 
+using NodeJS and ExpressJS. The users ware stored in a Sqlite3 database. For the user authentication I used a package called Passport.js, which is a flexible
 and modular authentication middleware for Node.js. For password security, I used Bcrpyt.js to hash the passwords.
