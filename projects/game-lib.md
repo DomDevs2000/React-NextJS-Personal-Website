@@ -1,7 +1,7 @@
 ---
-title: 'Game-Lib'
+title: 'Video Game Library'
 date: 'October 14, 2022'
-description: 'For gamers to manage their favourite games and wishlists.'
+description: 'For gamers to view & manage their favourite games and wishlists.'
 cover_image: '/images/projects/game-lib/gamelib.png'
 tags: 'Javascript,Full-Stack,Node.js,SQL'
 ---
