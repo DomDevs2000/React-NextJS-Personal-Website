@@ -3,7 +3,7 @@ title: 'User Authentication'
 date: 'October 14, 2022'
 description: 'Allows users to sign up and login, using PassportJS for authentication'
 cover_image: '/images/projects/user-auth/login.png'
-tags: 'Javascript,NodeJs,PostgreSQL'
+tags: 'Javascript,Node.js,SQLite'
 ---
 View this project in [GitHub](https://github.com/DomDevs2000/user-auth)
 View this project [Live](https://user-auth-fn0e.onrender.com)
