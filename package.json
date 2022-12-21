@@ -10,11 +10,12 @@
     "test": "jest"
   },
   "dependencies": {
-    "@emailjs/browser": "^3.7.0",
+    "@emailjs/browser": "^3.10.0",
     "@tailwindcss/typography": "^0.5.7",
     "@types/marked": "^4.0.7",
     "@vercel/analytics": "^0.1.4",
     "dotenv": "^16.0.3",
+    "emailjs": "^4.0.1",
     "gray-matter": "^4.0.3",
     "jest-environment-jsdom": "^29.2.1",
     "marked": "^4.1.1",
