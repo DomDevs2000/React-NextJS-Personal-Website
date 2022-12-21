@@ -7,12 +7,12 @@ import emailjs from '@emailjs/browser';
 
 
 export const Contact = () => {
-    const form = useRef();
+    const form: any = useRef()
 
     const sendEmail = (e: any) => {
         e.preventDefault();
 
-        emailjs.sendForm('service_z4jp556', 'template_bjvafnh', form.current!, 'korlJ5Z3ahc_tBSQw')
+        emailjs.sendForm('service_z4jp556', 'template_bjvafnh', form.current, 'korlJ5Z3ahc_tBSQw')
             .then((result) => {
                 console.log(result.text);
             }, (error) => {
