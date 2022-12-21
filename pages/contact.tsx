@@ -1,6 +1,6 @@
 import React from 'react'
 import Link from 'next/link'
-
+import { Contact } from '../components/contact';
  const contactPage = () => {
     return (
        <section className='min-h-screen dark:bg-gray-900 dark:text-white font-semibold text-center '>
@@ -8,6 +8,7 @@ import Link from 'next/link'
             </h1>
            <Link href='https://www.linkedin.com/in/aidan-carvalho/'>Here!</Link>
            <p>or Email me at contactdomdevs@gmail.com</p>
+           <Contact/>
        </section>
     )
 
