@@ -1,17 +1,14 @@
-import React from 'react'
-import Link from 'next/link'
+import React from 'react';
 import { Contact } from '../components/contact';
- const contactPage = () => {
+
+const contactPage = () => {
     return (
-       <section className='min-h-screen dark:bg-gray-900 dark:text-white font-semibold text-center '>
-        <h1 className=' '>You can contact me on LinkedIn
-            </h1>
-           <Link href='https://www.linkedin.com/in/aidan-carvalho/'>Here!</Link>
-           <p>or Email me at contactdomdevs@gmail.com</p>
-           <Contact/>
-       </section>
-    )
+        <section className='min-h-screen dark:bg-gray-900 dark:text-white font-semibold text-center '>
+            <h1 className='m-15'>Fill In The Form Below And I'll Be In Touch Soon</h1>
+            <Contact />
+        </section>
+    );
 
-}
+};
 
-export default contactPage
+export default contactPage;
