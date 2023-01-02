@@ -1,7 +1,7 @@
 ---
 title: 'Flexbox Vs CSS Grid'
-date: 'October 20 2022'
-description: 'A brief look at the differences between flexbox and css grid,their best use cases and which one I
+date: 'October 20, 2022'
+description: 'A brief look at the differences between flexbox and css grid, their best use cases and which one I
 prefer.'
 cover_image: '/images/posts/flexbox-vs-grid.jpg'
 tags: 'CSS, Flexbox, Grid'
