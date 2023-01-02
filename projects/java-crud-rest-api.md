@@ -12,22 +12,24 @@ View This Project In [GitHub](https://github.com/DomDevs2000/SpringBoot-CRUD-RES
 
 # What is this project about?
 
-I created a paginated REST API with CRUD functionality, using Spring Boot, JPA, MySQL and Maven. The api allows users to
+I created a paginated REST API with CRUD functionality, using Spring Boot, JPA, MySQL and Maven. The API allows users to
 create,update,read or delete a plethora of random users with data such as first and last names as well as age.
-This api also includes custom exception handling and validation. This project is unit tested using JUnit5.
+This API also includes custom exception handling and validation. This project is unit tested using JUnit5 and MockMVC.
 
 
 ## Why did I decide to create this project?
 
-I had previously made a crud rest api using Typescript and Node.js but as I am currently learning Java I decided
-replicate a similar project, to further enhance my skill set and to step out of my comfort zone.
+I had previously made a CRUD REST API using Typescript and Node.js but as I am currently learning Java, I decided
+replicate a similar project, to further enhance my skill set and to step out of my comfort zone. While learning Java I
+wanted to create a backend project to familiarise myself with how a full project is written and structured, and 
+understand its differences and nuances compared to my Typescript and Node.js API project.
 
 
 ### How to use the API endpoints
 
 To get all users use a GET requests to the URL: /users
-To get a single user by id use the URL: /users/id/```id```
-To create a new note, use a POST request to /users/create ensuring "content-type: application/JSON" is set. JSON body should
+To get a single user by id use the URL: /users/```id```
+To create a new user, use a POST request to /users ensuring "content-type: application/JSON" is set. JSON body should
 be as follows:
 
 ```
@@ -38,7 +40,7 @@ be as follows:
 }
 ```
 
-To update a note, use a PUT request to /users/update/```id``` ensuring "content-type: application/JSON" is set. JSON body should
+To update a user, use a PUT request to /users/```id``` ensuring "content-type: application/JSON" is set. JSON body should
 be as follows:
 
 ```
@@ -49,4 +51,10 @@ be as follows:
 }
 ```
 
-To delete a note, use a DELETE request to /users/delete```id``` and the API will delete the note by the id.
+To delete a user, use a DELETE request to /users/```id``` and the API will delete the user by the id.
+
+To get a user by age, use a GET request to /users/age/```age```.
+
+To get a user by first name, submit a GET request to /users/firstname/```firstname```.
+
+To get a user by first name, submit a GET request to /users/lastname/```lastname```.
