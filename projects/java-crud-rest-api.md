@@ -27,9 +27,9 @@ understand its differences and nuances compared to my Typescript and Node.js API
 
 ### How to use the API endpoints
 
-To get all users use a GET requests to the URL: /users
-To get a single user by id use the URL: /users/```id```
-To create a new user, use a POST request to /users ensuring "content-type: application/JSON" is set. JSON body should
+To get all users submit a GET request to  /users
+To get a single user by id, submit a GET request to  /users/```id```
+To create a new user, submit a POST request to /users ensuring "content-type: application/JSON" is set. JSON body should
 be as follows:
 
 ```
@@ -40,7 +40,7 @@ be as follows:
 }
 ```
 
-To update a user, use a PUT request to /users/```id``` ensuring "content-type: application/JSON" is set. JSON body should
+To update a user, submit a PUT request to /users/```id``` ensuring "content-type: application/JSON" is set. JSON body should
 be as follows:
 
 ```
@@ -51,9 +51,9 @@ be as follows:
 }
 ```
 
-To delete a user, use a DELETE request to /users/```id``` and the API will delete the user by the id.
+To delete a user, submit a DELETE request to /users/```id``` and the API will delete the user by the id.
 
-To get a user by age, use a GET request to /users/age/```age```.
+To get a user by age, submit a GET request to /users/age/```age```.
 
 To get a user by first name, submit a GET request to /users/firstname/```firstname```.
 
