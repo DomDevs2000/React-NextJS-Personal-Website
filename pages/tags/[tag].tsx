@@ -55,11 +55,11 @@ export const getStaticProps: GetStaticProps<TagPageProp, ITagPageParams> = (
     const { tag } = context.params;
     //gets slug and frontmatter by tags for projects
     const projectSlug = fs
-        .readdirSync('/projects', { withFileTypes: true })
+        .readdirSync('projects', { withFileTypes: true })
         .map((file) => file.name.replace('.md', ''));
     const metaMarkdowns = projectSlug.map((slug) => {
         const projectMetaMarkdowns = fs.readFileSync(
-            path.join('/projects', slug + '.md'),
+            path.join('projects', slug + '.md'),
             'utf8'
         );
         const { data: frontmatter, content } = matter(projectMetaMarkdowns);
