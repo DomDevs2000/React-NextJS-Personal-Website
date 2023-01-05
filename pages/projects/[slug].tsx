@@ -26,12 +26,12 @@ const ProjectPage: FC<ProjectPageProp> = ({ project }) => {
             <Helmet>
                 <title>Dom Devs | {title}</title>
             </Helmet>
-            <div className="py-10 px-10 dark:bg-gray-900 dark:text-white  ">
-                <h1 className="text-xl md:text-2xl lg:text-3xl text-center">
+            <div className="py-10 px-10 dark:bg-gray-900 dark:text-white text-center">
+                <h1 className="text-xl md:text-2xl lg:text-3xl">
                     {title}
                 </h1>
                 <br></br>
-                <p className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold  text-gray-700 mr-2 mb-2">
+                <p className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">
                     Posted on {date}
                 </p>
                 <p>Tags:</p>
@@ -51,7 +51,7 @@ const ProjectPage: FC<ProjectPageProp> = ({ project }) => {
                     <Image src={cover_image} alt="" width={700} height={400} />
                 </div>
 
-                <div className="text-sm md:text-lg lg:text-xl   flex justify-center  px-3 py-1  text-gray-700 mr-2 mb-2">
+                <div className="text-sm md:text-lg lg:text-xl flex justify-center px-3 py-1  text-gray-700 mr-2 mb-2">
                     <ReactMarkdown
                         className="prose dark:text-white dark:prose-a:text-gray-400 dark:prose-headings:text-white dark:prose-strong:text-white dark:prose-code:text-gray-400"
                         remarkPlugins={[remarkGfm]}
