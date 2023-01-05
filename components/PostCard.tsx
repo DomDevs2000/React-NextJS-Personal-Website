@@ -23,7 +23,7 @@ export const PostCard: FC<PostCardProp> = ({ post }) => {
     return (
         <div className="dark:gray-900 cursor-pointer">
             <Link href={`/blog/${slug}`}>
-                <div className="max-h-fit max-w-fit rounded overflow-hidden shadow-lg dark:bg-slate-500 dark:shadow-slate-600 hover:scale-105 delay-100 hover:shadow-2xl transition-all duration-150 ease-out hover:ease-in ">
+                <div className="max-h-fit max-w-fit rounded overflow-hidden shadow-lg dark:bg-violet-700 dark:shadow-purple-600 hover:scale-105 delay-100 hover:shadow-2xl transition-all duration-150 ease-out hover:ease-in ">
                     <Image
                         src={cover_image}
                         alt=""

@@ -54,7 +54,7 @@ const BlogPage: FC<BlogPageProp> = ({ posts }) => {
                 <title>Dom Devs | Blog</title>
             </Helmet>
 
-            <div className="text-center  dark:bg-gray-900  p-3">
+            <div className="text-center dark:bg-black p-3">
                 <input
                     className="inline-block dark:bg-gray-200 dark:text-black bg-gray-200 rounded-full m-5 px-3 py-1 text-sm font-semibold  mr-2 mb-2"
                     type="text"
@@ -66,7 +66,7 @@ const BlogPage: FC<BlogPageProp> = ({ posts }) => {
 
                 {searchBar}
             </div>
-            <div className="dark:bg-gray-900 min-h-screen sm:p-20 py-10 px-10 grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-3">
+            <div className="dark:bg-black min-h-screen sm:p-20 py-10 px-10 grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-3">
                 {renderPostCard}
             </div>
         </>

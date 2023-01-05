@@ -39,7 +39,7 @@ const Home: NextPage<HomeProps> = ({ posts, projects }) => {
                 <link rel="icon" href="/favicon.ico" />
             </Head>
 
-            <main className="bg-white px-10 md:px-20 lg:px-40 dark:bg-gray-900 font-sans">
+            <main className="bg-white px-10 md:px-20 lg:px-40 dark:bg-black font-sans">
                 <div className="text-center p-10 dark:text-white">
                     <h2 className="text-5xl text-gray-700 py-2 dark:text-slate-400 md:text-6xl">
                         Aidan Dominic Carvalho

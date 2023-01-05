@@ -39,7 +39,7 @@ const ProjectsPage: FC<ProjectsPageProp> = ({ projects }) => {
         .map((val, key) => {
             if (searchTerm)
                 return (
-                    <div className={'dark:text-white dark:bg-gray-900'}>
+                    <div className={'dark:text-white dark:bg-black'}>
                         <Link href={`/projects/${val.slug}`} key={'projects'}>
                             {val.frontmatter.title}
                         </Link>
@@ -51,7 +51,7 @@ const ProjectsPage: FC<ProjectsPageProp> = ({ projects }) => {
             <Helmet>
                 <title>Dom Devs | Projects</title>
             </Helmet>
-            <div className="text-center p-3 dark:bg-gray-900">
+            <div className="text-center p-3 dark:bg-black">
                 <input
                     className="inline-block bg-gray-200 rounded-full m-5 px-3 py-1 text-sm font-semibold npm rutext-gray-700 mr-2 mb-2"
                     type="text"
@@ -63,7 +63,7 @@ const ProjectsPage: FC<ProjectsPageProp> = ({ projects }) => {
 
                 {searchBar}
             </div>
-            <div className="dark:bg-gray-900 min-h-screen sm:p-20 py-10 px-10 grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-3">
+            <div className="dark:bg-black min-h-screen sm:p-20 py-10 px-10 grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-3">
                 {renderProjectCard}
             </div>
         </>

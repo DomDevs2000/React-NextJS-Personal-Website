@@ -12,7 +12,7 @@ const Nav: FC<NavProp> = ({ theme, setTheme }) => {
 
     return (
         <div className={theme}>
-            <section className="max-h-600  dark:bg-gray-900  px-10 font-sans">
+            <section className="max-h-600  dark:bg-black  px-10 font-sans">
                 <div className="flex items-center justify-between border-b border-gray-400 py-8">
                     <h1 className="uppercase dark:text-white hover:underline hover:scale-105">
                         <Link href="/">
@@ -28,7 +28,7 @@ const Nav: FC<NavProp> = ({ theme, setTheme }) => {
                                 window.localStorage.setItem('THEME', newTheme);
                                 setTheme(newTheme);
                             }}
-                            className="cursor-pointer animate-pulse text-2xl"
+                            className="cursor-pointer  text-2xl"
                         />
                     </button>
                     <nav>
