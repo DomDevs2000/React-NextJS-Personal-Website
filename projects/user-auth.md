@@ -1,7 +1,7 @@
 ---
 title: 'User Authentication'
 date: 'October 14, 2022'
-description: 'Allows users to sign up and login, using PassportJS for authentication'
+description: 'Allows users to sign up and login, using PassportJS for authentication.'
 cover_image: '/images/projects/user-auth/login.png'
 tags: 'Typescript,Node.js,Express,SQLite'
 ---

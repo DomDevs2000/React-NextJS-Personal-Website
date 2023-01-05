@@ -1,9 +1,9 @@
 ---
 title: 'React Shopping Cart'
 date: 'November 29, 2022'
-description: 'Shopping Cart to learn/showcase state management using React'
+description: 'Video game shopping cart using React to learn various React Hooks and state management.'
 cover_image: '/images/projects/react-shopping-cart/react-shopping-cart.png'
-tags: 'Javascript,React, CSS'
+tags: 'Javascript,React,CSS,Parcel'
 ---
 
 View this project in [GitHub](https://github.com/DomDevs2000/react-shopping-cart)
