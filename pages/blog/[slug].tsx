@@ -28,7 +28,7 @@ const PostPage: FC<PostPageProp> = ({ post }) => {
             <div className="py-10 px-10 dark:bg-gray-900 dark:text-white ">
                 <h1 className="text-xl md:text-2xl lg:text-3xl  text-center ">
                     {title}
-                </h1>e
+                </h1>
                 <br></br>
                 <p className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">
                     Posted on {date} | {read_length} read
