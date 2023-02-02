@@ -1,5 +1,5 @@
 ---
-title: 'Unit Testing'
+title: 'Unit Testing With Java'
 date: 'October 14, 2022'
 description: 'My thoughts on Unit testing and Test-Driven-Development and why I think it is important'
 cover_image: '/images/posts/unit-testing.jpg'
@@ -7,49 +7,76 @@ tags: ''
 read_length: '4 min'
 ---
 
-Lorem markdownum fine incustoditam unda factura versum occuluere Aeneas, iuvat
-haec praepes partes epulae in egisse de. Caecisque ter
-manus. Munere in exhalat, ferre sed [habe quaeque saepe](http://ne.org/fretum)
-verba caput ferarum _nubila_? Patriam Cyparisse tamen, **saxum** fide postponere
-pavida ne omnes etiam, atque. Sonuit omina sed sine haerebat illic fit a mora
-in.
+**Unit testing** is a critical aspect of software development that helps ensure that individual units of code are
+functioning as intended, and that changes made to code do not break existing functionality. In Java, there are a number
+of tools and frameworks available to make unit testing easier and more efficient.
+JUnit is one of the most widely used Java unit testing frameworks. It provides a simple and straightforward API for
+writing and running tests, and supports test cases, fixtures, test suites, and test runners.
 
-1. Serrae enim Etruscam aquis
-2. Et premis et flumine frontem minatur oppressos
-3. Inquam rector Icarus possum vim tumulo propiusque
-4. Vulnus se Latreus
-5. Aptumque bis
+Unit testing in Java works by writing test cases for individual units of code (such as methods or classes) to verify
+their functionality and correctness. The goal of unit testing is to isolate each unit of code and test it in isolation
+from the rest of the code. This helps ensure that each unit of code works as expected and that any changes made to the
+code do not break existing functionality.
 
-## Turpius Aegides membris colat volentes fallere
+Here are the basic steps to implement unit testing in Java:
 
-Ille fida formosus, et addunt viscera perdidit ad pondere quia tellus
-consequitur et quoque scinditque in. Ratis laborum instabat quaedam partem
-Phoebus, manus _partibus poenas_. Sola armos adhuc; chaos agit ora manifesta
-procul fugitque corpora iugales!
+1) Choose a testing framework: There are several popular Java testing frameworks, such as JUnit, TestNG, and Mockito,
+   that you can use to write and run unit tests.
 
-    
-## O contra diu
+2) Write test cases: For each unit of code that you want to test, write a test case that tests its behavior and verifies
+   that it works as expected.
 
-Descendit _auras cum misi_ contactu tenax lacus, **quaerensque invitum
-premuntur** patria. Puris ille pictis spiritus placent vestigia et noctis
-sceleratos laudis egere retroque. Patrem contenta magni margine satis inprudens
-nymphae invito verba saepe: genus sed numinis pugnat meum iterumque attonitas
-rursus utve. Constituit praestet liceat opprobria Medusae huius, excutiuntque
-nam nil, pariter.
+3) Run the tests: Use the testing framework to run the test cases. The testing framework will check the results of each
+   test case and report whether the test passed or failed.
 
-Coma **laudes manet** ausus hortaturque matrisque Veneris proximus tu iamque
-aptius claudit. Tmolus tetigere iussos animumque quid poplite Hippotaden? Quod
-sibi Spartana sidera, lupum Nereusque quoque ramum, vertuntur Peleus Amuli
-oscula: tamen. Surgere Epidaurius movit crede soceri Euboicam quoque.
+4) Analyze the results: If any test cases fail, examine the failure and fix the code if necessary. If all test cases
+   pass, the unit of code can be considered thoroughly tested and ready for deployment.
 
-Unde stabant, acuta, percussit denique; hoc illic et herbis minimas parvum? Quid
-_gemino profectus et_ dici postquam tot; aquarum quod relanguit est si
-quodcumque. Ossaque protinus, quod somno est, repetit, hoc passu est. Qui devia;
-respice humum vobis oscula, in Lotis nymphae.
+5) Repeat for each unit of code: Repeat the above steps for each unit of code that you want to test.
 
-Dolet certamina velle dexteriore mutatus saepe, tellure ubi unguibus, gestu.
-Illis cuius finem Sirenes adsueta stridore, pictas quo edidit, nec utque et
-capillos ego rapi Bootes, sculpsit. Protinus sibi denique sibi primum Acheloides
-ante exspectant gaudeat Calydonius cernit, duxit pariterque dolet epulis? Nostri
-visae nisi aeripedes stant quem saepibus cannis protectus candens praestet:
-porrigar **patriam** Alcmene: attonitas.
+Unit testing helps improve the quality of the code by catching errors early in the development process, making it easier
+and less time-consuming to fix them. Additionally, unit testing provides documentation for the code, as the test cases
+serve as examples of how the code should behave in various scenarios.
+
+In this blog post I will be using [JUnit](https://junit.org/junit5/docs/current/api/) to explain and give examples of unit testing. To get started with JUnit, you
+will need to write test cases to verify the functionality of individual units of code. A
+test case is a method that takes inputs, runs the code under test, and verifies that the output meets expectations.
+JUnit provides several annotations to mark methods as test cases, including @Test, @Before, and @After.
+
+**@Test** is used to indicate that a method is a test case. The test case should verify that the code being tested
+produces
+the expected results. If the code produces unexpected results, the test case will fail, signaling that there is a bug
+that needs to be fixed.
+
+**Here is an example:**
+
+```
+import org.junit.Test;
+import static org.junit.Assert.assertEquals;
+
+public class ThisIsAnExampleTest {
+  
+  @Test
+  public void testExample() {
+    Example example = new Example();
+    int result = example.subtract(5, 3); 
+    assertEquals(2, result); 
+  }
+}
+```
+
+In this example, the ThisIsAnExampleTest class contains a single test case testExample, which tests the _subtract_
+method of
+the
+Example
+class. The test case takes two inputs (5 and 3), calls the _subtract_ method with these inputs, and then verifies that
+the result is 2 using the assertEquals method from JUnit. If the result of the _subtract_ method is not 2, the test case will fail
+and an error message will be displayed indicating that the test failed.
+
+In conclusion, unit testing is a crucial practice in software development that helps ensure that code is
+functioning as expected and that changes made to code do not break existing functionality. JUnit is a popular Java unit
+testing framework that provides a simple and straightforward API for writing and running tests. By incorporating unit
+testing into your development process, you can save time and effort, and improve the overall quality of your Java
+applications. Additionally, you can catch bugs early in the development process and improve the overall
+quality of your code. It also makes it easier to make changes to the code in the future, as you can be confident that
+your changes won't break existing functionality.
