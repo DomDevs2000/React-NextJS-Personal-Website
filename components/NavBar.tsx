@@ -15,7 +15,7 @@ const Nav: FC<NavProp> = ({ theme, setTheme }) => {
             <nav className="bg-blue-700">
                 <div className="flex items-center justify-between border-b border-gray-400 py-8">
                     <Link href="/">
-                        <div className="inline-flex  px-4 p-2 text-xl font-bold uppercase tracking-wider text-white hover:cursor-pointer hover:scale-110 hover:bg-blue-800">
+                        <div className="inline-flex  rounded-md px-4 p-2 text-xl font-bold uppercase tracking-wider text-white hover:cursor-pointer hover:scale-110 hover:bg-blue-800">
                             Dom Devs
                         </div>
                     </Link>
