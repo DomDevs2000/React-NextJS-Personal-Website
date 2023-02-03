@@ -2,7 +2,7 @@
 title: 'Unit Testing With Java'
 date: 'October 14, 2022'
 description: 'My thoughts on Unit testing and Test-Driven-Development and why I think it is important'
-cover_image: '/images/posts/JUnit-logo.png'
+cover_image: '/images/posts/unit-testing.jpg'
 tags: 'Unit Testing, TDD'
 read_length: '4 min'
 ---
