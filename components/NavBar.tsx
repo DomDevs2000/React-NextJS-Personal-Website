@@ -13,7 +13,7 @@ const Nav: FC<NavProp> = ({ theme, setTheme }) => {
     return (
         <div className={theme}>
             <nav className="bg-blue-700">
-                <div className="flex items-center justify-between border-b border-gray-400 py-8">
+                <div className="flex items-center justify-between border-b border-gray-400 py-8 px-8">
                     <Link href="/">
                         <div className="inline-flex  rounded-md px-4 p-2 text-xl font-bold uppercase tracking-wider text-white hover:cursor-pointer hover:scale-110 hover:bg-blue-800">
                             Dom Devs
@@ -52,7 +52,7 @@ const Nav: FC<NavProp> = ({ theme, setTheme }) => {
                                     }
                                 >
                                     <button
-                                        className="CROSS-ICON text-white absolute top-0 right-0 px-8 py-8"
+                                        className="CROSS-ICON  text-white absolute top-0 right-0 px-8 py-8"
                                         onClick={() => setIsNavOpen(false)}
                                     >
                                         <svg
@@ -115,7 +115,7 @@ const Nav: FC<NavProp> = ({ theme, setTheme }) => {
                             )}
                         </section>
 
-                        <div className="MENU-LINK-MOBILE-OPEN w-full lg:inline-flex lg:w-auto mt-2 lg:mt-0">
+                        <div className="hidden w-full lg:inline-flex lg:w-auto mt-2 lg:mt-0">
                             <ul className="flex lg:flex-row flex-col space-y-y lg:space-y-0 lg:space-x-2">
                                 <li className="flex px-4 py-2 font-medium text-white  rounded-md  hover:scale-110  hover:bg-blue-800">
                                     <Link href="/projects">Projects</Link>

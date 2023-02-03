@@ -21,7 +21,7 @@ export const PostCard: FC<PostCardProp> = ({ post }) => {
         content
     } = post;
     return (
-        <div className="rounded overflow-hidden shadow-lg dark:bg-blue-800 dark:shadow-blue-600 hover:scale-105 delay-100 hover:shadow-xl transition-all duration-150 ease-out hover:ease-in cursor-pointer">
+        <div className="rounded overflow-hidden shadow-lg dark:bg-blue-700 dark:shadow-blue-600 hover:scale-105 delay-100 hover:shadow-xl transition-all duration-150 ease-out hover:ease-in cursor-pointer">
             <Link href={`/blog/${slug}`}>
                 <div className="w-full rounded-lg">
                     <Image
