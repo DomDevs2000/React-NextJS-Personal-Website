@@ -53,13 +53,12 @@ export const getStaticProps: GetStaticProps<TagPageProp, ITagPageParams> = (
 ) => {
     // @ts-ignore
     const { tag } = context.params;
-    //gets slug and frontmatter by tags for projects
     const projectSlug = fs
-        .readdirSync('projects', { withFileTypes: true })
+        .readdirSync('./projects', { withFileTypes: true })
         .map((file) => file.name.replace('.md', ''));
     const metaMarkdowns = projectSlug.map((slug) => {
         const projectMetaMarkdowns = fs.readFileSync(
-            path.join('projects', slug + '.md'),
+            path.join('./projects', slug + '.md'),
             'utf8'
         );
         const { data: frontmatter, content } = matter(projectMetaMarkdowns);
@@ -69,10 +68,8 @@ export const getStaticProps: GetStaticProps<TagPageProp, ITagPageParams> = (
             title: frontmatter.title,
             description: frontmatter.description,
             cover_image: frontmatter.cover_image
-            // read_length: frontmatter.read_length
         };
         return { frontmatter: fm, slug, content };
-        // return { frontmatter: frontmatter as TFrontmatter, slug, content };
     });
     const projects: TProject[] = metaMarkdowns.filter(({ frontmatter }) => {
         const tags: string[] = frontmatter.tags;
@@ -117,7 +114,6 @@ export const getStaticProps: GetStaticProps<TagPageProp, ITagPageParams> = (
     return {
         props: {
             projects
-            // posts
         }
     };
 };
