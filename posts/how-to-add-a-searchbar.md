@@ -3,7 +3,7 @@ title: 'How To Create A Search Bar'
 date: 'October 18, 2022'
 description: 'A short and sweet tutorial on how to create and implement a search bar in React'
 cover_image: '/images/posts/search-bar.jpg'
-tags: ''
+tags: 'React'
 read_length: '3 min'
 ---
 
