@@ -33,7 +33,7 @@ export const PostCard: FC<PostCardProp> = ({ post }) => {
                     />
                     <div className="p-4">
                         <h4 className="text-xl font-semibold text-blue-600 dark:text-white cursor-pointer ">
-                            <Link href={`/projects/${slug}`}>{title}</Link>
+                            <Link href={`/blog/${slug}`}>{title}</Link>
                         </h4>
                         <p className="mb-2 leading-normal dark:text-white">
                             {description}
