@@ -1,5 +1,5 @@
 ---
-title: 'How To Add Search'
+title: 'How To Create A Search Bar'
 date: 'October 18, 2022'
 description: 'A short and sweet tutorial on how to create and implement a search bar in React'
 cover_image: '/images/posts/search-bar.jpg'
@@ -27,10 +27,6 @@ consequitur et quoque scinditque in. Ratis laborum instabat quaedam partem
 Phoebus, manus _partibus poenas_. Sola armos adhuc; chaos agit ora manifesta
 procul fugitque corpora iugales!
 
-    var ethics_font_drive = cycleSystemProgram + deprecatedTransferIp.ide(3) /
-            rgb + nybbleBaseband;
-    permalinkCertificateMacintosh(ergonomicsIsdnDns);
-    boot = bridgeDaemonActive;
 
 ## O contra diu
 

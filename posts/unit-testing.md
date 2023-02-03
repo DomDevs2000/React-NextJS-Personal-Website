@@ -3,7 +3,7 @@ title: 'Unit Testing With Java'
 date: 'October 14, 2022'
 description: 'My thoughts on Unit testing and Test-Driven-Development and why I think it is important'
 cover_image: '/images/posts/JUnit-logo.png'
-tags: ''
+tags: 'Java, JUnit, Unit Testing, TDD'
 read_length: '4 min'
 ---
 
@@ -38,7 +38,8 @@ Unit testing helps improve the quality of the code by catching errors early in t
 and less time-consuming to fix them. Additionally, unit testing provides documentation for the code, as the test cases
 serve as examples of how the code should behave in various scenarios.
 
-In this blog post I will be using [JUnit](https://junit.org/junit5/docs/current/api/) to explain and give examples of unit testing. To get started with JUnit, you
+In this blog post I will be using [JUnit](https://junit.org/junit5/docs/current/api/) to explain and give examples of
+unit testing. To get started with JUnit, you
 will need to write test cases to verify the functionality of individual units of code. A
 test case is a method that takes inputs, runs the code under test, and verifies that the output meets expectations.
 JUnit provides several annotations to mark methods as test cases, including @Test, @Before, and @After.
@@ -70,7 +71,8 @@ method of
 the
 Example
 class. The test case takes two inputs (5 and 3), calls the _subtract_ method with these inputs, and then verifies that
-the result is 2 using the assertEquals method from JUnit. If the result of the _subtract_ method is not 2, the test case will fail
+the result is 2 using the assertEquals method from JUnit. If the result of the _subtract_ method is not 2, the test case
+will fail
 and an error message will be displayed indicating that the test failed.
 
 In conclusion, unit testing is a crucial practice in software development that helps ensure that code is
