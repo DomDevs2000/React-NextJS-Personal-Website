@@ -25,7 +25,7 @@ export const ProjectCard: FC<ProjectCardProp> = ({ project }) => {
         );
     });
     return (
-        <div className="rounded overflow-hidden shadow-lg dark:bg-blue-800 dark:shadow-blue-600 hover:scale-105 delay-100 hover:shadow-2xl transition-all duration-150 ease-out hover:ease-in">
+        <div className="rounded overflow-hidden shadow-lg dark:bg-blue-800 dark:shadow-blue-600 hover:scale-105 delay-100 hover:shadow-2xl transition-all duration-150 ease-out hover:ease-in cursor-pointer">
             <Link href={`/projects/${slug}`}>
                 <div className="w-full rounded-lg">
                     <Image
@@ -36,7 +36,7 @@ export const ProjectCard: FC<ProjectCardProp> = ({ project }) => {
                         alt="image"
                     />
                     <div className="p-4">
-                        <h4 className="text-xl font-semibold text-blue-600 dark:text-white cursor-pointer ">
+                        <h4 className="text-xl font-semibold text-blue-600 dark:text-white">
                             <Link href={`/projects/${slug}`}>{title}</Link>
                         </h4>
                         <p className="mb-2 leading-normal dark:text-white">
