@@ -34,7 +34,7 @@ const Nav: FC<NavProp> = ({ theme, setTheme }) => {
                     </button>
                     <nav>
                         {/*mobile menu code*/}
-                        <section className="MOBILE-MENU flex lg:hidden">
+                        <section className="MOBILE-MENU flex lg:hidden bg-blue-700">
                             <button
                                 className="HAMBURGER-ICON space-y-2 ml-auto"
                                 onClick={() => setIsNavOpen((prev) => !prev)}
@@ -79,7 +79,7 @@ const Nav: FC<NavProp> = ({ theme, setTheme }) => {
                                         </svg>
                                     </button>
                                     <ul className="MENU-LINK-MOBILE-OPEN flex flex-col items-center justify-between min-h-[250px]">
-                                        <li className="flex px-4 py-2 font-medium text-white  rounded-md hover:scale-110 hover:bg-blue-800">
+                                        <li className="flex px-4 py-2 font-medium text-white rounded-md hover:scale-110 hover:bg-blue-800">
                                             <button
                                                 onClick={() =>
                                                     setIsNavOpen(false)
@@ -115,7 +115,7 @@ const Nav: FC<NavProp> = ({ theme, setTheme }) => {
                             )}
                         </section>
 
-                        <div className="MENU-LINK-MOBILE-OPEN  w-full lg:inline-flex lg:w-auto mt-2 lg:mt-0">
+                        <div className="MENU-LINK-MOBILE-OPEN w-full lg:inline-flex lg:w-auto mt-2 lg:mt-0">
                             <ul className="flex lg:flex-row flex-col space-y-y lg:space-y-0 lg:space-x-2">
                                 <li className="flex px-4 py-2 font-medium text-white  rounded-md  hover:scale-110  hover:bg-blue-800">
                                     <Link href="/projects">Projects</Link>
@@ -150,7 +150,7 @@ const Nav: FC<NavProp> = ({ theme, setTheme }) => {
         
         
       }
-      .dark .showMenuNav{
+      .showMenuNav{
         background-color: rgb(29,78,216)
       }
     `}</style>
@@ -159,9 +159,8 @@ const Nav: FC<NavProp> = ({ theme, setTheme }) => {
         </div>
     );
 };
-{
+
     /*<nav className="bg-blue-700" >*/
-}
 {
     /*    <div className="container flex flex-wrap py-2 mx-auto">*/
 }
