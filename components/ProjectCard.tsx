@@ -31,8 +31,8 @@ export const ProjectCard: FC<ProjectCardProp> = ({ project }) => {
                     <Image
                         className=""
                         src={cover_image}
-                        width={500}
-                        height={250}
+                        width={600}
+                        height={350}
                         alt="image"
                     />
                     <div className="p-4">

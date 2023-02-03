@@ -27,7 +27,7 @@ export const PostCard: FC<PostCardProp> = ({ post }) => {
                     <Image
                         className=""
                         src={cover_image}
-                        width={500}
+                        width={600}
                         height={250}
                         alt="image"
                     />
