@@ -12,10 +12,10 @@ const Nav: FC<NavProp> = ({ theme, setTheme }) => {
 
     return (
         <div className={theme}>
-            <nav className="bg-blue-700">
+            <nav className="bg-red-600">
                 <div className="flex items-center justify-between border-b border-gray-400 py-8 px-8">
                     <Link href="/">
-                        <div className="inline-flex  rounded-md px-4 p-2 text-xl font-bold uppercase tracking-wider text-white hover:cursor-pointer hover:scale-110 hover:bg-blue-800">
+                        <div className="inline-flex  rounded-md px-4 p-2 text-xl font-bold uppercase tracking-wider text-white hover:cursor-pointer hover:scale-110 hover:bg-red-800">
                             Dom Devs
                         </div>
                     </Link>
@@ -34,14 +34,14 @@ const Nav: FC<NavProp> = ({ theme, setTheme }) => {
                     </button>
                     <nav>
                         {/*mobile menu code*/}
-                        <section className="MOBILE-MENU flex lg:hidden bg-blue-700">
+                        <section className="MOBILE-MENU flex lg:hidden bg-red-600">
                             <button
                                 className="HAMBURGER-ICON space-y-2 ml-auto"
                                 onClick={() => setIsNavOpen((prev) => !prev)}
                             >
-                                <span className="block h-0.5 w-8 animate-pulse  bg-white"></span>
-                                <span className="block h-0.5 w-8 animate-pulse  bg-white"></span>
-                                <span className="block h-0.5 w-8 animate-pulse  bg-white"></span>
+                                <span className="block h-0.5 w-8  bg-white"></span>
+                                <span className="block h-0.5 w-8  bg-white"></span>
+                                <span className="block h-0.5 w-8  bg-white"></span>
                             </button>
                             {isNavOpen && (
                                 <div
@@ -79,7 +79,7 @@ const Nav: FC<NavProp> = ({ theme, setTheme }) => {
                                         </svg>
                                     </button>
                                     <ul className="MENU-LINK-MOBILE-OPEN flex flex-col items-center justify-between min-h-[250px]">
-                                        <li className="flex px-4 py-2 font-medium text-white rounded-md hover:scale-110 hover:bg-blue-800">
+                                        <li className="flex px-4 py-2 font-medium text-white rounded-md hover:scale-110 hover:bg-red-800">
                                             <button
                                                 onClick={() =>
                                                     setIsNavOpen(false)
@@ -90,7 +90,7 @@ const Nav: FC<NavProp> = ({ theme, setTheme }) => {
                                                 </Link>
                                             </button>
                                         </li>
-                                        <li className="flex px-4 py-2 font-medium text-white  rounded-md  hover:scale-110 hover:bg-blue-800">
+                                        <li className="flex px-4 py-2 font-medium text-white  rounded-md  hover:scale-110 hover:bg-red-800">
                                             <button
                                                 onClick={() =>
                                                     setIsNavOpen(false)
@@ -99,7 +99,7 @@ const Nav: FC<NavProp> = ({ theme, setTheme }) => {
                                                 <Link href="/blog">Blog</Link>
                                             </button>
                                         </li>
-                                        <li className="flex px-4 py-2 font-medium text-white rounded-md hover:scale-110  hover:bg-blue-800">
+                                        <li className="flex px-4 py-2 font-medium text-white rounded-md hover:scale-110  hover:bg-red-800">
                                             <button
                                                 onClick={() =>
                                                     setIsNavOpen(false)
@@ -117,14 +117,14 @@ const Nav: FC<NavProp> = ({ theme, setTheme }) => {
 
                         <div className="hidden w-full lg:inline-flex lg:w-auto mt-2 lg:mt-0">
                             <ul className="flex lg:flex-row flex-col space-y-y lg:space-y-0 lg:space-x-2">
-                                <li className="flex px-4 py-2 font-medium text-white  rounded-md  hover:scale-110  hover:bg-blue-800">
+                                <li className="flex px-4 py-2 font-medium text-white  rounded-md  hover:scale-110  hover:bg-red-800">
                                     <Link href="/projects">Projects</Link>
                                 </li>
-                                <li className="flex px-4 py-2 font-medium text-white  rounded-md  hover:scale-110  hover:bg-blue-800">
+                                <li className="flex px-4 py-2 font-medium text-white  rounded-md  hover:scale-110  hover:bg-red-800">
                                     <Link href="/blog">Blog</Link>
                                 </li>
 
-                                <li className="flex px-4 py-2 font-medium text-white rounded-md  hover:scale-110  hover:bg-blue-800">
+                                <li className="flex px-4 py-2 font-medium text-white rounded-md  hover:scale-110  hover:bg-red-800">
                                     <Link href="/contact">Contact Me</Link>
                                 </li>
                             </ul>
@@ -151,7 +151,7 @@ const Nav: FC<NavProp> = ({ theme, setTheme }) => {
         
       }
       .showMenuNav{
-        background-color: rgb(29,78,216)
+        background-color: rgb(220,38,38)
       }
     `}</style>
                 </div>
