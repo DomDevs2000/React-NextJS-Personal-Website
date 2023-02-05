@@ -39,7 +39,7 @@ const BlogPage: FC<BlogPageProp> = ({ posts }) => {
                 return (
                     <div
                         className={'dark:text-white dark:bg-gray-900'}
-                        key={searchTerm}
+                        key={'blog'}
                     >
                         <Link href={`/blog/${val.slug}`}>
                             {val.frontmatter.title}
