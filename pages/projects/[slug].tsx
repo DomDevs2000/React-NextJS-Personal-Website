@@ -25,6 +25,10 @@ const ProjectPage: FC<ProjectPageProp> = ({ project }) => {
         <>
             <Helmet>
                 <title>Dom Devs | {title}</title>
+                <meta
+                    name="Dom Devs"
+                    content="Dom Devs blog portfolio projects"
+                />
             </Helmet>
             <div className="py-10 px-10 dark:bg-black dark:text-white text-center">
                 <h1 className="text-xl md:text-2xl lg:text-3xl">

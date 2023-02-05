@@ -50,6 +50,10 @@ const ProjectsPage: FC<ProjectsPageProp> = ({ projects }) => {
         <>
             <Helmet>
                 <title>Dom Devs | Projects</title>
+                <meta
+                    name="Dom Devs"
+                    content="Dom Devs blog portfolio projects"
+                />
             </Helmet>
             <div className="dark:bg-black min-h-screen">
             <div className="text-center p-3 dark:bg-black">

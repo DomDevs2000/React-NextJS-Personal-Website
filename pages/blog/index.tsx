@@ -53,6 +53,10 @@ const BlogPage: FC<BlogPageProp> = ({ posts }) => {
 
             <Helmet>
                 <title>Dom Devs | Blog</title>
+                <meta
+                    name="Dom Devs"
+                    content="Dom Devs blog portfolio projects"
+                />
             </Helmet>
             <div className="dark:bg-black min-h-screen">
             <div className="text-center dark:bg-black  p-3">

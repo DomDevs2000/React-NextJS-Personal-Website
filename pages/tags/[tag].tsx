@@ -3,6 +3,7 @@ import path from 'path';
 import matter from 'gray-matter';
 import React, {FC} from 'react';
 import {GetStaticProps} from 'next';
+import {Helmet} from 'react-helmet';
 import type {TProject, TPost} from '../../types';
 import {ParsedUrlQuery} from 'querystring';
 import {ProjectCard} from '../../components/ProjectCard';
@@ -22,6 +23,14 @@ const TagsPage: FC<TagPageProp> = ({projects}) => {
 	// });
 	return (
 		<>
+			<Helmet>
+				<title>Dom Devs | Tags</title>
+				<meta
+					name="Dom Devs"
+					content="Dom Devs blog portfolio projects"
+				/>
+			</Helmet>
+
 			<div className="dark:bg-black min-h-screen">
 				<div
 					className="dark:bg-black sm:p-20 py-10 px-10 grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-3">
