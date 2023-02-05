@@ -1,5 +1,5 @@
 ---
-title: 'Unit Testing With Java'
+title: 'Unit Testing'
 date: 'October 14, 2022'
 description: 'My thoughts on Unit testing and Test-Driven-Development and why I think it is important'
 cover_image: '/images/posts/unit-testing.jpg'
