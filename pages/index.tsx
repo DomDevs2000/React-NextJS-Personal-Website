@@ -67,7 +67,7 @@ const Home: NextPage<HomeProps> = ({ posts, projects }) => {
                 </div>
                 <section className="">
                     <Link href='/projects'>
-                    <h1 className="text-3xl cursor-pointer hover:underline text-center dark:text-white ">
+                    <h1 className="text-3xl inline-flex  rounded-md px-4 p-2 text-xl font-bold uppercase tracking-wider text-black dark:text-white hover:text-white hover:cursor-pointer hover:scale-110 hover:bg-gray-600">
                         Projects
                     </h1>
                     </Link>
@@ -77,7 +77,7 @@ const Home: NextPage<HomeProps> = ({ posts, projects }) => {
                 </section>
                 <section>
                     <Link href='/blog'>
-                    <h1 className="text-3xl py-1  cursor-pointer hover:underline text-center dark:text-white">
+                    <h1 className="text-3xl py-1  text-3xl inline-flex  rounded-md px-4 p-2 text-xl font-bold uppercase tracking-wider text-black dark:text-white hover:text-white hover:cursor-pointer hover:scale-110 hover:bg-gray-600">
                         Latest Blog Posts
                     </h1>
                     </Link>
