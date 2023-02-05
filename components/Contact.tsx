@@ -67,7 +67,7 @@ export const Contact = () => {
                 <div className=""></div>
                 <div className="">
                     <button
-                        className="shadow cursor-pointer bg-violet-700 hover:bg-purple-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
+                        className="shadow cursor-pointer  text-black dark:bg-white bg-gray-600 dark:hover:bg-gray-600 hover:bg-gray-200 focus:shadow-outline focus:outline-none font-bold py-2 px-4 rounded"
                         type="submit"
                         id="button"
                         value="Send Email"

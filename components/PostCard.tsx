@@ -38,7 +38,7 @@ export const PostCard: FC<PostCardProp> = ({ post }) => {
                         <p className="mb-2 leading-normal">
                             {description}
                         </p>
-                        <button className="px-4 py-2 text-sm  inline-block dark:bg-white bg-gray-400 rounded-full px-3 py-1 text-sm dark:text-black text-gray-700 mr-2 mb-2">
+                        <button className="px-4 py-2 text-sm  inline-block dark:bg-white bg-gray-200 rounded-full px-3 py-1 text-sm dark:text-black text-gray-700 mr-2 mb-2">
                             {date} | {read_length}
                         </button>
                     </div>

@@ -20,7 +20,7 @@ const Nav: FC<NavProp> = ({ theme, setTheme }) => {
                         </div>
                     </Link>
 
-                    <button className="ml-8 px-4 py-2 theme-toggle">
+                    <button className="ml-8 px-4 py-2 theme-toggle rounded-md px-4 p-2 text-xl font-bold hover:scale-110 hover:bg-gray-600 tracking-wider cursor-pointer  text-2xl">
                         <BsFillMoonStarsFill
                             color="white"
                             onClick={() => {
@@ -29,7 +29,6 @@ const Nav: FC<NavProp> = ({ theme, setTheme }) => {
                                 window.localStorage.setItem('THEME', newTheme);
                                 setTheme(newTheme);
                             }}
-                            className="cursor-pointer  text-2xl"
                         />
                     </button>
                     <nav>
@@ -160,7 +159,7 @@ const Nav: FC<NavProp> = ({ theme, setTheme }) => {
     );
 };
 
-    /*<nav className="bg-blue-700" >*/
+/*<nav className="bg-blue-700" >*/
 {
     /*    <div className="container flex flex-wrap py-2 mx-auto">*/
 }

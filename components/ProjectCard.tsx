@@ -18,7 +18,7 @@ export const ProjectCard: FC<ProjectCardProp> = ({ project }) => {
         return (
             <li
                 key={tag}
-                className="px-5 py-5 inline-block bg-gray-400 dark:bg-white rounded-full px-3 py-1 text-xs dark:text-black text-gray-700 mr-2 mb-2"
+                className="px-5 py-5 inline-block bg-gray-200 dark:bg-white rounded-full px-3 py-1 text-xs dark:text-black text-gray-700 mr-2 mb-2"
             >
                 <Link href={`/tags/${tag}`}>{tag}</Link>
             </li>
