@@ -3,7 +3,7 @@ title: 'Unit Testing'
 date: 'October 14, 2022'
 description: 'My thoughts on Unit testing and Test-Driven-Development and why I think it is important'
 cover_image: '/images/posts/unit-testing.jpg'
-tags: 'Unit Testing, TDD'
+tags: 'Unit Testing,TDD'
 read_length: '4 min'
 ---
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius
