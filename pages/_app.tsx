@@ -4,6 +4,7 @@ import NavBar from '../components/NavBar';
 import { createContext, useEffect, useState } from 'react';
 import { Footer } from '../components/Footer';
 import { Analytics } from '@vercel/analytics/react';
+
 export const ThemeContext = createContext('light');
 const defaultTheme = 'light';
 
@@ -23,9 +24,8 @@ function MyApp({ Component, pageProps }: AppProps) {
                     <NavBar theme={theme} setTheme={setTheme} />
                     <Component {...pageProps} />
                     <Footer></Footer>
-                    <Analytics/>
+                    <Analytics />
                 </ThemeContext.Provider>
-
             </div>
         </>
     );

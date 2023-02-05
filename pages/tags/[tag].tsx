@@ -15,7 +15,6 @@ type TagPageProp = {
     posts: TPost[];
 };
 const TagsPage: FC<TagPageProp> = ({ projects, posts }) => {
-
     const projectCard = projects.map((project, index) => {
         return <ProjectCard key={`project-${index}`} project={project} />;
     });
@@ -29,24 +28,26 @@ const TagsPage: FC<TagPageProp> = ({ projects, posts }) => {
             <Helmet>
                 <title>Dom Devs | Tags</title>
                 <meta
-                    name='Dom Devs'
-                    content='Dom Devs blog portfolio projects'
+                    name="Dom Devs"
+                    content="Dom Devs blog portfolio projects"
                 />
             </Helmet>
 
-            <div className='dark:bg-black min-h-screen'>
+            <div className="dark:bg-black min-h-screen">
                 <div>
-                    <h2 className='py-10 font-semibold text-3xl uppercase text-center dark:text-white'>Projects</h2>
-                    <div
-                        className='dark:bg-black sm:p-20 py-10 px-10 grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-3'>
+                    <h2 className="py-10 font-semibold text-3xl uppercase text-center dark:text-white">
+                        Projects
+                    </h2>
+                    <div className="dark:bg-black sm:p-20 py-10 px-10 grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-3">
                         {projectCard}
                     </div>
                 </div>
 
                 <div>
-                    <h2 className='mt-5 text-3xl font-semibold uppercase text-center dark:text-white'>Blogs</h2>
-                    <div
-                        className='dark:bg-black sm:p-20 py-10 px-10 grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-3'>
+                    <h2 className="mt-5 text-3xl font-semibold uppercase text-center dark:text-white">
+                        Blogs
+                    </h2>
+                    <div className="dark:bg-black sm:p-20 py-10 px-10 grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-3">
                         {postCard}
                     </div>
                 </div>
@@ -81,7 +82,7 @@ export const getStaticProps: GetStaticProps<TagPageProp, ITagPageParams> = (
     const { tag } = context.params;
 
     const projectSlug = fs
-        .readdirSync('projects', )
+        .readdirSync('projects')
         .map((file) => file.replace('.md', ''));
     const metaMarkdowns = projectSlug.map((slug) => {
         const projectMetaMarkdowns = fs.readFileSync(
@@ -104,7 +105,6 @@ export const getStaticProps: GetStaticProps<TagPageProp, ITagPageParams> = (
             .map((tag) => tag.toLowerCase().trim())
             .includes(tag.toLowerCase());
     });
-
 
     const postSlug = fs
         .readdirSync('posts')
@@ -131,7 +131,6 @@ export const getStaticProps: GetStaticProps<TagPageProp, ITagPageParams> = (
         return tags
             .map((tag) => tag.toLowerCase().trim())
             .includes(tag.toLowerCase());
-
     });
 
     return {

@@ -66,20 +66,20 @@ const Home: NextPage<HomeProps> = ({ posts, projects }) => {
                     </Link>
                 </div>
                 <section className="">
-                    <Link href='/projects'>
-                    <h1 className="text-3xl inline-flex  rounded-md px-4 p-2 text-xl font-bold uppercase tracking-wider text-black dark:text-white hover:text-white hover:cursor-pointer hover:scale-110 hover:bg-gray-600">
-                        Projects
-                    </h1>
+                    <Link href="/projects">
+                        <h1 className="text-3xl inline-flex  rounded-md px-4 p-2 text-xl font-bold uppercase tracking-wider text-black dark:text-white hover:text-white hover:cursor-pointer hover:scale-110 hover:bg-gray-600">
+                            Projects
+                        </h1>
                     </Link>
                     <div className="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-3 m-10">
                         {renderProjectCard}
                     </div>
                 </section>
                 <section>
-                    <Link href='/blog'>
-                    <h1 className="text-3xl py-1  text-3xl inline-flex  rounded-md px-4 p-2 text-xl font-bold uppercase tracking-wider text-black dark:text-white hover:text-white hover:cursor-pointer hover:scale-110 hover:bg-gray-600">
-                        Latest Blog Posts
-                    </h1>
+                    <Link href="/blog">
+                        <h1 className="text-3xl py-1  text-3xl inline-flex  rounded-md px-4 p-2 text-xl font-bold uppercase tracking-wider text-black dark:text-white hover:text-white hover:cursor-pointer hover:scale-110 hover:bg-gray-600">
+                            Latest Blog Posts
+                        </h1>
                     </Link>
 
                     <div className="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-3 m-10">

@@ -56,21 +56,21 @@ const ProjectsPage: FC<ProjectsPageProp> = ({ projects }) => {
                 />
             </Helmet>
             <div className="dark:bg-black min-h-screen">
-            <div className="text-center p-3 dark:bg-black">
-                <input
-                    className="inline-block bg-gray-200 rounded-full m-5 px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2"
-                    type="text"
-                    placeholder="Search Projects..."
-                    onChange={(e) => {
-                        setSearchTerm(e.target.value);
-                    }}
-                />
+                <div className="text-center p-3 dark:bg-black">
+                    <input
+                        className="inline-block bg-gray-200 rounded-full m-5 px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2"
+                        type="text"
+                        placeholder="Search Projects..."
+                        onChange={(e) => {
+                            setSearchTerm(e.target.value);
+                        }}
+                    />
 
-                {searchBar}
-            </div>
-            <div className="dark:bg-black  sm:p-20 py-10 px-10 grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-3">
-                {renderProjectCard}
-            </div>
+                    {searchBar}
+                </div>
+                <div className="dark:bg-black  sm:p-20 py-10 px-10 grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-3">
+                    {renderProjectCard}
+                </div>
             </div>
         </>
     );
