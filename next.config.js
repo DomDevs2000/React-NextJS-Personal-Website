@@ -3,11 +3,6 @@ const path = require("path");
 const nextConfig = {
 	reactStrictMode: true,
 	swcMinify: true,
-	output: 'standalone',
-	experimental: {
-		// this includes files from the monorepo base two directories up
-		outputFileTracingRoot: path.join(__dirname, '../projects', '../posts'),
-	},
 };
 
 module.exports = nextConfig;
