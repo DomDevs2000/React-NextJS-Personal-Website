@@ -81,8 +81,8 @@ export const getStaticProps: GetStaticProps<TagPageProp, ITagPageParams> = (
     const { tag } = context.params;
 
     const projectSlug = fs
-        .readdirSync('projects', { withFileTypes: true })
-        .map((file) => file.name.replace('.md', ''));
+        .readdirSync('projects', )
+        .map((file) => file.replace('.md', ''));
     const metaMarkdowns = projectSlug.map((slug) => {
         const projectMetaMarkdowns = fs.readFileSync(
             path.join('projects', slug + '.md'),
@@ -107,8 +107,8 @@ export const getStaticProps: GetStaticProps<TagPageProp, ITagPageParams> = (
 
 
     const postSlug = fs
-        .readdirSync('posts', { withFileTypes: true })
-        .map((file) => file.name.replace('.md', ''));
+        .readdirSync('posts')
+        .map((file) => file.replace('.md', ''));
     const postMetaMarkdowns = postSlug.map((slug) => {
         const markdownWithMeta = fs.readFileSync(
             path.join('posts', slug + '.md'),
