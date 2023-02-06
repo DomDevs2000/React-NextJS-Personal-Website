@@ -14,7 +14,7 @@ const contactPage = () => {
             </Helmet>
             <section className="min-h-screen dark:bg-black dark:text-white">
                 <div className="flex flex-row justify-center p-20">
-                <Contact />
+                    <Contact />
                 </div>
             </section>
         </>

@@ -1,9 +1,7 @@
 import fs, { readdirSync } from 'fs';
 import matter from 'gray-matter';
-import Head from 'next/head';
 import path from 'path';
 import Link from 'next/link';
-import { AiFillGithub, AiFillLinkedin } from 'react-icons/ai';
 import { HiArrowDown } from 'react-icons/hi';
 import type { GetStaticProps, NextPage } from 'next';
 import { PostCard } from '../components/PostCard';

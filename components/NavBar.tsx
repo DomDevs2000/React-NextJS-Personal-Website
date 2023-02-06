@@ -1,5 +1,5 @@
 import React, { FC, useState } from 'react';
-import { BsFillMoonFill, BsFillMoonStarsFill, BsMoon, BsSunFill, BsSunriseFill } from 'react-icons/bs';
+import { BsFillMoonFill, BsSunFill } from 'react-icons/bs';
 import Link from 'next/link';
 
 type NavProp = {

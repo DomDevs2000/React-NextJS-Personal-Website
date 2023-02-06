@@ -4,10 +4,10 @@ import matter from 'gray-matter';
 import React, { FC } from 'react';
 import { GetStaticProps } from 'next';
 import { Helmet } from 'react-helmet';
-import type { TProject, TPost } from '../../types';
+import type { TPost, TProject } from '../../types';
+import { TFrontmatter } from '../../types';
 import { ParsedUrlQuery } from 'querystring';
 import { ProjectCard } from '../../components/ProjectCard';
-import { TFrontmatter } from '../../types';
 import { PostCard } from '../../components/PostCard';
 
 type TagPageProp = {

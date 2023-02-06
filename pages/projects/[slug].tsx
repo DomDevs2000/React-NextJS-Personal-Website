@@ -31,9 +31,7 @@ const ProjectPage: FC<ProjectPageProp> = ({ project }) => {
                 />
             </Helmet>
             <div className="py-10 px-10 dark:bg-black dark:text-white text-center">
-                <h1 className="text-xl md:text-2xl lg:text-3xl">
-                    {title}
-                </h1>
+                <h1 className="text-xl md:text-2xl lg:text-3xl">{title}</h1>
                 <br></br>
                 <p className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">
                     Posted on {date}
@@ -89,8 +87,7 @@ interface IPostPageParams extends ParsedUrlQuery {
 export const getStaticProps: GetStaticProps<
     ProjectPageProp,
     IPostPageParams
-> = (context:any) => {
-
+> = (context: any) => {
     const { slug } = context.params;
 
     const markdownWithMeta = fs.readFileSync(
