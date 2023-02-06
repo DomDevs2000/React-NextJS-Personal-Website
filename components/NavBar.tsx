@@ -1,5 +1,5 @@
 import React, { FC, useState } from 'react';
-import { BsFillMoonStarsFill } from 'react-icons/bs';
+import { BsFillMoonFill, BsFillMoonStarsFill, BsMoon, BsSunFill, BsSunriseFill } from 'react-icons/bs';
 import Link from 'next/link';
 
 type NavProp = {
@@ -19,18 +19,28 @@ const Nav: FC<NavProp> = ({ theme, setTheme }) => {
                             Dom Devs
                         </div>
                     </Link>
-
-                    <button className="ml-8 px-4 py-2 theme-toggle rounded-md px-4 p-2 text-xl font-bold hover:scale-110 hover:bg-gray-600 tracking-wider cursor-pointer  text-2xl">
-                        <BsFillMoonStarsFill
-                            color="white"
+                    {theme === 'light' ? (
+                        <button
+                            className="ml-8 px-4 py-2 theme-toggle rounded-md px-4 p-2 text-xl font-bold hover:scale-110 hover:bg-gray-600 tracking-wider cursor-pointer  text-2xl"
                             onClick={() => {
-                                const newTheme =
-                                    theme === 'light' ? 'dark' : 'light';
-                                window.localStorage.setItem('THEME', newTheme);
-                                setTheme(newTheme);
+                                window.localStorage.setItem('THEME', 'dark');
+                                setTheme('dark');
                             }}
-                        />
-                    </button>
+                        >
+                            <BsSunFill color="white" />
+                        </button>
+                    ) : (
+                        <button
+                            className="ml-8 px-4 py-2 theme-toggle rounded-md px-4 p-2 text-xl font-bold hover:scale-110 hover:bg-gray-600 tracking-wider cursor-pointer  text-2xl"
+                            onClick={() => {
+                                window.localStorage.setItem('THEME', 'light');
+                                setTheme('light');
+                            }}
+                        >
+                            <BsFillMoonFill color="white" />
+                        </button>
+                    )}
+
                     <nav>
                         {/*mobile menu code*/}
                         <section className="MOBILE-MENU flex lg:hidden">
