@@ -4,11 +4,13 @@ import Head from 'next/head';
 import path from 'path';
 import Link from 'next/link';
 import { AiFillGithub, AiFillLinkedin } from 'react-icons/ai';
+import { HiArrowDown } from "react-icons/hi";
 import type { GetStaticProps, NextPage } from 'next';
 import { PostCard } from '../components/PostCard';
 import { sortByDate } from '../utils';
 import type { TFrontmatter, TPost, TProject } from '../types';
 import { ProjectCard } from '../components/ProjectCard';
+
 
 type HomeProps = {
     posts: TPost[];
@@ -64,6 +66,11 @@ const Home: NextPage<HomeProps> = ({ posts, projects }) => {
                     <Link href="https://github.com/DomDevs2000">
                         <AiFillGithub color="gray" className="cursor-pointer" />
                     </Link>
+                </div>
+
+                <div
+                className="flex flex-row justify-center py-5">
+                <HiArrowDown size={35} className="animate-bounce lg:hidden dark:text-white"/>
                 </div>
                 <section className="">
                     <Link href="/projects">
