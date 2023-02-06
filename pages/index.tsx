@@ -4,13 +4,13 @@ import Head from 'next/head';
 import path from 'path';
 import Link from 'next/link';
 import { AiFillGithub, AiFillLinkedin } from 'react-icons/ai';
-import { HiArrowDown } from "react-icons/hi";
+import { HiArrowDown } from 'react-icons/hi';
 import type { GetStaticProps, NextPage } from 'next';
 import { PostCard } from '../components/PostCard';
 import { sortByDate } from '../utils';
 import type { TFrontmatter, TPost, TProject } from '../types';
 import { ProjectCard } from '../components/ProjectCard';
-
+import SlideUp from '../components/SlideUp';
 
 type HomeProps = {
     posts: TPost[];
@@ -60,17 +60,19 @@ const Home: NextPage<HomeProps> = ({ posts, projects }) => {
                     <Link href="https://www.linkedin.com/in/aidan-carvalho/">
                         <AiFillLinkedin
                             color="gray"
-                            className="cursor-pointer"
+                            className=" hover:-translate-y-1 transition-transform cursor-pointer"
                         />
                     </Link>
                     <Link href="https://github.com/DomDevs2000">
-                        <AiFillGithub color="gray" className="cursor-pointer" />
+                        <AiFillGithub color="gray" className="hover:-translate-y-1 transition-transform cursor-pointer" />
                     </Link>
                 </div>
 
-                <div
-                className="flex flex-row justify-center py-5">
-                <HiArrowDown size={35} className="animate-bounce lg:hidden dark:text-white"/>
+                <div className="flex flex-row justify-center py-5">
+                    <HiArrowDown
+                        size={35}
+                        className="animate-bounce lg:hidden dark:text-white"
+                    />
                 </div>
                 <section className="">
                     <Link href="/projects">
@@ -78,20 +80,21 @@ const Home: NextPage<HomeProps> = ({ posts, projects }) => {
                             Projects
                         </h1>
                     </Link>
-                    <div className="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-3 m-10">
-                        {renderProjectCard}
-                    </div>
-                </section>
-                <section>
+                    <SlideUp offset="-300px 0px -300px 0px ">
+                        <div className="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-3 m-10 animate-slideUpCubiBezier animation-delay-2">
+                            {renderProjectCard}
+                        </div>
+
                     <Link href="/blog">
                         <h1 className="text-3xl py-1  text-3xl inline-flex  rounded-md px-4 p-2 text-xl font-bold uppercase tracking-wider text-black dark:text-white hover:text-white hover:cursor-pointer hover:scale-110 hover:bg-gray-600">
                             Latest Blog Posts
                         </h1>
                     </Link>
 
-                    <div className="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-3 m-10">
-                        {renderPostCard}
-                    </div>
+                        <div className="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-3 m-10 animate-slideUpCubiBezier animation-delay-2">
+                            {renderPostCard}
+                        </div>
+                </SlideUp>
 
                     <br></br>
                 </section>
