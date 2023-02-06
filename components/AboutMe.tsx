@@ -9,7 +9,7 @@ export const  AboutMe = () => {
             <h2 className='text-5xl text-gray-700 py-3 dark:text-slate-400 md:text-6xl'>
                 Aidan Dominic Carvalho
             </h2>
-            <h3 className='text-2xl'>Junior Full Stack Developer</h3>
+            <h3 className='text-2xl'> Full Stack Developer</h3>
             <p className='text-md py-2 leading-8 text-gray md:text-xl max-w-lg mx-auto'>
                 Programming enthusiast with experience in design,
                 testing and implementation. Equipped with a diverse
