@@ -10,8 +10,7 @@ import { PostCard } from '../components/PostCard';
 import { sortByDate } from '../utils';
 import type { TFrontmatter, TPost, TProject } from '../types';
 import { ProjectCard } from '../components/ProjectCard';
-import SlideUp from '../components/SlideUp';
-import {Helmet} from 'react-helmet';
+import { Helmet } from 'react-helmet';
 
 type HomeProps = {
     posts: TPost[];
@@ -36,19 +35,19 @@ const Home: NextPage<HomeProps> = ({ posts, projects }) => {
             <Helmet>
                 <title>Dom Devs | Home</title>
                 <meta
-                    name="Dom Devs"
-                    content="Dom Devs blog portfolio projects"
+                    name='Dom Devs'
+                    content='Dom Devs blog portfolio projects'
                 />
-                <link rel="icon" href="/favicon.ico" />
+                <link rel='icon' href='/favicon.ico' />
             </Helmet>
 
-            <main className="bg-white px-10 md:px-20 lg:px-40 dark:bg-black font-sans">
-                <div className="text-center p-10 dark:text-white">
-                    <h2 className="text-5xl text-gray-700 py-2 dark:text-slate-400 md:text-6xl">
+            <main className='bg-white px-10 md:px-20 lg:px-40 dark:bg-black font-sans'>
+                <div className='text-center px-10 py-5 dark:text-white'>
+                    <h2 className='text-5xl text-gray-700 py-3 dark:text-slate-400 md:text-6xl'>
                         Aidan Dominic Carvalho
                     </h2>
-                    <h3 className="text-2xl">Junior Full Stack Developer</h3>
-                    <p className="text-md py-5 leading-8 text-gray md:text-xl max-w-lg mx-auto">
+                    <h3 className='text-2xl'>Junior Full Stack Developer</h3>
+                    <p className='text-md py-2 leading-8 text-gray md:text-xl max-w-lg mx-auto'>
                         Programming enthusiast with experience in design,
                         testing and implementation. Equipped with a diverse
                         skill-set and experience with development tools and
@@ -57,44 +56,46 @@ const Home: NextPage<HomeProps> = ({ posts, projects }) => {
                     </p>
                 </div>
 
-                <div className="text-5xl flex justify-center gap-12 py-3">
-                    <Link href="https://www.linkedin.com/in/aidan-carvalho/">
+                <div className='text-5xl flex justify-center gap-12'>
+                    <Link href='https://www.linkedin.com/in/aidan-carvalho/'>
                         <AiFillLinkedin
-                            color="gray"
-                            className=" hover:-translate-y-1 transition-transform cursor-pointer"
+                            color='gray'
+                            className=' hover:-translate-y-1 transition-transform cursor-pointer'
                         />
                     </Link>
-                    <Link href="https://github.com/DomDevs2000">
-                        <AiFillGithub color="gray" className="hover:-translate-y-1 transition-transform cursor-pointer" />
+                    <Link href='https://github.com/DomDevs2000'>
+                        <AiFillGithub color='gray'
+                                      className='hover:-translate-y-1 transition-transform cursor-pointer' />
                     </Link>
                 </div>
 
-                <div className="flex flex-row justify-center py-5">
+                <div className='flex flex-row justify-center py-5'>
                     <HiArrowDown
                         size={35}
-                        className="animate-bounce lg:hidden dark:text-white"
+                        className='animate-bounce
+                         dark:text-white'
                     />
                 </div>
                 <section>
-                    <Link href="/projects">
-                        <h1 className="text-3xl inline-flex  rounded-md px-4 p-2 text-xl font-bold uppercase tracking-wider text-black dark:text-white hover:text-white hover:cursor-pointer hover:scale-110 hover:bg-gray-600">
+                    <Link href='/projects'>
+                        <h1 className='text-3xl inline-flex  rounded-md px-4 p-2 text-xl font-bold uppercase tracking-wider text-black dark:text-white hover:text-white hover:cursor-pointer hover:scale-110 hover:bg-gray-600'>
                             Projects
                         </h1>
                     </Link>
 
-                        <div className="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-3 m-10 a">
-                            {renderProjectCard}
-                        </div>
+                    <div className='grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-3 m-10 a'>
+                        {renderProjectCard}
+                    </div>
 
-                    <Link href="/blog">
-                        <h1 className="text-3xl py-1  text-3xl inline-flex  rounded-md px-4 p-2 text-xl font-bold uppercase tracking-wider text-black dark:text-white hover:text-white hover:cursor-pointer hover:scale-110 hover:bg-gray-600">
+                    <Link href='/blog'>
+                        <h1 className='text-3xl py-1  text-3xl inline-flex  rounded-md px-4 p-2 text-xl font-bold uppercase tracking-wider text-black dark:text-white hover:text-white hover:cursor-pointer hover:scale-110 hover:bg-gray-600'>
                             Latest Blog Posts
                         </h1>
                     </Link>
 
-                        <div className="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-3 m-10">
-                            {renderPostCard}
-                        </div>
+                    <div className='grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-3 m-10'>
+                        {renderPostCard}
+                    </div>
                     <br></br>
                 </section>
             </main>
