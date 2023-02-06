@@ -12,11 +12,10 @@ const contactPage = () => {
                     content="Dom Devs blog portfolio projects"
                 />
             </Helmet>
-            <section className="min-h-screen dark:bg-black dark:text-white font-semibold text-center ">
-                <h1 className="m-15">
-                    Fill In The Form Below And I&apos;ll Be In Touch Soon
-                </h1>
+            <section className="min-h-screen dark:bg-black dark:text-white">
+                <div className="flex flex-row justify-center p-20">
                 <Contact />
+                </div>
             </section>
         </>
     );
