@@ -2,7 +2,7 @@ import Image from 'next/image';
 import React, { FC } from 'react';
 import { TProject } from '../types';
 import Link from 'next/link';
-
+import SlideUp from '../components/SlideUp';
 type ProjectCardProp = {
     project: TProject;
 };
@@ -25,7 +25,9 @@ export const ProjectCard: FC<ProjectCardProp> = ({ project }) => {
         );
     });
     return (
-        <div className="rounded overflow-hidden shadow-lg bg-white dark:bg-gray-600  dark:shadow-red-600 hover:scale-105 delay-100 hover:shadow-2xl transition-all duration-150 ease-out hover:ease-in cursor-pointer">
+        <>
+        <SlideUp offset="-300px 0px -300px 0px">
+        <div className="rounded overflow-hidden shadow-lg bg-white dark:bg-gray-600  dark:shadow-red-600 hover:scale-105 delay-100 hover:shadow-2xl transition-all duration-150 ease-out hover:ease-in  animate-slideUpCubiBezier animation-delay-2 cursor-pointer">
             <Link href={`/projects/${slug}`}>
                 <div className="w-full rounded-lg">
                     <Image
@@ -47,5 +49,7 @@ export const ProjectCard: FC<ProjectCardProp> = ({ project }) => {
                 </div>
             </Link>
         </div>
+        </SlideUp>
+        </>
     );
 };

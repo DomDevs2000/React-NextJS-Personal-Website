@@ -75,14 +75,14 @@ const Home: NextPage<HomeProps> = ({ posts, projects }) => {
                         className="animate-bounce lg:hidden dark:text-white"
                     />
                 </div>
-                <section className="">
+                <section>
                     <Link href="/projects">
                         <h1 className="text-3xl inline-flex  rounded-md px-4 p-2 text-xl font-bold uppercase tracking-wider text-black dark:text-white hover:text-white hover:cursor-pointer hover:scale-110 hover:bg-gray-600">
                             Projects
                         </h1>
                     </Link>
-                    <SlideUp offset="-300px 0px -300px 0px ">
-                        <div className="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-3 m-10 animate-slideUpCubiBezier animation-delay-2">
+
+                        <div className="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-3 m-10 a">
                             {renderProjectCard}
                         </div>
 
@@ -92,11 +92,9 @@ const Home: NextPage<HomeProps> = ({ posts, projects }) => {
                         </h1>
                     </Link>
 
-                        <div className="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-3 m-10 animate-slideUpCubiBezier animation-delay-2">
+                        <div className="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-3 m-10">
                             {renderPostCard}
                         </div>
-                </SlideUp>
-
                     <br></br>
                 </section>
             </main>

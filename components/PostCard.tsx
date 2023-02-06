@@ -2,7 +2,7 @@ import Image from 'next/image';
 import React, { FC } from 'react';
 import type { TPost } from '../types';
 import Link from 'next/link';
-
+import SlideUp from '../components/SlideUp'
 type PostCardProp = {
     post: TPost;
 };
@@ -21,7 +21,9 @@ export const PostCard: FC<PostCardProp> = ({ post }) => {
         content
     } = post;
     return (
-        <div className="rounded overflow-hidden shadow-lg bg-white dark:bg-gray-600 dark:shadow-red-600 hover:scale-105 delay-100 hover:shadow-xl transition-all duration-150 ease-out hover:ease-in cursor-pointer">
+        <>
+        <SlideUp offset="-300px 0px -300px 0px">
+        <div className="rounded overflow-hidden shadow-lg bg-white dark:bg-gray-600 dark:shadow-red-600 hover:scale-105 delay-100 hover:shadow-xl transition-all duration-150 ease-out hover:ease-in animate-slideUpCubiBezier animation-delay-2 cursor-pointer">
             <Link href={`/blog/${slug}`}>
                 <div className="w-full rounded-lg">
                     <Image
@@ -45,6 +47,8 @@ export const PostCard: FC<PostCardProp> = ({ post }) => {
                 </div>
             </Link>
         </div>
+        </SlideUp>
 
+</>
     );
 };

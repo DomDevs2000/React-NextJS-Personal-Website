@@ -27,7 +27,7 @@ const Nav: FC<NavProp> = ({ theme, setTheme }) => {
                                 setTheme('dark');
                             }}
                         >
-                            <BsSunFill color="white" />
+                            <BsFillMoonFill color="white" />
                         </button>
                     ) : (
                         <button
@@ -37,7 +37,7 @@ const Nav: FC<NavProp> = ({ theme, setTheme }) => {
                                 setTheme('light');
                             }}
                         >
-                            <BsFillMoonFill color="white" />
+                            <BsSunFill color="white" />
                         </button>
                     )}
 
