@@ -2,7 +2,7 @@ import Image from 'next/image';
 import React, { FC } from 'react';
 import type { TPost } from '../types';
 import Link from 'next/link';
-import SlideUp from '../components/SlideUp'
+import SlideUp from '../components/animations/SlideUp'
 type PostCardProp = {
     post: TPost;
 };
