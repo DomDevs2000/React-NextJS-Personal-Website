@@ -24,10 +24,10 @@ export const PostCard: FC<PostCardProp> = ({ post }) => {
     return (
         <>
             <SlideUp offset="-300px 0px -300px 0px">
-                <div className="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+                <div className="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 hover:scale-110 hover:shadow-xl delay-75 ">
                     <Link href={`/blog/${slug}`}>
                         <Image
-                            className="rounded-t-lg"
+                            className="rounded-t-lg cursor-pointer"
                             src={cover_image}
                             width={500}
                             height={250}
@@ -58,9 +58,9 @@ export const PostCard: FC<PostCardProp> = ({ post }) => {
                                     xmlns="http://www.w3.org/2000/svg"
                                 >
                                     <path
-                                        fill-rule="evenodd"
+                                        fillRule="evenodd"
                                         d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
-                                        clip-rule="evenodd"
+                                        clipRule="evenodd"
                                     ></path>
                                 </svg>
                             </div>
