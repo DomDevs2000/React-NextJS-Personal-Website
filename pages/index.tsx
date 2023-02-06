@@ -11,6 +11,7 @@ import { sortByDate } from '../utils';
 import type { TFrontmatter, TPost, TProject } from '../types';
 import { ProjectCard } from '../components/ProjectCard';
 import SlideUp from '../components/SlideUp';
+import {Helmet} from 'react-helmet';
 
 type HomeProps = {
     posts: TPost[];
@@ -32,14 +33,14 @@ const Home: NextPage<HomeProps> = ({ posts, projects }) => {
 
     return (
         <div>
-            <Head>
+            <Helmet>
                 <title>Dom Devs | Home</title>
                 <meta
                     name="Dom Devs"
                     content="Dom Devs blog portfolio projects"
                 />
                 <link rel="icon" href="/favicon.ico" />
-            </Head>
+            </Helmet>
 
             <main className="bg-white px-10 md:px-20 lg:px-40 dark:bg-black font-sans">
                 <div className="text-center p-10 dark:text-white">
