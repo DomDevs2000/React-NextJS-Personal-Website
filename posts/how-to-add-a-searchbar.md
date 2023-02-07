@@ -7,34 +7,32 @@ tags: 'React'
 read_length: '3 min'
 ---
 
-# Initial set-up
 
-## Step 1
+## Step 1 - Initial React Setup
 
 If you want to create a new react project, run the command:
 ```npx create-react-app search-app```
 
 Refer to [React](https://reactjs.org/docs/create-a-new-react-app.html) on how to get started with your specific project.
 
-### step 2 File Setup
+### step 2 - File Setup
 
 Create a component folder inside the **./src** folder. Inside this folder, create a new file called searchBar.jsx and be
 sure to import react and useState by including this line at the top of your file:
 
 ```import React, {useState} from 'react'```
 
-### Step 3: Creating the component
+### Step 3 - Creating The Component
 
 Now we need to create a functional component:
 
 ```
 const searchBar = () => {
 
-
 }
 ```
 
-### Step 4 useState
+### Step 4 - useState Hook
 
 Inside  this component, we want to include the React [useState](https://reactjs.org/docs/hooks-state.html) hook.
 
@@ -47,7 +45,7 @@ const [searchInput, setSearchInput] = useState("");
 
 ```
 
-### Step 5 Data!
+### Step 5 - Data!
 
 Next, we need some data that we want to search against. In this example, we will be using an array of countries. To do
 this we will create a variable inside the component:
@@ -84,7 +82,7 @@ const countries = [
 
 ```
 
-### Step 6 Handler Function
+### Step 6 - Handler Function
 
 We will now create a handler function that will set the state of **setSearchInput** to the value that is being entered
 by the user.
@@ -98,7 +96,7 @@ setSearchInput(e.target.value);
 
 The **e.preventDefault()** prevents the default form behaviour, which would reload the page.
 
-# Step 7 Validation and filtering of the data
+# Step 7 - Validation and filtering of the data
 ```
 const search = countries
         .filter((country) => {
@@ -150,7 +148,7 @@ const searchResults = countries
         });
 ```
 
-### Step 8 Form
+### Step 8 - Form
 
 Now we want to create a search input inside this component using jsx:
 
@@ -174,7 +172,7 @@ When the input inside the search bar changes, an onChange event is omitted, sett
 **
 to the current value of the input.
 
-### Outputting the data
+### Step 9 - Outputting The Data
 
 Now, we want to output the filtered results. We can do this by using a simple div and placing the variable *
 *search** inside.
@@ -237,13 +235,13 @@ const SearchBar = () => {
     const search = countries
         .filter((country) => {
             if (searchInput == '') {
-                return;
+                return
             } else if (
                 country.name
                     .toLowerCase()
                     .includes(searchInput.toLowerCase())
             ) {
-                return country;
+                return country
             }
         })
         .map((country, key) => {
@@ -279,7 +277,7 @@ export default SearchBar;
 
 ```
 
-### Step 11 - Adding the component to the app
+### Step 10 - Adding the component to the app
 
 Import the searchBar component into the app.js file and add it to the return statement JSX as follows.
 
