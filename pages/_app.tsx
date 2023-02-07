@@ -4,10 +4,6 @@ import NavBar from '../components/NavBar';
 import { createContext, useEffect, useState } from 'react';
 import { Footer } from '../components/Footer';
 
-// import { Amplify, Analytics } from 'aws-amplify';
-// import awsconfig from './aws-exports';
-// Amplify.configure(awsconfig);
-
 export const ThemeContext = createContext('light');
 const defaultTheme = 'light';
 
