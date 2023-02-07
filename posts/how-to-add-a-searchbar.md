@@ -1,6 +1,6 @@
 ---
 title: 'How To Create A Search Bar'
-date: 'October 18, 2022'
+date: 'February 7, 2023'
 description: 'A short and sweet tutorial on how to create and implement a search bar in React'
 cover_image: '/images/posts/search-bar.jpg'
 tags: 'React'
@@ -15,7 +15,7 @@ If you want to create a new react project, run the command:
 
 Refer to [React](https://reactjs.org/docs/create-a-new-react-app.html) on how to get started with your specific project.
 
-### step 2 - File Setup
+### Step 2 - File Setup
 
 Create a component folder inside the **./src** folder. Inside this folder, create a new file called searchBar.jsx and be
 sure to import react and useState by including this line at the top of your file:
@@ -131,7 +131,7 @@ the full code should look like:
 const searchResults = countries
     .filter((country) => {
         if (searchInput == '') {
-            return
+            return;
         } else if (
             country.name
                 .toLowerCase()
@@ -304,7 +304,7 @@ export default App
 
 And there it is, you now know how to implement a search bar into react, using the useState hook.
 
-For the full code, please refer to the [GitHub](https://github.com/DomDevs2000/Search-Bar-Blog-Code)
+For the full code, please refer to the GitHub [Repo](https://github.com/DomDevs2000/Search-Bar-Blog-Code)
 
 
 
