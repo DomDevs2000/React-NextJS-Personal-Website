@@ -1,4 +1,9 @@
-# What is this project about?
+Full-stack personal website to showcase my projects and blog posts. Utilising Next.js’ dynamic routing, the user can
+view each project or blog. Using React hooks such as useEffect and useState, users can toggle their desired theme from
+light to dark mode in a click of a button. Blog posts are written in markdown and rendered as HTML. Unit tested using
+React Testing Library and Jest. Deployed with AWS Amplify, using AWS Management Console and Amplify CLI.
+
+## What is this project about?
 
 I created this project for two purposes, to be able to showcase my most recent projects as well as a dedicated space to
 post my blogs.
