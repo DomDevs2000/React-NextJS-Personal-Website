@@ -10,6 +10,7 @@
     "test": "jest"
   },
   "dependencies": {
+    "@aws-amplify/analytics": "^6.0.12",
     "@emailjs/browser": "^3.10.0",
     "@tailwindcss/typography": "^0.5.7",
     "@types/marked": "^4.0.7",
