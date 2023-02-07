@@ -3,7 +3,10 @@ import type { AppProps } from 'next/app';
 import NavBar from '../components/NavBar';
 import { createContext, useEffect, useState } from 'react';
 import { Footer } from '../components/Footer';
-import { Analytics } from '@vercel/analytics/react';
+
+import { Amplify, Analytics } from 'aws-amplify';
+import awsconfig from '../src/aws-exports';
+Amplify.configure(awsconfig);
 
 export const ThemeContext = createContext('light');
 const defaultTheme = 'light';
@@ -24,7 +27,6 @@ function MyApp({ Component, pageProps }: AppProps) {
                     <NavBar theme={theme} setTheme={setTheme} />
                     <Component {...pageProps} />
                     <Footer></Footer>
-                    <Analytics />
                 </ThemeContext.Provider>
             </div>
         </>

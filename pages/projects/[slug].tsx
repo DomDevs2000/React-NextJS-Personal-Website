@@ -55,7 +55,7 @@ const ProjectPage: FC<ProjectPageProp> = ({ project }) => {
 
                 <div className="text-sm md:text-lg lg:text-xl flex justify-center px-3 py-1  text-gray-700 mr-2 mb-2">
                     <ReactMarkdown
-                        className="prose dark:text-white dark:prose-a:text-gray-400 dark:prose-headings:text-white dark:prose-strong:text-white dark:prose-code:text-gray-400"
+                        className="prose dark:text-white dark:prose-a:text-gray-400 dark:prose-headings:text-white dark:prose-strong:text-white"
                         remarkPlugins={[remarkGfm]}
                     >
                         {content}
