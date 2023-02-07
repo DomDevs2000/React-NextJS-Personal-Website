@@ -1,7 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
-import Image from 'next/image';
+import Image from "next/legacy/image";
 import { GetStaticProps } from 'next';
 import { ParsedUrlQuery } from 'querystring';
 import React, { FC } from 'react';
