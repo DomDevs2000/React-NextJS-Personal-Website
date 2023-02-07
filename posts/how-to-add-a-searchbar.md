@@ -7,49 +7,298 @@ tags: 'React'
 read_length: '3 min'
 ---
 
-Lorem markdownum fine incustoditam unda factura versum occuluere Aeneas, iuvat
-haec praepes [partes epulae](http://cui.com/), in egisse de. Caecisque ter
-manus. Munere in exhalat, ferre sed [habe quaeque saepe](http://ne.org/fretum)
-verba caput ferarum _nubila_? Patriam Cyparisse tamen, **saxum** fide postponere
-pavida ne omnes etiam, atque. Sonuit omina sed sine haerebat illic fit a mora
-in.
+# Initial set up
 
-1. Serrae enim Etruscam aquis
-2. Et premis et flumine frontem minatur oppressos
-3. Inquam rector Icarus possum vim tumulo propiusque
-4. Vulnus se Latreus
-5. Aptumque bis
+## Step 1
 
-## Turpius Aegides membris colat volentes fallere
+If you want to create a new react project, run the command:
+```npx create-react-app search-app```
 
-Ille fida formosus, et addunt viscera perdidit ad pondere quia tellus
-consequitur et quoque scinditque in. Ratis laborum instabat quaedam partem
-Phoebus, manus _partibus poenas_. Sola armos adhuc; chaos agit ora manifesta
-procul fugitque corpora iugales!
+Refer to [React](https://reactjs.org/docs/create-a-new-react-app.html) on how to get started with your specific project.
+
+### step 2 File Setup
+
+Create a component folder inside the **./src** folder. Inside this folder, create a new file called searchBar.jsx and be
+sure to import react and useState by including this line at the top of your file:
+
+```import React, {useState} from 'react'```
+
+### Step 3: Creating the component
+
+Now we need to create a functional component:
+
+```
+const searchBar = () => {
 
 
-## O contra diu
+}
+```
 
-Descendit _auras cum misi_ contactu tenax lacus, **quaerensque invitum
-premuntur** patria. Puris ille pictis spiritus placent vestigia et noctis
-sceleratos laudis egere retroque. Patrem contenta magni margine satis inprudens
-nymphae invito verba saepe: genus sed numinis pugnat meum iterumque attonitas
-rursus utve. Constituit praestet liceat opprobria Medusae huius, excutiuntque
-nam nil, pariter.
+### Step 4 useState
 
-Coma **laudes manet** ausus hortaturque matrisque Veneris proximus tu iamque
-aptius claudit. Tmolus tetigere iussos animumque quid poplite Hippotaden? Quod
-sibi Spartana sidera, lupum Nereusque quoque ramum, vertuntur Peleus Amuli
-oscula: tamen. Surgere Epidaurius movit crede soceri Euboicam quoque.
+inside of this component, we want to include the react useState hook.
 
-Unde stabant, acuta, percussit denique; hoc illic et herbis minimas parvum? Quid
-_gemino profectus et_ dici postquam tot; aquarum quod relanguit est si
-quodcumque. Ossaque protinus, quod somno est, repetit, hoc passu est. Qui devia;
-respice humum vobis oscula, in Lotis nymphae.
+```
+const searchBar = () => {
 
-Dolet certamina velle dexteriore mutatus saepe, tellure ubi unguibus, gestu.
-Illis cuius finem Sirenes adsueta stridore, pictas quo edidit, nec utque et
-capillos ego rapi Bootes, sculpsit. Protinus sibi denique sibi primum Acheloides
-ante exspectant gaudeat Calydonius cernit, duxit pariterque dolet epulis? Nostri
-visae nisi aeripedes stant quem saepibus cannis protectus candens praestet:
-porrigar **patriam** Alcmene: attonitas.
+const [searchInput, setSearchInput] = useState("");
+
+}
+
+```
+
+### Step 5 Data!
+
+Next we need some data that we want to search against. In this example we will be using an array of countries. To do
+this we will create a variable inside the component:
+
+```
+const countries = [
+
+  { name: "Belgium", continent: "Europe" },
+  { name: "India", continent: "Asia" },
+  { name: "Bolivia", continent: "South America" },
+  { name: "Ghana", continent: "Africa" },
+  { name: "Japan", continent: "Asia" },
+  { name: "Canada", continent: "North America" },
+  { name: "New Zealand", continent: "Australasia" },
+  { name: "Italy", continent: "Europe" },
+  { name: "South Africa", continent: "Africa" },
+  { name: "China", continent: "Asia" },
+  { name: "Paraguay", continent: "South America" },
+  { name: "Usa", continent: "North America" },
+  { name: "France", continent: "Europe" },
+  { name: "Botswana", continent: "Africa" },
+  { name: "Spain", continent: "Europe" },
+  { name: "Senegal", continent: "Africa" },
+  { name: "Brazil", continent: "South America" },
+  { name: "Denmark", continent: "Europe" },
+  { name: "Mexico", continent: "South America" },
+  { name: "Australia", continent: "Australasia" },
+  { name: "Tanzania", continent: "Africa" },
+  { name: "Bangladesh", continent: "Asia" },
+  { name: "Portugal", continent: "Europe" },
+  { name: "Pakistan", continent"Asia" },
+
+];
+
+```
+
+### Step 6 Handler Function
+
+we will now create a handler function that will set the state of **setSearchInput** to the value that is being entered
+by the user.
+
+```
+const handleChange = (e) => {
+e.preventDefault();
+setSearchInput(e.target.value);
+};
+```
+
+The **e.preventDefault()** prevents the default form behavior, which would reload the page.
+
+# Step 7 Validation and filtering the data
+
+First, we need to check that the there is something being searched for, in code, this is a simple check that the length
+of **searchInput** is simply greater than 0.
+
+```
+const search = countries
+        .filter((country) => {
+            if (searchInput == '') {
+                return;
+            } else if (
+                country.name
+                    .toLowerCase()
+                    .includes(searchInput.toLowerCase())
+            ) {
+                return country;
+            }
+        })
+```
+
+This is a simple filter method, that goes over the **countries** array and checks if the searchInput (in lower case) is
+included in the country's name(in lower case).
+
+These validations are so important, sometimes users type in lowercase,
+uppercase or even camel case. If our data has multiple case types we want to check that it matches our search input.
+This is done by converting both the data and the user input to lower case and then seeing if the search input is
+included. If we did not have these validation, a search input of "japan" will return no matching results even though
+there is one "Japan" in the array.
+
+Now we need to add a map method on this, so that for each matching result, we can return a list inside a div. Heres what
+the full code should look like:
+
+```
+const searchResults = countries
+        .filter((country) => {
+            if (searchInput == '') {
+                return;
+            } else if (
+                country.name
+                    .toLowerCase()
+                    .includes(searchInput.toLowerCase())
+            ) {
+                return country;
+            }
+        })
+.map((country, key) => {
+            if (searchInput)
+                return (
+                    <div>
+                         {country.name}
+                         {country.continent}
+                    </div>
+                );
+        });
+```
+
+### Step 8 Form
+
+Now we want to create a search input inside this component using jsx:
+
+```
+
+return (
+<form onSubmit={handleSubmit}>
+<input
+type="text"
+placeholder="Search..."
+value={searchTerm}
+onChange={(event) => setSearchTerm(event.target.value)}
+/>
+<button type="submit">Search</button>
+</form>
+);
+```
+
+This code creates a simple form, on submission of the form, it calls the handleSubmit function we created earlier.
+When the input inside the search bar changes, an onChange event is omitted, setting the current state of **setSearchTerm
+**
+to the current value of the input.
+
+### Outputting the data
+
+Now, we want to output the filtered results. We can do this by using a simple div and placing the variable *
+*search** inside.
+
+```
+<div>
+    {search}
+</div>
+```
+
+### Final Code
+
+Your code for the searchBar.jsx should look like this:
+
+```
+
+import React, {useState} from 'react'
+
+
+const searchBar = () => {
+
+const [searchInput, setSearchInput] = useState("");
+
+const countries = [
+
+  { name: "Belgium", continent: "Europe" },
+  { name: "India", continent: "Asia" },
+  { name: "Bolivia", continent: "South America" },
+  { name: "Ghana", continent: "Africa" },
+  { name: "Japan", continent: "Asia" },
+  { name: "Canada", continent: "North America" },
+  { name: "New Zealand", continent: "Australasia" },
+  { name: "Italy", continent: "Europe" },
+  { name: "South Africa", continent: "Africa" },
+  { name: "China", continent: "Asia" },
+  { name: "Paraguay", continent: "South America" },
+  { name: "Usa", continent: "North America" },
+  { name: "France", continent: "Europe" },
+  { name: "Botswana", continent: "Africa" },
+  { name: "Spain", continent: "Europe" },
+  { name: "Senegal", continent: "Africa" },
+  { name: "Brazil", continent: "South America" },
+  { name: "Denmark", continent: "Europe" },
+  { name: "Mexico", continent: "South America" },
+  { name: "Australia", continent: "Australasia" },
+  { name: "Tanzania", continent: "Africa" },
+  { name: "Bangladesh", continent: "Asia" },
+  { name: "Portugal", continent: "Europe" },
+  { name: "Pakistan", continent"Asia" },
+
+];
+
+
+
+const handleChange = (e) => {
+e.preventDefault();
+setSearchInput(e.target.value);
+};
+
+
+
+const searchResults = countries
+        .filter((country) => {
+            if (searchInput == '') {
+                return;
+            } else if (
+                country.name
+                    .toLowerCase()
+                    .includes(searchInput.toLowerCase())
+            ) {
+                return country;
+            }
+        })
+.map((country, key) => {
+            if (searchInput)
+                return (
+                    <div>
+                         {country.name}
+                         {country.continent}
+                    </div>
+                );
+        });
+        
+}
+
+
+return (
+ <form onSubmit={handleSubmit}>
+                    <input
+                        type="text"
+                        placeholder="Search..."
+                        value={searchTerm}
+                        onChange={(event) => setSearchTerm(event.target.value)}
+                    />
+                    <button type="submit">Search</button>
+                </form>
+
+                <div>{search}</div>
+);
+
+```
+
+### Step 11 - Adding the component to teh app
+
+Import the searchBar component into the_ app.js _file and add it to the return statement JSX as follows.
+
+```
+import React from 'react'
+import './App.css'
+import SearchBar from './components/searchBar'
+
+function App() {
+return (
+<div classname='App'>
+<SearchBar/>
+</div>
+)}export default App
+```
+# Conclusion
+
+ And there it is, you now know how to implement a search bar into react, using the useState hook.
+
+
