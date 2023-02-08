@@ -38,5 +38,24 @@ module.exports = {
             },
         },
     },
+    typography: (theme) => {
+        return {
+            default: {
+                css: {
+                    "code::before": false,
+                    "code::after": false,
+                    "blockquote p:first-of-type::before": false,
+                    "blockquote p:last-of-type::after": false,
+                    a: {
+                        color: theme(`colors.blue.600`),
+                        textDecoration: `none`,
+                        "&:hover": {
+                            textDecoration: `underline`,
+                        },
+                    },
+                },
+            },
+        }
+    },
 plugins: [require('@tailwindcss/typography')]
 };

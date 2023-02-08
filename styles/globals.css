@@ -18,3 +18,7 @@ a {
 * {
 	box-sizing: border-box;
 }
+
+.prose :not(pre) > code.language-text {
+	white-space: pre-line;
+}
