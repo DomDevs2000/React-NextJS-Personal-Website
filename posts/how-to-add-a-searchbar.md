@@ -11,7 +11,9 @@ read_length: '3 min'
 
 If you want to create a new react project, run the command:
 
-```npx create-react-app search-app```
+```
+npx create-react-app search-app
+```
 
 Refer to [React](https://reactjs.org/docs/create-a-new-react-app.html) on how to get started with your specific project.
 
