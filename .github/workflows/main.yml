@@ -52,9 +52,14 @@ jobs:
           npm install -g @aws-amplify/cli
 
 
-      - name: Pull App From AWS Amplify
+      - name: Initialise App From AWS Amplify
         run:
-          amplify pull --appId ${{ secrets.AWS_AMPLIFY_APP_ID }} --envName dev
+          amplify init --appId ${{ secrets.AWS_AMPLIFY_APP_ID }}
+
+      - name: Check Amplify Status
+        run:
+          amplify status
+          amplify env list
 
       - name: Deploy To AWS
         run:  amplify push --force
