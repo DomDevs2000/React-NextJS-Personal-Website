@@ -26,7 +26,7 @@ jobs:
           eslint: true
           prettier: true
   build:
-    name: build
+    name: Build
     runs-on: ubuntu-latest
     steps:
       - name: Check out Git Repository
@@ -50,7 +50,7 @@ jobs:
       - name: Install Amplify CLI
         run:
           npm install -g @aws-amplify/cli
-          amplify init
+
 
       - name: Pull App From AWS Amplify
         run:
