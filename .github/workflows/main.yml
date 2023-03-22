@@ -7,10 +7,10 @@ on:
   workflow_dispatch:
 jobs:
   run-linters:
-    name: Run linters
+    name: Run Linters
     runs-on: ubuntu-latest
     steps:
-      - name: Check out Git repository
+      - name: Check Out Git Repository
         uses: actions/checkout@v3
 
       - name: Set up Node.js
@@ -18,7 +18,7 @@ jobs:
         with:
           node-version: 18
 
-      - name: Install Node.js dependencies
+      - name: Install Node.js Dependencies
         run: npm ci
       - name: Run linters
         uses: wearerequired/lint-action@v2
@@ -29,7 +29,7 @@ jobs:
     name: build
     runs-on: ubuntu-latest
     steps:
-      - name: Check out Git repository
+      - name: Check out Git Repository
         uses: actions/checkout@v3
 
       - name: Set up Node.js
@@ -37,14 +37,27 @@ jobs:
         with:
           node-version: 18
 
-      - name: Install NPM dependencies
+      - name: Install NPM Dependencies
         run: npm install
-      - name: Configure AWS Credentials
 
+      - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v2
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: eu-west-2
+
+      - name: Install Amplify CLI and Deploy
+        run:
+          npm install -g @aws-amplify/cli
+          bash init.sh
+          bash push.sh
+          amplify push
+
+      - name: Commit Amplify Files
+        uses: stefanzweifel/git-auto-commit-action@v4.2.0
+        with:
+            commit_message: Apply automatic changes
+            file_pattern: amplify/* amplifyconfiguration.json awsconfiguration.json
       - name: Deploy Next.js app
         run: amplify push
