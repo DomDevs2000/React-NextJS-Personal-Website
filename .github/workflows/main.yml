@@ -55,7 +55,6 @@ jobs:
       - name: Pull App From AWS Amplify
         run:
           amplify pull --appId ${{ secrets.AWS_AMPLIFY_APP_ID }} --envName dev
-          amplify status
 
       - name: Deploy To AWS
         run: amplify push
