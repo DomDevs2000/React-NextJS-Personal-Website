@@ -47,17 +47,16 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: eu-west-2
 
-      - name: Install Amplify CLI and Deploy
-        run:
-          npm install -g @aws-amplify/cli
-          bash init.sh
-          bash push.sh
-          amplify push
+      - name: Install Amplify CLI
+        run: npm install -g @aws-amplify/cli
+
+      - name: Deploy To AWS
+        run: amplify push
 
       - name: Commit Amplify Files
         uses: stefanzweifel/git-auto-commit-action@v4.2.0
         with:
-            commit_message: Apply automatic changes
-            file_pattern: amplify/* amplifyconfiguration.json awsconfiguration.json
+          commit_message: Apply automatic changes
+          file_pattern: amplify/* amplifyconfiguration.json awsconfiguration.json
       - name: Deploy Next.js app
         run: amplify push
