@@ -45,17 +45,16 @@ jobs:
         run:
           npm install -g @aws-amplify/cli
 
-      - name: Configure AWS Amplify Credentials
+      - name: Configure AWS  Credentials
         uses: aws-actions/configure-aws-credentials@v1
-        run: amplify configure
         with:
           aws-region: eu-west-2
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
 
       - name: Pull App From AWS Amplify
-        run:
-          amplify pull  ${{ secrets.AWS_AMPLIFY_APP_ID }}
+        run: aws amplify get-app --appId ${{ secrets.AWS_AMPLIFY_APP_ID }}
+#          amplify pull
 
       - name: Check Amplify Status
         run:
