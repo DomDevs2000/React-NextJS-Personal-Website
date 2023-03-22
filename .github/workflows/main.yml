@@ -48,17 +48,21 @@ jobs:
           aws-region: eu-west-2
 
       - name: Install Amplify CLI
-        run: npm install -g @aws-amplify/cli
+        run:
+          npm install -g @aws-amplify/cli
+          amplify init
 
       - name: Deploy To AWS
         run:
-          amplify init
-          amplify push
+          amplify status
+          amplify pull
+          amplify push --force
 
       - name: Commit Amplify Files
         uses: stefanzweifel/git-auto-commit-action@v4.2.0
         with:
           commit_message: Apply automatic changes
           file_pattern: amplify/* amplifyconfiguration.json awsconfiguration.json
+
       - name: Deploy Next.js app
         run: amplify push
