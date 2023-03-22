@@ -51,7 +51,9 @@ jobs:
         run: npm install -g @aws-amplify/cli
 
       - name: Deploy To AWS
-        run: amplify push
+        run:
+          amplify init
+          amplify push
 
       - name: Commit Amplify Files
         uses: stefanzweifel/git-auto-commit-action@v4.2.0
