@@ -54,7 +54,7 @@ jobs:
 
       - name: Pull App From AWS Amplify
         run:
-          aws amplify get-app --app-id ${{ secrets.AWS_AMPLIFY_APP_ID }}
+#          aws amplify get-app --app-id ${{ secrets.AWS_AMPLIFY_APP_ID }}
           amplify init
           #amplify init --appId ${{ secrets.AWS_AMPLIFY_APP_ID }} --envName dev
       #          amplify pull
