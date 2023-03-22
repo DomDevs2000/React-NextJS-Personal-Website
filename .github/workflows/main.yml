@@ -53,7 +53,7 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
 
       - name: Pull App From AWS Amplify
-        run: aws amplify get-app --appId ${{ secrets.AWS_AMPLIFY_APP_ID }}
+        run: aws amplify get-app --app-id ${{ secrets.AWS_AMPLIFY_APP_ID }}
 #          amplify pull
 
       - name: Check Amplify Status
