@@ -45,34 +45,61 @@ jobs:
         run:
           npm install -g @aws-amplify/cli
 
-      - name: Configure AWS  Credentials
-        uses: aws-actions/configure-aws-credentials@v1
+
+      - name: configure amplify
+        uses: ambientlight/amplify-cli-action@0.3.0
         with:
-          aws-region: eu-west-2
-          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          amplify_command: configure
+          amplify_env: env
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          AWS_REGION: eu-west-2
 
-      - name: Pull App From AWS Amplify
-        run:
-#          aws amplify get-app --app-id ${{ secrets.AWS_AMPLIFY_APP_ID }}
-          amplify init blog
-          #amplify init --appId ${{ secrets.AWS_AMPLIFY_APP_ID }} --envName dev
-      #          amplify pull
+      - name: install, build and test
+        run: |
+          npm install
+          # build and test
+          # npm run build
+#           npm run test
 
-
-      - name: Check Amplify Status
-        run:
-          amplify status
-          amplify env list
-
-      - name: Deploy To AWS
-        run:  amplify push --force
-
-      - name: Commit Amplify Files
-        uses: stefanzweifel/git-auto-commit-action@v4.2.0
+      - name: deploy
+        uses: ambientlight/amplify-cli-action@0.3.0
         with:
-          commit_message: Apply automatic changes
-          file_pattern: amplify/* amplifyconfiguration.json awsconfiguration.json
-
-      - name: Remove AWS Amplify CLI Package
-        run: npm uninstall -g @aws-amplify/cli
+          amplify_command: publish
+          amplify_env: env
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          AWS_REGION: eu-west-2
+#      - name: Configure AWS  Credentials
+#        uses: aws-actions/configure-aws-credentials@v1
+#        with:
+#          aws-region: eu-west-2
+#          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+#          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+#
+#      - name: Pull App From AWS Amplify
+#        run:
+##          aws amplify get-app --app-id ${{ secrets.AWS_AMPLIFY_APP_ID }}
+#          amplify init blog
+#          #amplify init --appId ${{ secrets.AWS_AMPLIFY_APP_ID }} --envName dev
+#      #          amplify pull
+#
+#
+#      - name: Check Amplify Status
+#        run:
+#          amplify status
+#          amplify env list
+#
+#      - name: Deploy To AWS
+#        run:  amplify push --force
+#
+#      - name: Commit Amplify Files
+#        uses: stefanzweifel/git-auto-commit-action@v4.2.0
+#        with:
+#          commit_message: Apply automatic changes
+#          file_pattern: amplify/* amplifyconfiguration.json awsconfiguration.json
+#
+#      - name: Remove AWS Amplify CLI Package
+#        run: npm uninstall -g @aws-amplify/cli
