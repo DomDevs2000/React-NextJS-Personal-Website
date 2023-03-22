@@ -55,8 +55,8 @@ jobs:
       - name: Deploy To AWS
         run:
           amplify status
-          amplify pull
-          amplify push --force
+          amplify pull --appId ${{ secrets.AWS_AMPLIFY_APP_ID }} --envName dev
+          amplify push
 
       - name: Commit Amplify Files
         uses: stefanzweifel/git-auto-commit-action@v4.2.0
