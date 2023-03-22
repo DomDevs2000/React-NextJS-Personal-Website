@@ -52,11 +52,13 @@ jobs:
           npm install -g @aws-amplify/cli
           amplify init
 
-      - name: Deploy To AWS
+      - name: Pull App From AWS Amplify
         run:
-          amplify status
           amplify pull --appId ${{ secrets.AWS_AMPLIFY_APP_ID }} --envName dev
-          amplify push
+          amplify status
+
+      - name: Deploy To AWS
+        run: amplify push
 
       - name: Commit Amplify Files
         uses: stefanzweifel/git-auto-commit-action@v4.2.0
@@ -64,5 +66,4 @@ jobs:
           commit_message: Apply automatic changes
           file_pattern: amplify/* amplifyconfiguration.json awsconfiguration.json
 
-      - name: Deploy Next.js app
-        run: amplify push
+
