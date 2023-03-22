@@ -46,6 +46,7 @@ jobs:
           npm install -g @aws-amplify/cli
 
       - name: Configure AWS Amplify Credentials
+        uses: aws-actions/configure-aws-credentials@v1
         run: amplify configure
         with:
           aws-region: eu-west-2
