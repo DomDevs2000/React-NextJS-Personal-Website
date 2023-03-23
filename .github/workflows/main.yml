@@ -1,126 +1,80 @@
-#name: CI
-#on:
-#  push:
-#    branches: [ main ]
-#  pull_request:
-#    branches: [ main ]
-#  workflow_dispatch:
-#jobs:
-#  run-linters:
-#    name: Run Linters
-#    runs-on: ubuntu-latest
-#    steps:
-#      - name: Check Out Git Repository
-#        uses: actions/checkout@v3
-#
-#      - name: Set up Node.js
-#        uses: actions/setup-node@v3
-#        with:
-#          node-version: 18
-#
-#      - name: Install Node.js Dependencies
-#        run: npm ci
-#      - name: Run linters
-#        uses: wearerequired/lint-action@v2
-#        with:
-#          eslint: true
-#          prettier: true
-#  build:
-#    name: Build
-#    runs-on: ubuntu-latest
-#    steps:
-#      - name: Check out Git Repository
-#        uses: actions/checkout@v3
-#
-#      - name: Set up Node.js
-#        uses: actions/setup-node@v3
-#        with:
-#          node-version: 18
-#
-#      - name: Install NPM Dependencies
-#        run: npm install
-#
-#
-#      - name: Install Amplify CLI
-#        run:
-#          npm install -g @aws-amplify/cli
-#
-#
-#
-##      - name: Configure AWS  Credentials
-##        uses: aws-actions/configure-aws-credentials@v1
-##        with:
-##          aws-region: eu-west-2
-##          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-##          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-##
-##      - name: Pull App From AWS Amplify
-##        run:
-###          aws amplify get-app --app-id ${{ secrets.AWS_AMPLIFY_APP_ID }}
-##          amplify init blog
-##          #amplify init --appId ${{ secrets.AWS_AMPLIFY_APP_ID }} --envName dev
-##      #          amplify pull
-##
-##
-##      - name: Check Amplify Status
-##        run:
-##          amplify status
-##          amplify env list
-##
-##      - name: Deploy To AWS
-##        run:  amplify push --force
-##
-##      - name: Commit Amplify Files
-##        uses: stefanzweifel/git-auto-commit-action@v4.2.0
-##        with:
-##          commit_message: Apply automatic changes
-##          file_pattern: amplify/* amplifyconfiguration.json awsconfiguration.json
-##
-##      - name: Remove AWS Amplify CLI Package
-##        run: npm uninstall -g @aws-amplify/cli
-
-
-name: 'Amplify Deploy'
-on: [push]
-
+name: CI
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
 jobs:
-  test:
-    name: test amplify-cli-action
+  run-linters:
+    name: Run Linters
     runs-on: ubuntu-latest
-
-
     steps:
-      - uses: actions/checkout@v1
+      - name: Check Out Git Repository
+        uses: actions/checkout@v3
 
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-            node-version: 18
+          node-version: 18
 
-
-      - name: configure amplify
-        uses: ambientlight/amplify-cli-action@0.3.0
+      - name: Install Node.js Dependencies
+        run: npm ci
+      - name: Run linters
+        uses: wearerequired/lint-action@v2
         with:
-          amplify_command: configure
-          amplify_env: dev
-        env:
-          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          AWS_REGION: eu-west-2
+          eslint: true
+          prettier: true
 
-      - name: install, build and test
-        run: |
-          npm install
-          # build and test
-          # npm run build
-          # npm run test
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
 
-      - name: deploy
-        uses: ambientlight/amplify-cli-action@0.3.0
+      - name: Check out Git Repository
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
         with:
-          amplify_command: publish
-          amplify_env: dev
-        env:
-          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          AWS_REGION: eu-west-2
+          node-version: 18
+
+      - name: Install NPM Dependencies
+        run: npm install
+
+      - name: Install Amplify CLI
+        run:
+          npm install -g @aws-amplify/cli
+
+
+      - name: Configure AWS  Credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-region: eu-west-2
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+
+      - name: Pull App From AWS Amplify
+        run:
+#          aws amplify get-app --app-id ${{ secrets.AWS_AMPLIFY_APP_ID }}
+          amplify pull
+        # amplify init --appId ${{ secrets.AWS_AMPLIFY_APP_ID }} --envName dev
+      #          amplify pull
+
+      - name: Check Amplify Status
+        run:
+          amplify status
+          amplify env list
+
+      - name: Deploy To AWS
+        run:  amplify push --force
+
+      - name: Commit Amplify Files
+        uses: stefanzweifel/git-auto-commit-action@v4.2.0
+        with:
+          commit_message: Apply automatic changes
+          file_pattern: amplify/* amplifyconfiguration.json awsconfiguration.json
+
+      - name: Remove AWS Amplify CLI Package
+        run: npm uninstall -g @aws-amplify/cli
+
