@@ -45,26 +45,31 @@ jobs:
           npm install -g @aws-amplify/cli
 
 
-#      - name: Configure AWS  Credentials
-#        uses: aws-actions/configure-aws-credentials@v1
-#        with:
-#          aws-region: eu-west-2
-#          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-#          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+      #      - name: Configure AWS  Credentials
+      #        uses: aws-actions/configure-aws-credentials@v1
+      #        with:
+      #          aws-region: eu-west-2
+      #          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+      #          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+      #      - name: Configure AWS Credentials
+      #        uses: aws-actions/configure-aws-credentials@v2
+      #        run: amplify configure
+      #        with:
+      #          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+      #          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+      #          role-to-assume: ${{ secrets.AWS_IAM_USER}}
+      #          aws-region: eu-west-2
       - name: Configure AWS Credentials
-        uses: aws-actions/configure-aws-credentials@v2
-        with:
-          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          role-to-assume: ${{ secrets.AWS_IAM_USER}}
-          aws-region: eu-west-2
+        run: |
+          echo ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws configure set aws_access_key_id ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws configure set aws_secret_access_key {{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws configure set default.region eu-west-2
+
+
 
       - name: Pull App From AWS Amplify
-        run:
-#          aws amplify get-app --app-id ${{ secrets.AWS_AMPLIFY_APP_ID }}
-          amplify pull
-        # amplify init --appId ${{ secrets.AWS_AMPLIFY_APP_ID }} --envName dev
-      #          amplify pull
+        run: amplify pull
 
       - name: Check Amplify Status
         run:
@@ -72,7 +77,7 @@ jobs:
           amplify env list
 
       - name: Deploy To AWS
-        run:  amplify push --force
+        run: amplify push --force
 
       - name: Commit Amplify Files
         uses: stefanzweifel/git-auto-commit-action@v4.2.0
