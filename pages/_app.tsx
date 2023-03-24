@@ -22,9 +22,9 @@ function MyApp({ Component, pageProps }: AppProps) {
         <>
             <div className={theme}>
                 <ThemeContext.Provider value={theme}>
-                    <Analytics mode={'production'}/>
                     <NavBar theme={theme} setTheme={setTheme} />
                     <Component {...pageProps} />
+                    <Analytics mode={'production'}/>
                     <Footer></Footer>
                 </ThemeContext.Provider>
             </div>
