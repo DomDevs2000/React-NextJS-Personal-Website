@@ -1,4 +1,5 @@
 import '../styles/globals.css';
+import { Analytics } from '@vercel/analytics/react';
 import type { AppProps } from 'next/app';
 import NavBar from '../components/NavBar';
 import { createContext, useEffect, useState } from 'react';
@@ -21,6 +22,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         <>
             <div className={theme}>
                 <ThemeContext.Provider value={theme}>
+                    <Analytics mode={'production'}/>
                     <NavBar theme={theme} setTheme={setTheme} />
                     <Component {...pageProps} />
                     <Footer></Footer>
