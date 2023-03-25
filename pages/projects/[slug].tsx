@@ -30,7 +30,7 @@ const ProjectPage: FC<ProjectPageProp> = ({ project }) => {
                     content="Dom Devs blog portfolio projects"
                 />
             </Helmet>
-            <div className="py-10 px-10 dark:bg-black dark:text-white text-center">
+            <div className="py-10 px-10 dark:bg-black dark:text-white grid-cols-2">
                 <h1 className="text-xl md:text-2xl lg:text-3xl">{title}</h1>
                 <br></br>
                 <p className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">
@@ -49,13 +49,9 @@ const ProjectPage: FC<ProjectPageProp> = ({ project }) => {
                         );
                     })}
                 </ul>
-                <div className="flex justify-center  px-15 py-15 ">
-                    <Image src={cover_image} alt="" width={700} height={400} />
-                </div>
-
                 <div className="text-sm md:text-lg lg:text-xl flex justify-center flex-col px-3 py-1  text-gray-700 mr-2 mb-2">
                     <ReactMarkdown
-                        className="prose dark:text-white dark:prose-a:text-gray-400 dark:prose-headings:text-white dark:prose-strong:text-white"
+                        className="prose dark:text-white dark:prose-a:text-gray-400 dark:prose-code:text-white dark:prose-headings:text-white dark:prose-strong:text-white"
                         remarkPlugins={[remarkGfm]}
                     >
                         {content}
