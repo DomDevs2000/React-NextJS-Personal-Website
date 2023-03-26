@@ -31,7 +31,7 @@ export const PostCard: FC<PostCardProp> = ({ post }) => {
                             src={cover_image}
                             width={500}
                             height={250}
-                            alt=""
+                            alt="blog post image"
                         />
                     </Link>
                     <div className="p-5">

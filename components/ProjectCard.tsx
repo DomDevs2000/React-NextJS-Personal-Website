@@ -35,7 +35,7 @@ export const ProjectCard: FC<ProjectCardProp> = ({ project }) => {
                             src={cover_image}
                             width={500}
                             height={250}
-                            alt=""
+                            alt="project image"
                         />
                     </Link>
                     <div className="p-5">
