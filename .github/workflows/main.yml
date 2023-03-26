@@ -8,7 +8,9 @@ on:
       - main
 jobs:
   Set-Up-Node:
+    name: Set Up Node
     runs-on: ubuntu-latest
+
     steps:
       - uses: actions/checkout@v3
       - name: Use Node.js
@@ -19,6 +21,29 @@ jobs:
         run: npm ci
       - name: Run Tests
         run: npm test
+
+  run-linters:
+    name: Run linters
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out Git repository
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: 18
+
+
+      - name: Install Node.js dependencies
+        run: npm ci
+
+      - name: Run linters
+        uses: wearerequired/lint-action@v2
+        with:
+          eslint: true
+          prettier: true
   Deploy-Production:
     runs-on: ubuntu-latest
     steps:
