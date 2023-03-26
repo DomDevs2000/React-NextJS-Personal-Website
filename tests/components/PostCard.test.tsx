@@ -3,7 +3,17 @@ import { render, screen } from '@testing-library/react';
 import { PostCard } from '../../components/PostCard';
 
 describe('Post Card', () => {
-    it('should render the component', () => {
+    beforeEach(() => {
+        // IntersectionObserver isn't available in test environment
+        const mockIntersectionObserver = jest.fn();
+        mockIntersectionObserver.mockReturnValue({
+            observe: () => null,
+            unobserve: () => null,
+            disconnect: () => null
+        });
+        window.IntersectionObserver = mockIntersectionObserver;
+    });
+    it('should render the blog post card component', () => {
         const post = {
             frontmatter: {
                 title: 'test title',
@@ -19,12 +29,12 @@ describe('Post Card', () => {
 
         render(<PostCard post={post}></PostCard>);
 
-        const date = screen.getByText('22/05/2022');
         const title = screen.getByText('test title');
         const description = screen.getByText('test description');
+        const cover_image = screen.getByAltText('blog post image');
 
         expect(title).toBeInTheDocument();
         expect(description).toBeInTheDocument();
-        expect(date).toBeInTheDocument();
+        expect(cover_image).toBeInTheDocument();
     });
 });
