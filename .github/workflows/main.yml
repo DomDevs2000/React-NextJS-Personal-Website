@@ -19,7 +19,7 @@ jobs:
   Run-Unit-Tests:
     - steps:
       - name: Run Tests
-        -run: npm test
+        run: npm test
   Deploy-Production:
     runs-on: ubuntu-latest
     steps:
