@@ -8,6 +8,11 @@ tags: 'React,Next.js,Typescript,Tailwind'
 
 View This Project In [GitHub](https://github.com/DomDevs2000/React-NextJS-Personal-Website)
 
+Full-stack personal website to showcase my projects and blog posts. Utilising Next.js’ dynamic routing, the user can
+view each project or blog. Using React hooks such as useEffect and useState, users can toggle their desired theme from
+light to dark mode in a click of a button. Blog posts are written in markdown and rendered as HTML. Unit tested using
+React Testing Library and Jest. Deployed to Vercel, leveraging both Vercel CLI and GitHub Actions for efficient CI/CD.
+
 # What is this project about?
 
 I created this project for two purposes, to be able to showcase my most recent projects as well as a dedicated space to
@@ -18,7 +23,7 @@ post my blogs.
 My initial idea was to create a modern responsive website that showcases my projects & blog posts all in one
 place.
 
-## Why did i decide to use the technologies/languages that i did?
+## Why did I decide to use the technologies/languages that I did?
 
 I decided to use [React](https://www.reactjs.org) for this project as I initially designed a modular website with a need
 for multiple components being implemented and interchanged based on the page content. Using React Hooks such as useState, I could implement a dark mode theme toggle and search
