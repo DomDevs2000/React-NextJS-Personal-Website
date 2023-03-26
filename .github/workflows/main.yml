@@ -8,7 +8,7 @@ on:
       - main
 jobs:
   Set-Up-Node:
-    name: Set Up Node
+    name: Run Tests
     runs-on: ubuntu-latest
 
     steps:
@@ -17,7 +17,7 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 18
-      - name: Install dependencies
+      - name: Install Node.js Dependencies
         run: npm ci
       - name: Run Tests
         run: npm run test
@@ -36,15 +36,16 @@ jobs:
           node-version: 18
 
 
-      - name: Install Node.js dependencies
+      - name: Install Node.js Dependencies
         run: npm ci
 
-      - name: Run linters
+      - name: Run Linters
         uses: wearerequired/lint-action@v2
         with:
           eslint: true
           prettier: true
   Deploy-Production:
+    name: Deploy To Vercel
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
