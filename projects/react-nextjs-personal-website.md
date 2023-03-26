@@ -5,7 +5,9 @@ description: 'Full-stack static site to showcase personal projects & blog posts.
 cover_image: '/images/projects/personal-blog/personal-blog.png'
 tags: 'React,Next.js,Typescript,Tailwind'
 ---
+
 View This Project In [GitHub](https://github.com/DomDevs2000/React-NextJS-Personal-Website)
+
 # What is this project about?
 
 I created this project for two purposes, to be able to showcase my most recent projects as well as a dedicated space to
@@ -27,7 +29,7 @@ it was a no-brainer to include it in this one. Typescript allows for a better de
 
 [NextJS](https://nextjs.org) is a great tool to create static sites and was easy to implement with react and
 typescript Creating a NextJs app with Typescript is simple. Running this command:
-```npx create-next-app@latest --ts```
+`npx create-next-app@latest --ts`
 will create a
 Next app with typescript included out of the box.
 

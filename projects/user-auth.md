@@ -5,6 +5,7 @@ description: 'Allows users to sign up and login, using PassportJS for authentica
 cover_image: '/images/projects/user-auth/login.png'
 tags: 'Typescript,Node.js,Express,SQLite'
 ---
+
 View this project in [GitHub](https://github.com/DomDevs2000/user-auth)
 View this project [Live](https://user-auth-fn0e.onrender.com)
 

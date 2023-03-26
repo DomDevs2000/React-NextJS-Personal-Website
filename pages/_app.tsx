@@ -5,7 +5,6 @@ import NavBar from '../components/NavBar';
 import { createContext, useEffect, useState } from 'react';
 import { Footer } from '../components/Footer';
 
-
 export const ThemeContext = createContext('light');
 const defaultTheme = 'light';
 
@@ -24,7 +23,7 @@ function MyApp({ Component, pageProps }: AppProps) {
                 <ThemeContext.Provider value={theme}>
                     <NavBar theme={theme} setTheme={setTheme} />
                     <Component {...pageProps} />
-                    <Analytics mode={'production'}/>
+                    <Analytics mode={'production'} />
                     <Footer></Footer>
                 </ThemeContext.Provider>
             </div>

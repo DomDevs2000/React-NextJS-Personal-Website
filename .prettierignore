@@ -3,4 +3,4 @@ coverage
 public
 node_modules
 next-env.d.ts
-
+.history

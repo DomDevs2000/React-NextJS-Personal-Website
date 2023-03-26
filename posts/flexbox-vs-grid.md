@@ -25,4 +25,3 @@ X or Y axis.
 
 Flexbox aligns elements inside a container, which is, well you guessed it, flexible. the elements inside can expand or
 shrink when needed. Flexbox is one-dimensional compared to the two dimensions of CSS Grid.
-

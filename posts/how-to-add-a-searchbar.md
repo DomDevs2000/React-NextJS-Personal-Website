@@ -23,7 +23,7 @@ Create a component folder inside the **./src** folder. Inside this folder, creat
 sure to import react and useState by including this line at the top of your file:
 
 ```javascript
-import React, {useState} from 'react'
+import React, { useState } from 'react';
 ```
 
 ### Step 3 - Creating The Component
@@ -31,9 +31,7 @@ import React, {useState} from 'react'
 Now we need to create a functional component:
 
 ```javascript
-const searchBar = () => {
-
-}
+const searchBar = () => {};
 ```
 
 ### Step 4 - useState Hook
@@ -42,11 +40,8 @@ Inside this component, we want to include the React [useState](https://reactjs.o
 
 ```javascript
 const searchBar = () => {
-
-    const [searchInput, setSearchInput] = useState("");
-
-}
-
+    const [searchInput, setSearchInput] = useState('');
+};
 ```
 
 ### Step 5 - Data!
@@ -103,18 +98,13 @@ The **e.preventDefault()** prevents the default form behaviour, which would relo
 ### Step 7 - Validation and filtering of the data
 
 ```javascript
-const search = countries
-    .filter((country) => {
-        if (searchInput == '') {
-            return;
-        } else if (
-            country.name
-                .toLowerCase()
-                .includes(searchInput.toLowerCase())
-        ) {
-            return country;
-        }
-    })
+const search = countries.filter((country) => {
+    if (searchInput == '') {
+        return;
+    } else if (country.name.toLowerCase().includes(searchInput.toLowerCase())) {
+        return country;
+    }
+});
 ```
 
 This is a simple filter method, that goes over the **countries** array and checks if the searchInput (in lowercase) is
@@ -135,9 +125,7 @@ const searchResults = countries
         if (searchInput == '') {
             return;
         } else if (
-            country.name
-                .toLowerCase()
-                .includes(searchInput.toLowerCase())
+            country.name.toLowerCase().includes(searchInput.toLowerCase())
         ) {
             return country;
         }
@@ -158,7 +146,6 @@ const searchResults = countries
 Now we want to create a search input inside this component using jsx:
 
 ```javascript
-
 return (
     <form onSubmit={handleSubmit}>
         <input
@@ -179,13 +166,11 @@ to the current value of the input.
 
 ### Step 9 - Outputting The Data
 
-Now, we want to output the filtered results. We can do this by using a simple div and placing the variable *
-*search** inside.
+Now, we want to output the filtered results. We can do this by using a simple div and placing the variable \*
+\*search\*\* inside.
 
 ```javascript
-<div>
-    {search}
-</div>
+<div>{search}</div>
 ```
 
 ### Final Code
@@ -193,60 +178,51 @@ Now, we want to output the filtered results. We can do this by using a simple di
 Your code for the SearchBar.jsx should look like this:
 
 ```javascript
-
 import React, { useState } from 'react';
 
-
 const SearchBar = () => {
-
-    const [searchInput, setSearchInput] = useState("");
+    const [searchInput, setSearchInput] = useState('');
 
     const countries = [
-
-        { name: "Belgium", continent: "Europe" },
-        { name: "India", continent: "Asia" },
-        { name: "Bolivia", continent: "South America" },
-        { name: "Ghana", continent: "Africa" },
-        { name: "Japan", continent: "Asia" },
-        { name: "Canada", continent: "North America" },
-        { name: "New Zealand", continent: "Australasia" },
-        { name: "Italy", continent: "Europe" },
-        { name: "South Africa", continent: "Africa" },
-        { name: "China", continent: "Asia" },
-        { name: "Paraguay", continent: "South America" },
-        { name: "Usa", continent: "North America" },
-        { name: "France", continent: "Europe" },
-        { name: "Botswana", continent: "Africa" },
-        { name: "Spain", continent: "Europe" },
-        { name: "Senegal", continent: "Africa" },
-        { name: "Brazil", continent: "South America" },
-        { name: "Denmark", continent: "Europe" },
-        { name: "Mexico", continent: "South America" },
-        { name: "Australia", continent: "Australasia" },
-        { name: "Tanzania", continent: "Africa" },
-        { name: "Bangladesh", continent: "Asia" },
-        { name: "Portugal", continent: "Europe" },
-        { name: "Pakistan", continent: "Asia" },
-
+        { name: 'Belgium', continent: 'Europe' },
+        { name: 'India', continent: 'Asia' },
+        { name: 'Bolivia', continent: 'South America' },
+        { name: 'Ghana', continent: 'Africa' },
+        { name: 'Japan', continent: 'Asia' },
+        { name: 'Canada', continent: 'North America' },
+        { name: 'New Zealand', continent: 'Australasia' },
+        { name: 'Italy', continent: 'Europe' },
+        { name: 'South Africa', continent: 'Africa' },
+        { name: 'China', continent: 'Asia' },
+        { name: 'Paraguay', continent: 'South America' },
+        { name: 'Usa', continent: 'North America' },
+        { name: 'France', continent: 'Europe' },
+        { name: 'Botswana', continent: 'Africa' },
+        { name: 'Spain', continent: 'Europe' },
+        { name: 'Senegal', continent: 'Africa' },
+        { name: 'Brazil', continent: 'South America' },
+        { name: 'Denmark', continent: 'Europe' },
+        { name: 'Mexico', continent: 'South America' },
+        { name: 'Australia', continent: 'Australasia' },
+        { name: 'Tanzania', continent: 'Africa' },
+        { name: 'Bangladesh', continent: 'Asia' },
+        { name: 'Portugal', continent: 'Europe' },
+        { name: 'Pakistan', continent: 'Asia' }
     ];
-
 
     const handleSubmit = (e) => {
         e.preventDefault();
         setSearchInput(e.target.value);
     };
 
-
     const search = countries
         .filter((country) => {
             if (searchInput == '') {
-                return
+                return;
             } else if (
-                country.name
-                    .toLowerCase()
-                    .includes(searchInput.toLowerCase())
+                country.name.toLowerCase().includes(searchInput.toLowerCase())
             ) {
-                return country
+                return country;
             }
         })
         .map((country, key) => {
@@ -270,16 +246,12 @@ const SearchBar = () => {
                 />
                 <button type="submit">Search</button>
             </form>
-
-            <div>{search}</div>
-            ;
+            <div>{search}</div>;
         </>
     );
-
 };
 
 export default SearchBar;
-
 ```
 
 ### Step 10 - Adding the component to the app
@@ -287,19 +259,19 @@ export default SearchBar;
 Import the searchBar component into the app.js file and add it to the return statement JSX as follows.
 
 ```javascript
-import React from 'react'
-import './App.css'
-import SearchBar from '../src/components/SearchBar'
+import React from 'react';
+import './App.css';
+import SearchBar from '../src/components/SearchBar';
 
 function App() {
     return (
-        <div classname='App'>
-            <SearchBar/>
+        <div classname="App">
+            <SearchBar />
         </div>
-    )
+    );
 }
 
-export default App
+export default App;
 ```
 
 # Conclusion
@@ -307,7 +279,3 @@ export default App
 And there it is, you now know how to implement a search bar into react, using the useState hook.
 
 For the full code, please refer to the GitHub [Repo](https://github.com/DomDevs2000/Search-Bar-Blog-Code)
-
-
-
-

@@ -1,7 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
-import Image from "next/legacy/image";
+import Image from 'next/legacy/image';
 import React, { FC } from 'react';
 import { GetStaticProps } from 'next';
 import { TFrontmatter, TProject } from '../../types';

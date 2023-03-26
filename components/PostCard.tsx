@@ -1,4 +1,4 @@
-import Image from "next/legacy/image";
+import Image from 'next/legacy/image';
 import React, { FC } from 'react';
 import type { TPost } from '../types';
 import Link from 'next/link';

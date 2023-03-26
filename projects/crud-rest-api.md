@@ -5,6 +5,7 @@ description: 'A REST API built to create notes, with full CRUD functionality.'
 cover_image: '/images/projects/crud-api/nodejs-logo.png'
 tags: 'Typescript,Node.js,MongoDB,Express'
 ---
+
 View This Project [Live](https://crud-rest-api.onrender.com/notes)
 
 **Use Postman/Insomnia to create GET/POST/PUT/DELETE requests**
@@ -19,7 +20,7 @@ MongoDB for the database. For unit testing I used Jest and Supertest to test the
 
 ## Why did I decide to create this project?
 
-I wanted to create a back-end only project to experiment, learn and develop my skills in dealing with databases and 
+I wanted to create a back-end only project to experiment, learn and develop my skills in dealing with databases and
 RESTful API design.
 
 ## Why did I decide to use the technologies/languages that I did?
@@ -37,7 +38,7 @@ it was a no-brainer to include it in this one. Typescript allows for a better de
 ### How to use the API endpoints
 
 To get all notes use a GET requests to the URL: /notes
-To get a single note by id use the URL: /notes/id/```id```
+To get a single note by id use the URL: /notes/id/`id`
 To create a new note, use a POST request to /notes ensuring "content-type: application/JSON" is set. JSON body should
 be as follows:
 
@@ -48,7 +49,7 @@ be as follows:
 }
 ```
 
-To update a note, use a PUT request to /notes/```id``` ensuring "content-type: application/JSON" is set. JSON body should
+To update a note, use a PUT request to /notes/`id` ensuring "content-type: application/JSON" is set. JSON body should
 be as follows:
 
 ```
@@ -58,4 +59,4 @@ be as follows:
 }
 ```
 
-To delete a note, use a DELETE request to /notes/```id``` and the API will delete the note by the id.
+To delete a note, use a DELETE request to /notes/`id` and the API will delete the note by the id.

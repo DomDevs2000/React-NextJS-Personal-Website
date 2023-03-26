@@ -24,7 +24,7 @@ it was a no-brainer to include it in this one. Typescript allows for a better de
 
 [NextJS](https://nextjs.org) is a great tool to create static sites and was easy to implement with react and
 typescript. Creating a Next.js app with Typescript is simple, just by running this command:
-```npx create-next-app@latest --ts```
+`npx create-next-app@latest --ts`
 will create a Next app with typescript included out of the box. So no need to fiddle with ts config files and googling
 why your
 typescript files aren't compiling the way you want!
