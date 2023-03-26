@@ -7,45 +7,47 @@ on:
         branches:
             - main
 jobs:
-    Run-Tests-Linters-And-Deploy:
-        name: Run Tests, Linters And Deploy
+    Run-Test-And-Deploy:
+        name: Run Tests
         runs-on: ubuntu-latest
 
         steps:
-            - name: Check out Git repository
-              uses: actions/checkout@v2
-
-            - name: Set up Node.js
-              uses: actions/setup-node@v1
+            - uses: actions/checkout@v3
+            - name: Use Node.js
+              uses: actions/setup-node@v3
               with:
                   node-version: 18
-
             - name: Install Node.js Dependencies
               run: npm ci
-
             - name: Run Tests
               run: npm run test
-
-            - name: Check And Run Prettier
-              run: npx prettier --check .
-
-            - name: Run Linters
-              uses: wearerequired/lint-action@v2
-              with:
-                  eslint: true
-                  prettier: true
-
-            - name: Deploy-Production
-            - uses: actions/checkout@v2
-
             - name: Install Vercel CLI
               run: npm install --global vercel@latest
             - name: Pull Vercel Environment Information
-
               run: vercel pull --yes --environment=production --token=${{ secrets.VERCEL_TOKEN }}
             - name: Build Project Artifacts
-
               run: vercel build --prod --token=${{ secrets.VERCEL_TOKEN }}
-
             - name: Deploy Project Artifacts to Vercel
               run: vercel deploy --prebuilt --prod --token=${{ secrets.VERCEL_TOKEN }}
+
+        run-linters:
+            name: Run linters
+            runs-on: ubuntu-latest
+
+            steps:
+                - name: Check out Git repository
+                  uses: actions/checkout@v2
+
+                - name: Set up Node.js
+                  uses: actions/setup-node@v1
+                  with:
+                      node-version: 18
+
+                - name: Install Node.js Dependencies
+                  run: npm ci
+
+                - name: Run Linters
+                  uses: wearerequired/lint-action@v2
+                  with:
+                      eslint: true
+                      prettier: true
