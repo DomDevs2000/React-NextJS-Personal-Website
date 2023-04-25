@@ -18,10 +18,15 @@ This API also includes custom exception handling and validation. This project is
 
 ## Why did I decide to create this project?
 
-I had previously made a [CRUD REST API](https://www.dom-devs.tech/projects/crud-rest-api) using Typescript and Node.js but as I am currently learning Java, I decided
+I had previously made a [Serverless Node.js REST API](https://www.dom-devs.tech/projects/serverless-node-api) using
+Typescript and Node.js but as I am currently learning Java, I decided
 replicate a similar project, to further enhance my skill set and to step out of my comfort zone. While learning Java I
 wanted to create a backend project to familiarise myself with how a full project is written and structured, and
 understand its differences and nuances compared to my Typescript and Node.js API project.
+
+I chose to deploy my website to AWS using Elastic Container Service (ECS) as I wanted to apply my newly acquired Docker
+skills. I created a local Docker image of the API and pushed it to AWS' Elastic Container Registry (ECR). ECS then
+pulled the image and created a container within a Load Balancer, simplifying the deployment process.
 
 ### How to use the API endpoints
 
