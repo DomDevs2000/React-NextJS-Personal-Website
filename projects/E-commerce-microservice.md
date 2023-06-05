@@ -1,7 +1,7 @@
 ---
 title: 'E-Commerce Microservice'
 date: 'May 25, 2023'
-description: ''
+description: 'Fully integrated micro-service project for an E-Commerce platform'
 cover_image: './images/projects/ecommerce-microservice/ECommerce-Microservice-Architecture.drawio.png'
 tags: 'Java,Spring Boot,Kafka,MongoDB,MySQL'
 ---
