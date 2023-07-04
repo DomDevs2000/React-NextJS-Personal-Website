@@ -6,6 +6,8 @@ cover_image: './images/projects/ecommerce-microservice/ECommerce-Microservice-Ar
 tags: 'Java,Spring Boot,Kafka,MongoDB,MySQL'
 ---
 
+View this project in [GitHub](https://github.com/DomDevs2000/ECommerce-Microservice)
+
 # Project Description
 
 For this project, I developed a fully integrated E-commerce service that allows users to create orders, check products
