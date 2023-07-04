@@ -41,4 +41,4 @@ non-development teams such as operations who can use it without knowing a progra
 pushing infrastructure changes to AWS was simple and straightforward. As this was a React application, I decided to
 create an S3 bucket to store the app files as it is secure, scalable and low cost. I used CloudFront as the CDN to
 deliver the website securely, by design, delivering data out of CloudFront can be more cost-effective than delivering it
-from S3. 
+from S3.

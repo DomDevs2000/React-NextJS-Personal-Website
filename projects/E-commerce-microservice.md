@@ -18,21 +18,20 @@ This entire project is Dockerized using, Docker, Docker Hub and Google Cloud Jib
 
 # Technologies Used
 
-- Java 17,
-- Spring Boot 3.0.5,
-- Spring Security,
-- Spring Cloud Netflix Eureka(Service Discovery),
-- Apache Kafka (Event-Driven Architecture),
-- KeyCloak (OAuth 2.0 JWT)
-- Docker,
-- Resilience4J (Circuit Breaker),
-- MySQL,
-- MongoDB,
-- Zipkin (Distributed Tracing),
-- JUnit5 (Unit Testing)
-- MockMVC (Unit Testing)
-- TestContainers(Integration Testing)
-
+-   Java 17,
+-   Spring Boot 3.0.5,
+-   Spring Security,
+-   Spring Cloud Netflix Eureka(Service Discovery),
+-   Apache Kafka (Event-Driven Architecture),
+-   KeyCloak (OAuth 2.0 JWT)
+-   Docker,
+-   Resilience4J (Circuit Breaker),
+-   MySQL,
+-   MongoDB,
+-   Zipkin (Distributed Tracing),
+-   JUnit5 (Unit Testing)
+-   MockMVC (Unit Testing)
+-   TestContainers(Integration Testing)
 
 # Microservice Architecture
 
@@ -46,13 +45,13 @@ To view the product catalog, please make a HTTP GET request to `/api/product`
 To create a product for the product catalog, please make a HTTP POST request to `/api/product/create` with the body in
 JSON, here is an example:
 
- ```
- {
-    "name": "iphone_12_black",
-    "description": "Black iPhone 12",
-    "price": 1000
- }
- ```
+```
+{
+   "name": "iphone_12_black",
+   "description": "Black iPhone 12",
+   "price": 1000
+}
+```
 
 ### Inventory Service
 
@@ -64,15 +63,15 @@ queried product, it's quantity count and will state if its in stock or not.
 To create an order, make a HTTP POST request to `/api/order` with the body in JSON,
 here is an example:
 
- ```
- { 
- "orderLineItemsDto": {
-    "name": "iphone_12_black",
-    "quantity": "1",
-    "price": 1000
-    }
- }
- ```
+```
+{
+"orderLineItemsDto": {
+   "name": "iphone_12_black",
+   "quantity": "1",
+   "price": 1000
+   }
+}
+```
 
 The order service will query the inventory service, if the requested item is in stock, the order will be placed
 successfully, otherwise it will send a response stating that the product is not in stock.
