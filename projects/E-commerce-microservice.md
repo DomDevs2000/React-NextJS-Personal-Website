@@ -6,11 +6,11 @@ cover_image: './images/projects/ecommerce-microservice/ECommerce-Microservice-Ar
 tags: 'Java,Spring Boot,Kafka,MongoDB,MySQL'
 ---
 
-# What Is This Project About
+# Project Description
 
 For this project, I developed a fully integrated E-commerce service that allows users to create orders, check products
 and inventory and successfully place orders if products are in stock.
-Functionality includes product and inventory queries, order placements, event-driven email notifications using Kafka. Ensured security with Spring WebFlux Security and OAuth 2.0 JWT authentication. Implemeneted inter-service communication using Spring Cloud Netflix Eureka with inter-service
+Functionality includes product and inventory queries, order placements, and event-driven notifications using Kafka once orders are successfully placed. Ensured security with Spring WebFlux Security and OAuth 2.0 JWT authentication. Implemeneted inter-service communication using Spring Cloud Netflix Eureka with inter-service
 fault tolerance using Spring Cloud Circuit Breaker via the Resilience4j library.
 Ensured website functionality with comprehensive unit testing using JUnit5 and MockMvc and integration testing using
 TestContainers.
@@ -28,7 +28,7 @@ Docker,
 Resilience4J (Circuit Breaker),
 MySQL,
 MongoDB,
-Zipkin (Distributed Tracing0,
+Zipkin (Distributed Tracing),
 JUnit5 (Unit Testing)
 MockMVC (Unit Testing)
 TestContainers(Integration Testing)
@@ -45,7 +45,7 @@ TestContainers(Integration Testing)
 To view the product catalog, please make a HTTP GET request to `/api/product`
 To create a product for the product catalog, please make a HTTP POST request to `/api/product/create` with the body in
 JSON,
-here is an example:
+Here is an example:
 
  ```
  {
