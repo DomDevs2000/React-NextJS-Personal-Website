@@ -18,20 +18,20 @@ This entire project is Dockerized using, Docker, Docker Hub and Google Cloud Jib
 
 # Technologies Used
 
-Java 17,
-Spring Boot 3.0.5,
-Spring Security,
-Spring Cloud Netflix Eureka(Service Discovery),
-Apache Kafka (Event-Driven Architecture),
-KeyCloak (OAuth 2.0 JWT)
-Docker,
-Resilience4J (Circuit Breaker),
-MySQL,
-MongoDB,
-Zipkin (Distributed Tracing),
-JUnit5 (Unit Testing)
-MockMVC (Unit Testing)
-TestContainers(Integration Testing)
+- Java 17,
+- Spring Boot 3.0.5,
+- Spring Security,
+- Spring Cloud Netflix Eureka(Service Discovery),
+- Apache Kafka (Event-Driven Architecture),
+- KeyCloak (OAuth 2.0 JWT)
+- Docker,
+- Resilience4J (Circuit Breaker),
+- MySQL,
+- MongoDB,
+- Zipkin (Distributed Tracing),
+- JUnit5 (Unit Testing)
+- MockMVC (Unit Testing)
+- TestContainers(Integration Testing)
 
 
 # Microservice Architecture
