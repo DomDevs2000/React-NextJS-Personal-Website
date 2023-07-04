@@ -34,7 +34,7 @@ MockMVC (Unit Testing)
 TestContainers(Integration Testing)
 
 
-# Micro-Service Architecture
+# Microservice Architecture
 
 ![Architecture](/images/projects/ecommerce-microservice/ECommerce-Microservice-Architecture.drawio.png)
 
@@ -44,8 +44,7 @@ TestContainers(Integration Testing)
 
 To view the product catalog, please make a HTTP GET request to `/api/product`
 To create a product for the product catalog, please make a HTTP POST request to `/api/product/create` with the body in
-JSON,
-Here is an example:
+JSON, here is an example:
 
  ```
  {
