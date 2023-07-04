@@ -1,6 +1,6 @@
 ---
 title: 'E-Commerce Microservice'
-date: 'May 25, 2023'
+date: 'July 1, 2023'
 description: 'Fully integrated micro-service project for an E-Commerce platform'
 cover_image: './images/projects/ecommerce-microservice/ECommerce-Microservice-Architecture.drawio.png'
 tags: 'Java,Spring Boot,Kafka,MongoDB,MySQL'
@@ -10,8 +10,7 @@ tags: 'Java,Spring Boot,Kafka,MongoDB,MySQL'
 
 For this project, I developed a fully integrated E-commerce service that allows users to create orders, check products
 and inventory and successfully place orders if products are in stock.
-Functionality includes product and inventory queries, order placements, event-driven email notifications using Kafka, if orders are placed
-successfully, OAuth 2.0 JWT authentication, inter-service communication using Spring Cloud Netflix Eureka, inter-service
+Functionality includes product and inventory queries, order placements, event-driven email notifications using Kafka. Ensured security with Spring WebFlux Security and OAuth 2.0 JWT authentication. Implemeneted inter-service communication using Spring Cloud Netflix Eureka with inter-service
 fault tolerance using Spring Cloud Circuit Breaker via the Resilience4j library.
 Ensured website functionality with comprehensive unit testing using JUnit5 and MockMvc and integration testing using
 TestContainers.
@@ -58,12 +57,12 @@ here is an example:
 
 ### Inventory Service
 
-To view the inventory, please make a HTTP GET request to `/api/inventory?skuCode={skuCode}`. This will return the
+To view the inventory, make a HTTP GET request to `/api/inventory?skuCode={skuCode}`. This will return the
 queried product, it's quantity count and will state if its in stock or not.
 
 ### Order Service
 
-To create an order, please make a HTTP POST request to `/api/order` with the body in JSON,
+To create an order, make a HTTP POST request to `/api/order` with the body in JSON,
 here is an example:
 
  ```
@@ -84,4 +83,4 @@ successfully, otherwise it will send a response stating that the product is not 
 The entire project is dockerized, using Google Cloud Jib to create a docker image of each microservice, which
 automatically pushes each build to a remote repository (Docker Hub), where the docker compose file will pull and run
 these containers. 3rd-party services, such as Kafka, Key Cloak and ZipKin are also run via docker compose by pulling and spinning up
-their respective containers. 
+their respective containers. I am currently in the process of deploying this project using kubernetes via K8s.
